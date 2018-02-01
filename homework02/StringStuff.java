@@ -4,6 +4,8 @@
  *  Purpose       :  A file full of stuff to do with the Java String class
  *  Author        :  B.J. Johnson
  *  Date          :  2017-01-19
+ *  Author        :  Kevin Peters
+ *  Date          :  2018-01-30
  *  Description   :  This file presents a bunch of String-style helper methods.  Although pretty much
  *                   any and every thing you'd want to do with Strings is already made for you in the
  *                   Jave String class, this exercise gives you a chance to do it yourself [DIY] for some
@@ -19,6 +21,7 @@
  *           -----  ----------  ------------  -----------------------------------------------------------
  *  @version 1.0.0  2017-01-19  B.J. Johnson  Initial writing and release
  *  @version 1.1.0  2017-01-22  B.J. Johnson  Fill in methods to make the program actually work
+ *  @version 2.0.0  2018-01-30  Kevin Peters  Added initial version of working code
  * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 import java.util.Set;
 import java.util.HashSet;
@@ -77,6 +80,7 @@ public class StringStuff {
         char[] even_letters = { 'B', 'D', 'F', 'H', 'J', 'L', 'N', 'P', 'R', 'T', 'V', 'X', 'Z' };
         StringBuilder s_evens = new StringBuilder();
         String upper_s = s.toUpperCase();
+        //Adds all "even" letters to a string builder
         for (int i = 0; i < s.length(); i++) {
             for (int j = 0; j < even_letters.length; j++) {
                 if (upper_s.charAt(i) == even_letters[j]) {
@@ -100,6 +104,7 @@ public class StringStuff {
         char[] odd_letters = { 'A', 'C', 'E', 'G', 'I', 'K', 'M', 'O', 'Q', 'S', 'U', 'W', 'Y' };
         StringBuilder s_odds = new StringBuilder();
         String upper_s = s.toUpperCase();
+        //Adds all "odd" character to a StringBuilder 
         for (int i = 0; i < s.length(); i++) {
             for (int j = 0; j < odd_letters.length; j++) {
                 if (upper_s.charAt(i) == odd_letters[j]) {
@@ -121,6 +126,7 @@ public class StringStuff {
     public static String evensOnlyNoDupes(String s) {
         String s_evens = evensOnly(s);
         Set unique_evens = new LinkedHashSet();
+        //Adds all elements to an ordered set, which cannot contain duplicates
         for (int i = 0; i < s_evens.length(); i++) {
             unique_evens.add(s_evens.charAt(i));
         }
@@ -138,6 +144,7 @@ public class StringStuff {
     public static String oddsOnlyNoDupes(String s) {
         String s_odds = oddsOnly(s);
         Set unique_odds = new LinkedHashSet();
+        //Adds all elements to an ordered set, which cannot contain duplicates
         for (int i = 0; i < s_odds.length(); i++) {
             unique_odds.add(s_odds.charAt(i));
         }
