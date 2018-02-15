@@ -13,7 +13,7 @@ public class HighRoller {
         System.out.println("3. CALCULATE THE SCORE FOR THIS SET");
         System.out.println("4. SAVE THIS SCORE AS HIGH SCORE");
         System.out.println("5. DISPLAY THE HIGH SCORE");
-        System.out.println("6. ENTER 'Q' TO QUIT \n");
+        System.out.println("\n   ENTER 'Q' TO QUIT \n");
     }
 
     /**
@@ -21,17 +21,32 @@ public class HighRoller {
      * Does not except input from "args", instead uses StringBuffer each instance
      */
     public static void main(String[] args) {
-        // Displays the options menu
-        // Initializes input, DiceSet, and highScore
-        optionsMenu();
+
+        DiceSet ds = null;
+
+        // Creates DiceSet with given arguements in the form <number of dice> <number of sides>
+        try {
+            ds = new DiceSet(Integer.parseInt(args[0]), Integer.parseInt(args[1]));
+        } catch (NumberFormatException nf) {
+            System.out
+                    .println("Invalid arguements, please enter two integers\nRun program again with valid arguements");
+            System.exit(1);
+        } catch (ArrayIndexOutOfBoundsException aiob) {
+            System.out
+                    .println("Invalid arguements, please enter two integers\nRun program again with valid arguements");
+            System.exit(2);
+        }
+        // Initialize command linen input variable and highScore
         BufferedReader input = new BufferedReader(new InputStreamReader(System.in));
-        DiceSet ds = new DiceSet(5, 6);
         int highScore = 0;
+
+        // Displays the options menu
+        optionsMenu();
 
         // Loop that keeps program running until user chooses to exit
         while (true) {
             // Displays value of all Dice in the DiceSet
-            System.out.println("Current Dice Set:  " + ds.toString());
+            System.out.println("\nCurrent Dice Set:  " + ds.toString());
             // Indicates input and clears/initializes inputLine value
             System.out.print(">>");
             String inputLine = null;
@@ -61,8 +76,14 @@ public class HighRoller {
                     // Re-rolls a single die as indicated by the user
                     System.out.println("Which die do you wish to roll?");
                     System.out.print(">>");
-                    inputLine = input.readLine();
-                    ds.rollIndividual(Integer.parseInt(inputLine));
+                    try {
+                        inputLine = input.readLine();
+                        ds.rollIndividual(Integer.parseInt(inputLine));
+                    } catch (ArrayIndexOutOfBoundsException aiob) {
+                        System.out.println("Please enter an integer index within the range of the DiceSet");
+                    } catch (NumberFormatException nf) {
+                        System.out.println("Please enter an integer index within the range of the DiceSet");
+                    }
                     break;
                 case '3':
                     // Returns sum of current DiceSet
