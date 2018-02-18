@@ -112,8 +112,7 @@ public class Die {
      * A little test main to check things out
      */
     public static void main(String[] args) {
-        Die d = new Die(5);
-        System.out.println(d.toString());
+
     }
 
 }
