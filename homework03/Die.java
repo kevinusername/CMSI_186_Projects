@@ -52,6 +52,9 @@ public class Die {
     public Die(int nSides) {
         if (nSides >= MINIMUM_SIDES) {
             sides = nSides;
+        } else {
+            System.out.println("Please enter an integer greater than 3");
+            System.exit(0);
         }
         roll();
     }
@@ -84,6 +87,8 @@ public class Die {
     public void setSides(int newSides) {
         if (newSides >= MINIMUM_SIDES) {
             sides = newSides;
+        } else {
+            System.out.println("Invalid number of sides\nPlease input a number greater than 3");
         }
     }
 
@@ -112,7 +117,13 @@ public class Die {
      * A little test main to check things out
      */
     public static void main(String[] args) {
+        // Some tests...
+        Die d = new Die(5);
+        d.setSides(-10);
 
+        d.roll();
+
+        System.out.println(d.toString());
     }
 
 }

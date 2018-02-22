@@ -55,12 +55,19 @@ public class DiceSet {
         // Checks that input "count" and "sides" are within the valid range
         // Creates a DiceSet "ds" of size "count"
         // Loops to initialize each Die in the DiceSet via Die() constructor
+
         if (newCount > 0) {
             count = newCount;
+        } else {
+            System.out.println("Please enter an integer > 0");
         }
+
         if (newSides > 3) {
             sides = newSides;
+        } else {
+            System.out.println("Please enter an integer > 3");
         }
+
         ds = new Die[count];
         for (int i = 0; i < count; i++) {
             ds[i] = new Die(sides);

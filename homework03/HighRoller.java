@@ -25,6 +25,7 @@ public class HighRoller {
         DiceSet ds = null;
 
         // Creates DiceSet with given arguements in the form <number of dice> <number of sides>
+        // Catches invalid outputs and prompts user to try again
         try {
             ds = new DiceSet(Integer.parseInt(args[0]), Integer.parseInt(args[1]));
         } catch (NumberFormatException nf) {
@@ -74,7 +75,7 @@ public class HighRoller {
                     break;
                 case '2':
                     // Re-rolls a single die as indicated by the user
-                    System.out.println("Which die do you wish to roll?");
+                    System.out.println("Which die do you wish to roll?\n**Note that the index starts at 0**");
                     System.out.print(">>");
                     try {
                         inputLine = input.readLine();
