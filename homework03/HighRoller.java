@@ -1,3 +1,16 @@
+/** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ *  File name     :  HighRoller.java
+ *  Purpose       :  Use a textual user interface to simulate rolling an input set of die and perform
+ *                   several actions on it
+ *  @author       :  Kevin Peters
+ * Date           :  2018-02-22
+ * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ *  Revision History
+ *  ---------------
+ *            Rev      Date     Modified by:  Reason for change/modification
+ *           -----  ----------  ------------  -----------------------------------------------------------
+ *  @version 1.0    2018-02-21  Kevin Peters  Final version for grading
+ * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;

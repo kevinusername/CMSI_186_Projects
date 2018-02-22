@@ -3,6 +3,8 @@
  *  Purpose       :  Provides a class describing a single die that can be rolled
  *  @author       :  B.J. Johnson
  *  Date          :  2017-02-06
+ *  @author       :  Kevin Peters
+ * Date           :  2018-02-22
  *  Description   :  This class provides the data fields and methods to describe a single game die.  A
  *                   die can have "N" sides.  Sides are randomly assigned sequential pip values, from 1
  *                   to N, with no repeating numbers.  A "normal" die would thus has six sides, with the
@@ -26,12 +28,13 @@
  *  Warnings      :  None
  *  Exceptions    :  IllegalArgumentException when the number of sides or pips is out of range
  * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
- *  Revision Histor
+ *  Revision History
  *  ---------------
  *            Rev      Date     Modified by:  Reason for change/modification
  *           -----  ----------  ------------  -----------------------------------------------------------
  *  @version 1.0.0  2017-02-06  B.J. Johnson  Initial writing and release
  *  @version 1.1.0  2017-02-17  B.J. Johnson  Filled in method code
+ *  @version 2.0    2018-02-21  Kevin Peters  Final version for grading
  * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 public class Die {
 
@@ -40,6 +43,8 @@ public class Die {
      */
     private int sides;
     private int pips;
+    // I'm going with 4 as the minimum, with the dice being a pyramid and having to check the bottom side as the value
+    // This is definitely not an ideal way to roll a die, but it works I suppose?
     private final int MINIMUM_SIDES = 4;
 
     // public constructor:
@@ -87,6 +92,7 @@ public class Die {
     public void setSides(int newSides) {
         if (newSides >= MINIMUM_SIDES) {
             sides = newSides;
+            roll();
         } else {
             System.out.println("Invalid number of sides\nPlease input a number greater than 3");
         }
@@ -117,12 +123,39 @@ public class Die {
      * A little test main to check things out
      */
     public static void main(String[] args) {
-        // Some tests...
+        // Creates a new dice "d"
         Die d = new Die(5);
+
+        // Tests valid and invalid inputs for setSides as well as the getValue() function
+        System.out.println("Starting Die value: " + d.getValue());
         d.setSides(-10);
+        System.out.println("Current Die value (Should remain 5): " + d.getValue());
+        d.setSides(1);
+        System.out.println("Current Die value (Should remain 5): " + d.getValue());
+        d.setSides(6);
+        System.out.println("Current Die value (Should change to 6): " + d.getValue());
 
+        // Checks the toString() function as well as the roll() function
+        System.out.println("\nChecking .toString() function:\n" + d.toString());
+        System.out.println("Re-rolling d...");
         d.roll();
+        System.out.println("Displaying new properties:\n" + d.toString());
 
+        // Checks Dice properties with a few other side configurations
+        System.out.println("Setting die sides to 10...");
+        d.setSides(10);
+        System.out.println(d.toString());
+        System.out.println("Setting die sides to 20...");
+        d.setSides(20);
+        System.out.println(d.toString());
+        System.out.println("Setting die sides to 1000...");
+        d.setSides(1000);
+        System.out.println(d.toString());
+        System.out.println("Setting die sides to 11230...");
+        d.setSides(11230);
+        System.out.println(d.toString());
+        System.out.println("Setting die sides to 123...");
+        d.setSides(123);
         System.out.println(d.toString());
     }
 

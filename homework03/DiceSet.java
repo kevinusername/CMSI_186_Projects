@@ -24,12 +24,13 @@
  *  Warnings      :  None
  *  Exceptions    :  IllegalArgumentException when the number of sides or pips is out of range
  * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
- *  Revision Histor
+ *  Revision History
  *  ---------------
  *            Rev      Date     Modified by:  Reason for change/modification
  *           -----  ----------  ------------  -----------------------------------------------------------
  *  @version 1.0.0  2017-02-09  B.J. Johnson  Initial writing and release
  *  @version 2.0.0  2018-02-09  Kevin Peters  Initial working code for all methods
+ *  @version 2.1.0  2018-02-21  Kevin Peters  Final? version for grading. Added tests and some comments
  * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 import java.util.Arrays;
@@ -174,14 +175,33 @@ public class DiceSet {
      * A little test main to check things out
      */
     public static void main(String[] args) {
-        DiceSet mySet = new DiceSet(5, 5);
-        DiceSet copySet = mySet;
+        //Creates three test DiceSets, once of which is an identical copy
+        DiceSet set1 = new DiceSet(5, 5);
+        DiceSet copySet = set1;
         DiceSet set2 = new DiceSet(5, 5);
 
-        System.out.println(mySet.toString());
-        System.out.println(copySet.toString());
+        // Prints out the DiceSets
+        System.out.println("set1: " + set1.toString());
+        System.out.println("copySet: " + copySet.toString());
+        System.out.println("set2: " + set2.toString());
 
-        System.out.println(mySet.isIdentical(copySet));
-        System.out.println(mySet.isIdentical(set2));
+        // Checks that the isIdentical() function works when appropriate
+        System.out.println("\nset1 = copySet (should be true): " + set1.isIdentical(copySet));
+        System.out.println("set1 = set2 (should be false): " + set1.isIdentical(set2));
+
+        // Checks the ability to re-roll a whole DiceSet and find the sum
+        DiceSet set3 = new DiceSet(8, 11);
+        System.out.println("\nOriginal set3: " + set3.toString());
+        System.out.println("Original sum " + set3.sum());
+        System.out.println("Re-rolling set3...");
+        set1.roll();
+        System.out.println("New set3: " + set3.toString());
+        System.out.println("New sum: " + set1.sum());
+
+        // Check the ability to display an individual dice value as well as re-roll an individual die
+        System.out.println("\nOriginal value of set3[0]: " + set3.getIndividual(0));
+        System.out.println("Re-rolling set3[0]...");
+        set3.rollIndividual(0);
+        System.out.println("New value of set3[0]: " + set3.getIndividual(0));
     }
 }
