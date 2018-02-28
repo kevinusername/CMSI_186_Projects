@@ -1,0 +1,340 @@
+Starting Die value: 4
+Invalid number of sides
+Please input a number greater than 3
+Current Die value (Should remain 5): 4
+Invalid number of sides
+Please input a number greater than 3
+Current Die value (Should remain 5): 4
+Current Die value (Should change to 6): 2
+
+Checking .toString() function:
+Sides: 6
+Pips: 2
+
+Re-rolling d...
+Displaying new properties:
+Sides: 6
+Pips: 3
+
+Setting die sides to 10...
+Sides: 10
+Pips: 10
+
+Setting die sides to 20...
+Sides: 20
+Pips: 12
+
+Setting die sides to 1000...
+Sides: 1000
+Pips: 893
+
+Setting die sides to 11230...
+Sides: 11230
+Pips: 9341
+
+Setting die sides to 123...
+Sides: 123
+Pips: 90
+
+set1: 2, 2, 2, 4, 3 
+copySet: 2, 2, 2, 4, 3 
+set2: 3, 2, 4, 4, 5 
+
+set1 = copySet (should be true): true
+set1 = set2 (should be false): false
+
+Original set3: 3, 5, 11, 1, 7, 8, 7, 5 
+Original sum 47
+Re-rolling set3...
+New set3: 3, 5, 11, 1, 7, 8, 7, 5 
+New sum: 16
+
+Original value of set3[0]: 3
+Re-rolling set3[0]...
+New value of set3[0]: 7
+TESTING THE DIE CLASS: TEST CONSTRUCTOR FOR INVALID NUMBERS OF SIDES:
+Please enter an integer greater than 3
+1. ROLL ALL THE DICE
+2. ROLL A SINGLE DIE
+3. CALCULATE THE SCORE FOR THIS SET
+4. SAVE THIS SCORE AS HIGH SCORE
+5. DISPLAY THE HIGH SCORE
+
+   ENTER 'Q' TO QUIT 
+
+
+Current Dice Set:  5, 6, 5, 5, 2 
+>>
+Dice have been re-rolled 
+
+
+Current Dice Set:  1, 1, 5, 3, 2 
+>>
+Dice have been re-rolled 
+
+
+Current Dice Set:  4, 4, 5, 6, 1 
+>>
+Dice have been re-rolled 
+
+
+Current Dice Set:  1, 4, 6, 3, 3 
+>>
+Which die do you wish to roll?
+**Note that the index starts at 0**
+>>
+Current Dice Set:  1, 4, 6, 6, 3 
+>>
+Which die do you wish to roll?
+**Note that the index starts at 0**
+>>Please enter an integer index within the range of the DiceSet
+
+Current Dice Set:  1, 4, 6, 6, 3 
+>>
+Which die do you wish to roll?
+**Note that the index starts at 0**
+>>
+Current Dice Set:  1, 4, 6, 6, 3 
+>>
+Score for this set:  20
+
+
+Current Dice Set:  1, 4, 6, 6, 3 
+>>
+High score set to 20
+
+
+Current Dice Set:  1, 4, 6, 6, 3 
+>>
+Current High Score: 20
+
+
+Current Dice Set:  1, 4, 6, 6, 3 
+>>
+Dice have been re-rolled 
+
+
+Current Dice Set:  1, 5, 6, 1, 2 
+>>
+Dice have been re-rolled 
+
+
+Current Dice Set:  2, 3, 4, 2, 6 
+>>
+Which die do you wish to roll?
+**Note that the index starts at 0**
+>>Please enter an integer index within the range of the DiceSet
+
+Current Dice Set:  2, 3, 4, 2, 6 
+>>
+Which die do you wish to roll?
+**Note that the index starts at 0**
+>>
+Current Dice Set:  2, 2, 4, 2, 6 
+>>
+Score for this set:  16
+
+
+Current Dice Set:  2, 2, 4, 2, 6 
+>>
+High score set to 16
+
+
+Current Dice Set:  2, 2, 4, 2, 6 
+>>
+Current High Score: 16
+
+
+Current Dice Set:  2, 2, 4, 2, 6 
+>>
+Exiting...
+1. ROLL ALL THE DICE
+2. ROLL A SINGLE DIE
+3. CALCULATE THE SCORE FOR THIS SET
+4. SAVE THIS SCORE AS HIGH SCORE
+5. DISPLAY THE HIGH SCORE
+
+   ENTER 'Q' TO QUIT 
+
+
+Current Dice Set:  11, 12, 8, 8, 9, 17, 1, 11, 10, 17, 15 
+>>
+Dice have been re-rolled 
+
+
+Current Dice Set:  14, 3, 3, 10, 10, 2, 1, 14, 16, 8, 2 
+>>
+Dice have been re-rolled 
+
+
+Current Dice Set:  10, 10, 1, 5, 9, 8, 9, 5, 15, 8, 15 
+>>
+Dice have been re-rolled 
+
+
+Current Dice Set:  9, 12, 10, 5, 3, 1, 12, 16, 12, 6, 11 
+>>
+Which die do you wish to roll?
+**Note that the index starts at 0**
+>>Please enter an integer index within the range of the DiceSet
+
+Current Dice Set:  9, 12, 10, 5, 3, 1, 12, 16, 12, 6, 11 
+>>
+Which die do you wish to roll?
+**Note that the index starts at 0**
+>>
+Current Dice Set:  9, 1, 10, 5, 3, 1, 12, 16, 12, 6, 11 
+>>
+Which die do you wish to roll?
+**Note that the index starts at 0**
+>>
+Current Dice Set:  9, 1, 10, 5, 3, 1, 12, 7, 12, 6, 11 
+>>
+enter some text!:
+
+Current Dice Set:  9, 1, 10, 5, 3, 1, 12, 7, 12, 6, 11 
+>>
+Score for this set:  77
+
+
+Current Dice Set:  9, 1, 10, 5, 3, 1, 12, 7, 12, 6, 11 
+>>
+High score set to 77
+
+
+Current Dice Set:  9, 1, 10, 5, 3, 1, 12, 7, 12, 6, 11 
+>>
+Current High Score: 77
+
+
+Current Dice Set:  9, 1, 10, 5, 3, 1, 12, 7, 12, 6, 11 
+>>
+Dice have been re-rolled 
+
+
+Current Dice Set:  15, 1, 14, 17, 13, 17, 17, 10, 13, 4, 2 
+>>
+Dice have been re-rolled 
+
+
+Current Dice Set:  7, 12, 11, 2, 10, 10, 7, 4, 4, 15, 15 
+>>
+Which die do you wish to roll?
+**Note that the index starts at 0**
+>>
+Current Dice Set:  7, 12, 11, 2, 10, 10, 7, 4, 4, 15, 15 
+>>
+Which die do you wish to roll?
+**Note that the index starts at 0**
+>>
+Current Dice Set:  7, 12, 11, 15, 10, 10, 7, 4, 4, 15, 15 
+>>
+Score for this set:  110
+
+
+Current Dice Set:  7, 12, 11, 15, 10, 10, 7, 4, 4, 15, 15 
+>>
+High score set to 110
+
+
+Current Dice Set:  7, 12, 11, 15, 10, 10, 7, 4, 4, 15, 15 
+>>
+Current High Score: 110
+
+
+Current Dice Set:  7, 12, 11, 15, 10, 10, 7, 4, 4, 15, 15 
+>>
+Exiting...
+1. ROLL ALL THE DICE
+2. ROLL A SINGLE DIE
+3. CALCULATE THE SCORE FOR THIS SET
+4. SAVE THIS SCORE AS HIGH SCORE
+5. DISPLAY THE HIGH SCORE
+
+   ENTER 'Q' TO QUIT 
+
+
+Current Dice Set:  4, 1, 2, 2, 1, 2, 2, 3, 4, 4, 1, 1, 2, 1, 2, 4, 3, 4, 4, 2, 4, 1, 2, 3, 2, 4, 3, 3, 3 
+>>
+Dice have been re-rolled 
+
+
+Current Dice Set:  3, 3, 4, 2, 4, 1, 2, 3, 1, 2, 2, 3, 4, 3, 3, 2, 3, 1, 1, 4, 1, 3, 1, 1, 1, 1, 1, 4, 2 
+>>
+Dice have been re-rolled 
+
+
+Current Dice Set:  4, 4, 4, 3, 2, 2, 3, 4, 1, 3, 1, 2, 2, 2, 3, 4, 1, 4, 4, 1, 4, 1, 1, 3, 3, 4, 2, 2, 2 
+>>
+Dice have been re-rolled 
+
+
+Current Dice Set:  2, 4, 1, 3, 1, 4, 1, 3, 4, 1, 1, 3, 1, 4, 1, 2, 3, 4, 3, 2, 1, 3, 4, 1, 1, 3, 4, 3, 3 
+>>
+Which die do you wish to roll?
+**Note that the index starts at 0**
+>>Please enter an integer index within the range of the DiceSet
+
+Current Dice Set:  2, 4, 1, 3, 1, 4, 1, 3, 4, 1, 1, 3, 1, 4, 1, 2, 3, 4, 3, 2, 1, 3, 4, 1, 1, 3, 4, 3, 3 
+>>
+Which die do you wish to roll?
+**Note that the index starts at 0**
+>>
+Current Dice Set:  2, 1, 1, 3, 1, 4, 1, 3, 4, 1, 1, 3, 1, 4, 1, 2, 3, 4, 3, 2, 1, 3, 4, 1, 1, 3, 4, 3, 3 
+>>
+Which die do you wish to roll?
+**Note that the index starts at 0**
+>>
+Current Dice Set:  2, 1, 1, 3, 1, 4, 1, 3, 4, 1, 1, 3, 1, 4, 1, 2, 3, 2, 3, 2, 1, 3, 4, 1, 1, 3, 4, 3, 3 
+>>
+Score for this set:  66
+
+
+Current Dice Set:  2, 1, 1, 3, 1, 4, 1, 3, 4, 1, 1, 3, 1, 4, 1, 2, 3, 2, 3, 2, 1, 3, 4, 1, 1, 3, 4, 3, 3 
+>>
+High score set to 66
+
+
+Current Dice Set:  2, 1, 1, 3, 1, 4, 1, 3, 4, 1, 1, 3, 1, 4, 1, 2, 3, 2, 3, 2, 1, 3, 4, 1, 1, 3, 4, 3, 3 
+>>
+Current High Score: 66
+
+
+Current Dice Set:  2, 1, 1, 3, 1, 4, 1, 3, 4, 1, 1, 3, 1, 4, 1, 2, 3, 2, 3, 2, 1, 3, 4, 1, 1, 3, 4, 3, 3 
+>>
+Dice have been re-rolled 
+
+
+Current Dice Set:  1, 2, 2, 4, 4, 2, 2, 1, 2, 1, 3, 2, 3, 3, 2, 3, 2, 1, 2, 4, 2, 3, 2, 4, 2, 4, 4, 4, 2 
+>>
+Dice have been re-rolled 
+
+
+Current Dice Set:  4, 3, 1, 4, 2, 4, 2, 4, 4, 2, 3, 3, 3, 3, 1, 1, 4, 1, 2, 3, 2, 3, 4, 4, 4, 2, 3, 4, 3 
+>>
+Which die do you wish to roll?
+**Note that the index starts at 0**
+>>
+Current Dice Set:  4, 3, 1, 4, 2, 4, 2, 4, 4, 2, 3, 3, 3, 3, 1, 1, 4, 1, 2, 4, 2, 3, 4, 4, 4, 2, 3, 4, 3 
+>>
+Which die do you wish to roll?
+**Note that the index starts at 0**
+>>
+Current Dice Set:  4, 3, 1, 4, 2, 4, 2, 4, 4, 2, 3, 3, 3, 3, 1, 1, 4, 1, 2, 4, 2, 3, 4, 4, 4, 2, 3, 4, 3 
+>>
+Score for this set:  84
+
+
+Current Dice Set:  4, 3, 1, 4, 2, 4, 2, 4, 4, 2, 3, 3, 3, 3, 1, 1, 4, 1, 2, 4, 2, 3, 4, 4, 4, 2, 3, 4, 3 
+>>
+High score set to 84
+
+
+Current Dice Set:  4, 3, 1, 4, 2, 4, 2, 4, 4, 2, 3, 3, 3, 3, 1, 1, 4, 1, 2, 4, 2, 3, 4, 4, 4, 2, 3, 4, 3 
+>>
+Current High Score: 84
+
+
+Current Dice Set:  4, 3, 1, 4, 2, 4, 2, 4, 4, 2, 3, 3, 3, 3, 1, 1, 4, 1, 2, 4, 2, 3, 4, 4, 4, 2, 3, 4, 3 
+>>
+Exiting...
