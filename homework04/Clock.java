@@ -23,19 +23,26 @@ public class Clock {
     /**
      *  Class field definintions go here
      */
-    private static final double DEFAULT_TIME_SLICE_IN_SECONDS = 60.0;
     private static final double MAXIMUM_DEGREE_VALUE = 360.0;
-    private static final double HOUR_HAND_DEGREES_PER_SECOND = 0.00834;
-    private static final double MINUTE_HAND_DEGREES_PER_SECOND = 0.1;
 
     private double totalSeconds = 0;
     private double timeSlice = 0;
+    public double targetAngle = 0;
 
     /**
      *  Constructor goes here
      */
-    public Clock() {
-
+    public Clock(String[] args) {
+        if (1 == args.length) {
+            targetAngle = validateAngleArg(args[0]);
+            timeSlice = 60;
+        } else if (2 == args.length) {
+            targetAngle = validateAngleArg(args[0]);
+            timeSlice = validateTimeSliceArg(args[1]);
+        } else {
+            System.out.println("\nPlease enter exactly two inputs\nFormat: ClockSolver [angle] [timeSlice]\n");
+            System.exit(1);
+        }
     }
 
     /**
@@ -104,7 +111,7 @@ public class Clock {
      *  @return double-precision value of the angle between the two hands
      */
     public double getHandAngle() {
-        return Math.abs(getHandAngle() - getMinuteHandAngle());
+        return Math.abs(getHourHandAngle() - getMinuteHandAngle());
     }
 
     /**
@@ -124,7 +131,7 @@ public class Clock {
         StringBuilder timeString = new StringBuilder();
         timeString.append(Math.floor(totalSeconds / 60 / 60) + " Hours ");
         timeString.append(Math.floor((totalSeconds / 60) % 60) + " Minutes ");
-        timeString.append(Math.floor(totalSeconds % 60) + " Seconds");
+        timeString.append(Math.round(totalSeconds % 60) + " Seconds");
         return timeString.toString();
     }
 
@@ -135,11 +142,12 @@ public class Clock {
      *  be sure to make LOTS of tests!!
      *  remember you are trying to BREAK your code, not just prove it works!
      */
-    public static void main(String args[]) {
+    public static void main(String[] args) {
 
         System.out.println("\nCLOCK CLASS TESTER PROGRAM\n" + "--------------------------\n");
         System.out.println("  Creating a new clock: ");
-        Clock clock = new Clock();
+        Clock clock = new Clock(args);
+        System.out.println(clock.targetAngle + " " + clock.timeSlice);
         System.out.println("    New clock created: " + clock.toString());
         System.out.println("    Testing validateAngleArg()....");
         System.out.print("      sending '  0 degrees', expecting double value   0.0");

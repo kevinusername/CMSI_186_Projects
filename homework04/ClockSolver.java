@@ -22,9 +22,7 @@ public class ClockSolver {
     /**
      *  Class field definintions go here
      */
-    private final double MAX_TIME_SLICE_IN_SECONDS = 1800.00;
-    private final double DEFAULT_TIME_SLICE_SECONDS = 60.0;
-    private final double EPSILON_VALUE = 0.1; // small value for double-precision comparisons
+    private final static double EPSILON_VALUE = 0.1; // small value for double-precision comparisons
 
     /**
      *  Constructor
@@ -50,8 +48,6 @@ public class ClockSolver {
                     + "   Usage: java ClockSolver <angle> [timeSlice]\n" + "   Please try again...........");
             System.exit(1);
         }
-        Clock clock = new Clock();
-
     }
 
     /**
@@ -63,12 +59,17 @@ public class ClockSolver {
      *                args[1] is the time slice; this is optional and defaults to 60 seconds
      */
     public static void main(String[] args) {
-        ClockSolver cse = new ClockSolver();
-        Clock clock = new Clock();
-        double[] timeValues = new double[3];
-        cse.handleInitialArguments(args);
-        while (true) {
-            break;
+        Clock clock = new Clock(args);
+
+        while (clock.getTotalSeconds() < 43200) {
+            if (clock.getHandAngle() >= (clock.targetAngle - EPSILON_VALUE)
+                    && clock.getHandAngle() <= (clock.targetAngle + EPSILON_VALUE)) {
+                System.out.println(clock.toString());
+            } else if ((360 - clock.getHandAngle()) >= (clock.targetAngle - EPSILON_VALUE)
+                    && (360 - clock.getHandAngle()) <= (clock.targetAngle + EPSILON_VALUE)) {
+                System.out.println(clock.toString());
+            }
+            clock.tick();
         }
         System.exit(0);
     }
