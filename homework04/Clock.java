@@ -1,4 +1,3 @@
-import javafx.scene.text.TextAlignment;
 
 /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  *  File name     :  Clock.java
@@ -38,12 +37,25 @@ public class Clock {
      *  Checks validity of input angle and timeSlice and sets values if tests pass
      */
     public Clock(String[] args) {
+
         if (1 == args.length) {
-            targetAngle = validateAngleArg(args[0]);
-            timeSlice = 60;
+            try {
+                targetAngle = validateAngleArg(args[0]);
+                timeSlice = 60;
+            } catch (NumberFormatException e) {
+                System.out.println("\nError!\nAngle must be between 0.0 and 360.0 degrees\n");
+                System.exit(2);
+            }
         } else if (2 == args.length) {
-            targetAngle = validateAngleArg(args[0]);
-            timeSlice = validateTimeSliceArg(args[1]);
+            try {
+                targetAngle = validateAngleArg(args[0]);
+                timeSlice = validateTimeSliceArg(args[1]);
+            } catch (NumberFormatException e) {
+                System.out.println("\nPlease enter exactly two inputs\nFormat: ClockSolver [angle] [timeSlice]\n");
+                System.out.println(
+                        "\nError!\nAngle must be between 0.0 and 360.0 degrees\ntimeSlice must a positive real under 1800.0\n");
+                System.exit(3);
+            }
         } else {
             System.out.println("\nPlease enter exactly two inputs\nFormat: ClockSolver [angle] [timeSlice]\n");
             System.exit(1);
