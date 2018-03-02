@@ -35,6 +35,8 @@ public class Clock {
      *  Creates a new clock with given inputs
      *  Excepts one or two inputs, gives error if any other value
      *  Checks validity of input angle and timeSlice and sets values if tests pass
+     * 
+     * If there is a NumberFormatException, displays error message and exits the program
      */
     public Clock(String[] args) {
 
