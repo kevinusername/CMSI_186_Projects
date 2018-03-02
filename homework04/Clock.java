@@ -5,6 +5,8 @@ import javafx.scene.text.TextAlignment;
  *  Purpose       :  Provides a class defining methods for the ClockSolver class
  *  @author       :  B.J. Johnson
  *  Date written  :  2017-02-28
+ *  @author       :  Kevin Peters
+ *  Date written   :  2018-03-01
  *  Description   :  This class provides a bunch of methods which may be useful for the ClockSolver class
  *                   for Homework 4, part 1.  Includes the following:
  *
@@ -17,6 +19,7 @@ import javafx.scene.text.TextAlignment;
  *            Rev      Date     Modified by:  Reason for change/modification
  *           -----  ----------  ------------  -----------------------------------------------------------
  *  @version 1.0.0  2017-02-28  B.J. Johnson  Initial writing and release
+ *  @version 2.0.0  2018-03-01  Kevin Peters  Initial working version
  * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 public class Clock {
@@ -30,7 +33,9 @@ public class Clock {
     public double targetAngle = 0;
 
     /**
-     *  Constructor goes here
+     *  Creates a new clock with given inputs
+     *  Excepts one or two inputs, gives error if any other value
+     *  Checks validity of input angle and timeSlice and sets values if tests pass
      */
     public Clock(String[] args) {
         if (1 == args.length) {

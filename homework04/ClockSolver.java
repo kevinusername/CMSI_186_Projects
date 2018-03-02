@@ -6,7 +6,7 @@
  *  Date written  :  2017-02-28
  *  Description   :  This class provides a bunch of methods which may be useful for the ClockSolver class
  *                   for Homework 4, part 1.  Includes the following:
-  *
+ *
  *  Notes         :  None right now.  I'll add some as they occur.
  *  Warnings      :  None
  *  Exceptions    :  IllegalArgumentException when the input arguments are "hinky"
@@ -19,9 +19,7 @@
  * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 public class ClockSolver {
-    /**
-     *  Class field definintions go here
-     */
+
     private final static double EPSILON_VALUE = 0.1; // small value for double-precision comparisons
 
     /**
@@ -30,24 +28,6 @@ public class ClockSolver {
      */
     public ClockSolver() {
         super();
-    }
-
-    /**
-     *  Method to handle all the input arguments from the command line
-     *   this sets up the variables for the simulation
-     */
-    public void handleInitialArguments(String[] args) {
-        // args[0] specifies the angle for which you are looking
-        // your simulation will find all the angles in the 12-hour day at which those angles occur
-        // args[1] if present will specify a time slice value; if not present, defaults to 60 seconds
-        // you may want to consider using args[2] for an "angle window"
-
-        System.out.println("\n   Hello world, from the ClockSolver program!!\n\n");
-        if (0 == args.length) {
-            System.out.println("   Sorry you must enter at least one argument\n"
-                    + "   Usage: java ClockSolver <angle> [timeSlice]\n" + "   Please try again...........");
-            System.exit(1);
-        }
     }
 
     /**
@@ -62,6 +42,8 @@ public class ClockSolver {
         Clock clock = new Clock(args);
 
         while (clock.getTotalSeconds() < 43200) {
+            // Checks if current hand angle, or its compliment, is equal to targetAngle +- EPSILON VALUE
+            // If conditutions are met, prints out String representation of current Clock time
             if (clock.getHandAngle() >= (clock.targetAngle - EPSILON_VALUE)
                     && clock.getHandAngle() <= (clock.targetAngle + EPSILON_VALUE)) {
                 System.out.println(clock.toString());
@@ -69,7 +51,7 @@ public class ClockSolver {
                     && (360 - clock.getHandAngle()) <= (clock.targetAngle + EPSILON_VALUE)) {
                 System.out.println(clock.toString());
             }
-            clock.tick();
+            clock.tick(); // Progresses clock to next tick
         }
         System.exit(0);
     }
