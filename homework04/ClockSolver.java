@@ -39,6 +39,10 @@ public class ClockSolver {
      *                args[1] is the time slice; this is optional and defaults to 60 seconds
      */
     public static void main(String[] args) {
+
+        // NOTE: All tests are done in the Clock class since that is what parses inputs.
+        //  This ClockSolver class is only designed to output when certain criteria of Clock object are met
+        
         Clock clock = new Clock(args);
 
         while (clock.getTotalSeconds() < 43200) {

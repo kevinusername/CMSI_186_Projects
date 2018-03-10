@@ -45,7 +45,8 @@ public class Clock {
                 targetAngle = validateAngleArg(args[0]);
                 timeSlice = 60;
             } catch (NumberFormatException e) {
-                System.out.println("\nError!\nAngle must be between 0.0 and 360.0 degrees\n");
+                System.out.println("\nError! There was a problem with your input\n");
+                System.out.println("Angle must be between 0.0 and 360.0 degrees\n");
                 System.exit(2);
             }
         } else if (2 == args.length) {
@@ -53,13 +54,15 @@ public class Clock {
                 targetAngle = validateAngleArg(args[0]);
                 timeSlice = validateTimeSliceArg(args[1]);
             } catch (NumberFormatException e) {
+                System.out.println("\nError! There was a problem with your input\n");
                 System.out.println("\nPlease enter exactly two inputs\nFormat: ClockSolver [angle] [timeSlice]\n");
                 System.out.println(
-                        "\nError!\nAngle must be between 0.0 and 360.0 degrees\ntimeSlice must a positive real under 1800.0\n");
+                        "\nAngle must be between 0.0 and 360.0 degrees\ntimeSlice must a positive real under 1800.0\n");
                 System.exit(3);
             }
         } else {
-            System.out.println("\nPlease enter exactly two inputs\nFormat: ClockSolver [angle] [timeSlice]\n");
+            System.out.println("\nError! There was a problem with your input\n");
+            System.out.println("Please enter exactly two inputs\nFormat: ClockSolver [angle] [timeSlice]\n");
             System.exit(1);
         }
     }
@@ -111,6 +114,10 @@ public class Clock {
 
     /**
      *  Method to calculate and return the current position of the hour hand
+     *  
+     *  Converts total seconds into hours, then multiplies by 30 to account for
+     *   how far the hand moves in one hour.
+     * 
      *  @return double-precision value of the hour hand location
      */
     public double getHourHandAngle() {
@@ -119,6 +126,10 @@ public class Clock {
 
     /**
      *  Method to calculate and return the current position of the minute hand
+     * 
+     * Converts total seconds into minutes, then multiplies by 6 to account for
+     *   how far the hand moves in one minute.
+     * 
      *  @return double-precision value of the minute hand location
      */
     public double getMinuteHandAngle() {
@@ -144,6 +155,7 @@ public class Clock {
 
     /**
      *  Method to return a String representation of this clock
+     *  Creates a StringBuilder and appends approriate data before finalizing and returning String
      *  @return String value of the current clock
      */
     public String toString() {
@@ -164,16 +176,75 @@ public class Clock {
     public static void main(String[] args) {
 
         System.out.println("\nCLOCK CLASS TESTER PROGRAM\n" + "--------------------------\n");
-        System.out.println("  Creating a new clock: ");
-        Clock clock = new Clock(args);
-        System.out.println(clock.targetAngle + " " + clock.timeSlice);
-        System.out.println("    New clock created: " + clock.toString());
-        System.out.println("    Testing validateAngleArg()....");
-        System.out.print("      sending '  0 degrees', expecting double value   0.0");
+        System.out.println("Creating a new clock: ");
+        String[] testArgs = new String[2];
+        testArgs[0] = "50";
+        testArgs[1] = "1";
+        Clock clock = new Clock(testArgs);
+        System.out.println("New clock created: " + clock.toString());
+
+        System.out.print("\nStarting a series of test arguements...\n");
+        System.out.println("Testing valid arguements:\n");
+
         try {
-            System.out.println((0.0 == clock.validateAngleArg("0.0")) ? " - got 0.0" : " - no joy");
+            System.out.println("Correct answer: 0\nActual answer:  " + clock.validateAngleArg("0.0") + "\n");
+            System.out.println("Correct answer: 50\nActual answer:  " + clock.validateAngleArg("50.0") + "\n");
+            System.out.println("Correct answer: 210.5\nActual answer:  " + clock.validateAngleArg("210.5") + "\n");
+            System.out.println(
+                    "Correct answer: 359.812321\nActual answer:  " + clock.validateAngleArg("359.812321") + "\n");
+            System.out
+                    .println("Correct answer: 0.812321\nActual answer:  " + clock.validateAngleArg("0.812321") + "\n");
         } catch (Exception e) {
             System.out.println(" - Exception thrown: " + e.toString());
         }
+
+        System.out.println("\nTesting invalid arguements\nShould throw NumberFormatExceptions...\n");
+        int errorCount = 0;
+
+        try {
+            System.out.println("Trying validateAngelArg(\"cat\")");
+            clock.validateAngleArg("cat");
+        } catch (NumberFormatException ne) {
+            System.out.println("Error was properly caught\n");
+            errorCount++;
+        }
+
+        try {
+            System.out.println("Trying validateAngelArg(\"-50\")");
+            clock.validateAngleArg("-50");
+        } catch (NumberFormatException ne) {
+            System.out.println("Error was properly caught\n");
+            errorCount++;
+        }
+
+        try {
+            System.out.println("Trying validateAngelArg(\"360.001\")");
+            clock.validateAngleArg("360.001");
+        } catch (NumberFormatException ne) {
+            System.out.println("Error was properly caught\n");
+            errorCount++;
+        }
+
+        try {
+            System.out.println("Trying validateAngelArg(\"-1\")");
+            clock.validateAngleArg("-1");
+        } catch (NumberFormatException ne) {
+            System.out.println("Error was properly caught\n");
+            errorCount++;
+        }
+
+        try {
+            System.out.println("Trying validateAngelArg(\"\")");
+            clock.validateAngleArg("");
+        } catch (NumberFormatException ne) {
+            System.out.println("Error was properly caught\n");
+            errorCount++;
+        }
+
+        System.out.println("Checking that error count is correct: " + ( (5 == errorCount) ? "true" : "false, you messed up"));
+
+        System.out.println("\nAll tests passed... yay");
+
+
     }
 }
