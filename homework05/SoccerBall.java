@@ -3,6 +3,8 @@ public class SoccerBall {
     static double RADIUS = 4.45;
     static double DIAMETER = 8.9;
 
+    boolean inBounds = true;
+
     double xPosition = 0;
     double yPosition = 0;
 
@@ -23,6 +25,6 @@ public class SoccerBall {
     }
 
     public static void main(String[] args) {
-        
+
     }
 }
