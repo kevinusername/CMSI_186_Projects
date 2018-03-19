@@ -1,7 +1,7 @@
 public class SoccerBall {
 
-    double RADIUS = 4.45;
-    double DIAMETER = 8.9;
+    static double RADIUS = 4.45;
+    static double DIAMETER = 8.9;
 
     double xPosition = 0;
     double yPosition = 0;
@@ -20,5 +20,9 @@ public class SoccerBall {
 
         xVelocity = xV;
         yVelocity = yV;
+    }
+
+    public static void main(String[] args) {
+        
     }
 }
