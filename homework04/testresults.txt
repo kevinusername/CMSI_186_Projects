@@ -1,0 +1,229 @@
+. 
+. 
+successful compilation 
+. 
+. 
+
+CLOCK CLASS TESTER PROGRAM
+--------------------------
+
+Creating a new clock: 
+New clock created: 0.0 Hours 0.0 Minutes 0 Seconds
+
+Starting a series of test arguements...
+Testing valid arguements:
+
+Correct answer: 0
+Actual answer:  0.0
+
+Correct answer: 50
+Actual answer:  50.0
+
+Correct answer: 210.5
+Actual answer:  210.5
+
+Correct answer: 359.812321
+Actual answer:  359.812321
+
+Correct answer: 0.812321
+Actual answer:  0.812321
+
+
+Testing invalid arguements
+Should throw NumberFormatExceptions...
+
+Trying validateAngelArg("cat")
+Error was properly caught
+
+Trying validateAngelArg("-50")
+Error was properly caught
+
+Trying validateAngelArg("360.001")
+Error was properly caught
+
+Trying validateAngelArg("-1")
+Error was properly caught
+
+Trying validateAngelArg("")
+Error was properly caught
+
+Checking that error count is correct: true
+
+All tests passed... yay
+
+Error! There was a problem with your input
+
+Please enter exactly two inputs
+Format: ClockSolver [angle] [timeSlice]
+
+
+Error! There was a problem with your input
+
+Angle must be between 0.0 and 360.0 degrees
+
+
+Error! There was a problem with your input
+
+
+Please enter exactly two inputs
+Format: ClockSolver [angle] [timeSlice]
+
+
+Angle must be between 0.0 and 360.0 degrees
+timeSlice must a positive real under 1800.0
+
+0.0 Hours 0.0 Minutes 0 Seconds
+
+Error! There was a problem with your input
+
+
+Please enter exactly two inputs
+Format: ClockSolver [angle] [timeSlice]
+
+
+Angle must be between 0.0 and 360.0 degrees
+timeSlice must a positive real under 1800.0
+
+
+Error! There was a problem with your input
+
+Angle must be between 0.0 and 360.0 degrees
+
+1.0 Hours 0.0 Minutes 0 Seconds
+11.0 Hours 0.0 Minutes 0 Seconds
+1.0 Hours 0.0 Minutes 0 Seconds
+3.0 Hours 21.0 Minutes 50 Seconds
+5.0 Hours 21.0 Minutes 50 Seconds
+6.0 Hours 38.0 Minutes 10 Seconds
+8.0 Hours 38.0 Minutes 10 Seconds
+11.0 Hours 0.0 Minutes 0 Seconds
+0.0 Hours 5.0 Minutes 27 Seconds
+0.0 Hours 5.0 Minutes 28 Seconds
+0.0 Hours 59.0 Minutes 59 Seconds
+1.0 Hours 0.0 Minutes 0 Seconds
+1.0 Hours 0.0 Minutes 1 Seconds
+1.0 Hours 10.0 Minutes 54 Seconds
+1.0 Hours 10.0 Minutes 55 Seconds
+2.0 Hours 5.0 Minutes 27 Seconds
+2.0 Hours 5.0 Minutes 28 Seconds
+2.0 Hours 16.0 Minutes 21 Seconds
+2.0 Hours 16.0 Minutes 22 Seconds
+3.0 Hours 10.0 Minutes 54 Seconds
+3.0 Hours 10.0 Minutes 55 Seconds
+3.0 Hours 21.0 Minutes 48 Seconds
+3.0 Hours 21.0 Minutes 49 Seconds
+3.0 Hours 21.0 Minutes 50 Seconds
+4.0 Hours 16.0 Minutes 21 Seconds
+4.0 Hours 16.0 Minutes 22 Seconds
+4.0 Hours 27.0 Minutes 16 Seconds
+4.0 Hours 27.0 Minutes 17 Seconds
+5.0 Hours 21.0 Minutes 48 Seconds
+5.0 Hours 21.0 Minutes 49 Seconds
+5.0 Hours 21.0 Minutes 50 Seconds
+5.0 Hours 32.0 Minutes 43 Seconds
+5.0 Hours 32.0 Minutes 44 Seconds
+6.0 Hours 27.0 Minutes 16 Seconds
+6.0 Hours 27.0 Minutes 17 Seconds
+6.0 Hours 38.0 Minutes 10 Seconds
+6.0 Hours 38.0 Minutes 11 Seconds
+6.0 Hours 38.0 Minutes 12 Seconds
+7.0 Hours 32.0 Minutes 43 Seconds
+7.0 Hours 32.0 Minutes 44 Seconds
+7.0 Hours 43.0 Minutes 38 Seconds
+7.0 Hours 43.0 Minutes 39 Seconds
+8.0 Hours 38.0 Minutes 10 Seconds
+8.0 Hours 38.0 Minutes 11 Seconds
+8.0 Hours 49.0 Minutes 5 Seconds
+8.0 Hours 49.0 Minutes 6 Seconds
+9.0 Hours 43.0 Minutes 38 Seconds
+9.0 Hours 43.0 Minutes 39 Seconds
+9.0 Hours 54.0 Minutes 32 Seconds
+9.0 Hours 54.0 Minutes 33 Seconds
+10.0 Hours 49.0 Minutes 5 Seconds
+10.0 Hours 49.0 Minutes 6 Seconds
+10.0 Hours 59.0 Minutes 59 Seconds
+11.0 Hours 0.0 Minutes 0 Seconds
+11.0 Hours 0.0 Minutes 1 Seconds
+11.0 Hours 54.0 Minutes 32 Seconds
+11.0 Hours 54.0 Minutes 33 Seconds
+3.0 Hours 2.0 Minutes 42 Seconds
+4.0 Hours 8.0 Minutes 9 Seconds
+5.0 Hours 13.0 Minutes 36 Seconds
+6.0 Hours 19.0 Minutes 3 Seconds
+7.0 Hours 24.0 Minutes 30 Seconds
+8.0 Hours 29.0 Minutes 57 Seconds
+9.0 Hours 35.0 Minutes 24 Seconds
+10.0 Hours 40.0 Minutes 51 Seconds
+0.0 Hours 13.0 Minutes 40 Seconds
+0.0 Hours 13.0 Minutes 42 Seconds
+0.0 Hours 51.0 Minutes 46 Seconds
+0.0 Hours 51.0 Minutes 47 Seconds
+1.0 Hours 19.0 Minutes 8 Seconds
+1.0 Hours 19.0 Minutes 9 Seconds
+1.0 Hours 57.0 Minutes 13 Seconds
+1.0 Hours 57.0 Minutes 14 Seconds
+2.0 Hours 24.0 Minutes 35 Seconds
+2.0 Hours 24.0 Minutes 36 Seconds
+3.0 Hours 2.0 Minutes 40 Seconds
+3.0 Hours 2.0 Minutes 42 Seconds
+3.0 Hours 30.0 Minutes 2 Seconds
+3.0 Hours 30.0 Minutes 3 Seconds
+4.0 Hours 8.0 Minutes 8 Seconds
+4.0 Hours 8.0 Minutes 9 Seconds
+4.0 Hours 35.0 Minutes 29 Seconds
+4.0 Hours 35.0 Minutes 31 Seconds
+5.0 Hours 13.0 Minutes 35 Seconds
+5.0 Hours 13.0 Minutes 36 Seconds
+5.0 Hours 40.0 Minutes 57 Seconds
+5.0 Hours 40.0 Minutes 58 Seconds
+6.0 Hours 19.0 Minutes 2 Seconds
+6.0 Hours 19.0 Minutes 3 Seconds
+6.0 Hours 46.0 Minutes 24 Seconds
+6.0 Hours 46.0 Minutes 25 Seconds
+7.0 Hours 24.0 Minutes 29 Seconds
+7.0 Hours 24.0 Minutes 31 Seconds
+7.0 Hours 51.0 Minutes 51 Seconds
+8.0 Hours 29.0 Minutes 57 Seconds
+8.0 Hours 29.0 Minutes 58 Seconds
+8.0 Hours 57.0 Minutes 19 Seconds
+9.0 Hours 35.0 Minutes 24 Seconds
+9.0 Hours 35.0 Minutes 25 Seconds
+10.0 Hours 2.0 Minutes 46 Seconds
+10.0 Hours 40.0 Minutes 51 Seconds
+10.0 Hours 40.0 Minutes 53 Seconds
+11.0 Hours 8.0 Minutes 13 Seconds
+11.0 Hours 46.0 Minutes 19 Seconds
+11.0 Hours 46.0 Minutes 20 Seconds
+0.0 Hours 16.0 Minutes 23 Seconds
+0.0 Hours 49.0 Minutes 5 Seconds
+1.0 Hours 21.0 Minutes 50 Seconds
+1.0 Hours 54.0 Minutes 33 Seconds
+3.0 Hours 0.0 Minutes 0 Seconds
+4.0 Hours 5.0 Minutes 28 Seconds
+4.0 Hours 38.0 Minutes 10 Seconds
+5.0 Hours 10.0 Minutes 55 Seconds
+5.0 Hours 43.0 Minutes 38 Seconds
+6.0 Hours 16.0 Minutes 23 Seconds
+6.0 Hours 49.0 Minutes 5 Seconds
+7.0 Hours 21.0 Minutes 50 Seconds
+7.0 Hours 54.0 Minutes 33 Seconds
+9.0 Hours 0.0 Minutes 0 Seconds
+10.0 Hours 5.0 Minutes 28 Seconds
+10.0 Hours 38.0 Minutes 10 Seconds
+11.0 Hours 10.0 Minutes 55 Seconds
+11.0 Hours 43.0 Minutes 38 Seconds
+3.0 Hours 0.0 Minutes 0 Seconds
+9.0 Hours 0.0 Minutes 0 Seconds
+0.0 Hours 32.0 Minutes 44 Seconds
+1.0 Hours 38.0 Minutes 11 Seconds
+2.0 Hours 43.0 Minutes 37 Seconds
+2.0 Hours 43.0 Minutes 39 Seconds
+3.0 Hours 49.0 Minutes 5 Seconds
+4.0 Hours 54.0 Minutes 32 Seconds
+5.0 Hours 59.0 Minutes 60 Seconds
+7.0 Hours 5.0 Minutes 28 Seconds
+8.0 Hours 10.0 Minutes 55 Seconds
+9.0 Hours 16.0 Minutes 21 Seconds
+9.0 Hours 16.0 Minutes 23 Seconds
+10.0 Hours 21.0 Minutes 49 Seconds
+11.0 Hours 27.0 Minutes 16 Seconds
