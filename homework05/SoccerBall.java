@@ -1,7 +1,8 @@
 public class SoccerBall {
 
-    static double RADIUS = 4.45;
-    static double DIAMETER = 8.9;
+    // All the values for a given SoccerBall
+    static final double RADIUS = 4.45;
+    static final double DIAMETER = 8.9;
 
     boolean inBounds = true;
 
@@ -11,14 +12,13 @@ public class SoccerBall {
     double xVelocity = 0;
     double yVelocity = 0;
 
+    /**
+     * Creates a SoccerBall from given inputs
+     * Accepts any position, since the SoccerSim program will discard invalid SoccerBalls upon the first tick
+     */
     public SoccerBall(double xP, double yP, double xV, double yV) {
-        if (-50 < xP && 50 > xP) {
-            xPosition = xP;
-        }
-        
-        if (-50 < yP && 50 > yP) {
-            yPosition = yP;
-        }
+        xPosition = xP;
+        yPosition = yP;
 
         xVelocity = xV;
         yVelocity = yV;
