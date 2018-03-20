@@ -1,8 +1,8 @@
 public class SoccerBall {
 
     // All the values for a given SoccerBall
-    static final double RADIUS = 4.45;
-    static final double DIAMETER = 8.9;
+    static final double RADIUS = 4.45 / 12;
+    static final double DIAMETER = 8.9 / 12;
 
     boolean inBounds = true;
 
