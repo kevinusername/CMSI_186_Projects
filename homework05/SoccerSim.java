@@ -12,6 +12,8 @@ public class SoccerSim {
     static int ballCount = 0;
     static int[] collided = new int[2];
 
+    static SoccerBall pole = new SoccerBall(10, 10, 0, 0);
+
     public static void tick(SoccerBall ball) {
         ball.xPosition += ball.xVelocity * timeSlice;
         ball.yPosition += ball.yVelocity * timeSlice;
@@ -59,6 +61,13 @@ public class SoccerSim {
     public static void validateArgs(String[] args) {
         // Ensures that every arguement can be parse as a double
         // If not, informs user arguements must be doubles and ends program
+        if (0 == args.length) {
+            System.out.println(
+                    "Please enter 4 arguements for every ball\nformat: [x position] [y position] [x velocity] [y velocity]\n");
+            System.out.println("An optional final arguement for timeSlice can be put at end of input as well");
+            System.exit(1);
+        }
+
         for (int i = 0; i < args.length; i++) {
             try {
                 Double.parseDouble(args[i]);
@@ -88,7 +97,7 @@ public class SoccerSim {
      */
     public static void checkCollision(SoccerBall[] allBalls) {
         for (int i = 0; i < ballCount; i++) { // Runs through each ball
-            for (int j = 0; j < ballCount; j++) // For each iteration of above loop, loops through all balls again to compare
+            for (int j = 0; j < ballCount; j++) {// For each iteration of above loop, loops through all balls again to compare
                 if (allBalls[i].inBounds && allBalls[j].inBounds) {
                     if ((distanceBetween(allBalls[i], allBalls[j]) <= SoccerBall.DIAMETER) && (i != j)) {
                         noCollision = false;
@@ -97,6 +106,12 @@ public class SoccerSim {
                         collided[1] = j;
                     }
                 }
+            }
+            if ((distanceBetween(allBalls[i], pole)) <= SoccerBall.DIAMETER) { // Check for collision with pole
+                noCollision = false;
+                collided[0] = i;
+                collided[1] = -1;
+            }
         }
     }
 
@@ -131,17 +146,24 @@ public class SoccerSim {
         }
     }
 
+    /**
+     * Uses all the above methods to simulate a field with any amount of soccerballs with input properties
+     * Will print out which objects collided, where, and when upon first collision
+     * If no collision occurs, will print out message and exit
+     * 
+     * In the event of no collision, stops when no ball is in motion
+     */
     public static void main(String[] args) {
 
         validateArgs(args);
 
         SoccerBall[] allBalls = createSoccerBalls(args);
 
-        while (noCollision && checkMotion(allBalls)) {
-            checkCollision(allBalls);
-            if (noCollision) {
+        while (noCollision && checkMotion(allBalls)) { // Ensures that the simuation should still be running
+            checkCollision(allBalls); // Checks if collision occurs with current values
+            if (noCollision) { // If there is no collision, increment all values
                 for (int i = 0; i < ballCount; i++) {
-                    tick(allBalls[i]);
+                    tick(allBalls[i]); // Increment all SoccerBalls
                 }
             }
         }
@@ -149,13 +171,17 @@ public class SoccerSim {
         if (noCollision) {
             System.out.println("There was no collision");
             System.exit(0);
-        } else {
+        } else { // If there was a collision, print out the properties of collided objects
             System.out.println("There was a collision");
-            System.out.println("Time:" + timeElapsed + " seconds");
-            System.out.println("SoccerBall " + collided[0] + " at position x:" + allBalls[collided[0]].xPosition
-                    + ", y:" + allBalls[collided[0]].yPosition);
-            System.out.println("SoccerBall " + collided[1] + " at position x:" + allBalls[collided[1]].xPosition
-                    + ", y:" + allBalls[collided[1]].yPosition);
+            System.out.format("Time: %.3f seconds\n", timeElapsed);
+            System.out.format("SoccerBall %d : <%.3f, %.3f>\n", collided[0], allBalls[collided[0]].xPosition,
+                    allBalls[collided[0]].yPosition);
+            if (-1 == collided[1]) { // Special case for if pole was involved in collision
+                System.out.format("Pole : <%.3f, %.3f>\n", pole.xPosition, pole.yPosition);
+            } else { // Case where only SoccerBalls were involved
+                System.out.format("SoccerBall %d : <%.3f, %.3f>\n", collided[1], allBalls[collided[1]].xPosition,
+                        allBalls[collided[1]].yPosition);
+            }
             System.exit(0);
         }
     }

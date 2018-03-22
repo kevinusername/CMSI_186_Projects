@@ -15,6 +15,7 @@ public class SoccerBall {
     /**
      * Creates a SoccerBall from given inputs
      * Accepts any position, since the SoccerSim program will discard invalid SoccerBalls upon the first tick
+     * Prevents killng SoccerSim due to out of bounds ball input
      */
     public SoccerBall(double xP, double yP, double xV, double yV) {
         xPosition = xP;
