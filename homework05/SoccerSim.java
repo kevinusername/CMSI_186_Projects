@@ -194,6 +194,8 @@ public class SoccerSim {
      */
     public static void main(String[] args) {
 
+        System.out.println("$ java SoccerSim " + String.join(" ",args) + "\n");
+
         validateArgs(args);
 
         SoccerBall[] allBalls = createSoccerBalls(args);
