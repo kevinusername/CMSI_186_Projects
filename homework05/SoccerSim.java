@@ -194,8 +194,6 @@ public class SoccerSim {
      */
     public static void main(String[] args) {
 
-        System.out.println("$ java SoccerSim " + String.join(" ",args) + "\n");
-
         validateArgs(args);
 
         SoccerBall[] allBalls = createSoccerBalls(args);
@@ -216,8 +214,8 @@ public class SoccerSim {
             System.out.format("Time: %02.0f:%02.0f:%.2f\n", Math.floor(timeElapsed / 3600),
                     Math.floor(timeElapsed / 60), timeElapsed % 60);
             System.out.println("Information of collided objects:");
-            System.out.format("    SoccerBall %d: Position:<%.4f, %.4f>\n", collided[0], allBalls[collided[0]].xPosition,
-                    allBalls[collided[0]].yPosition);
+            System.out.format("    SoccerBall %d: Position:<%.4f, %.4f>\n", collided[0],
+                    allBalls[collided[0]].xPosition, allBalls[collided[0]].yPosition);
             if (-1 == collided[1]) { // Special case for if pole was involved in collision
                 System.out.format("    Pole: Position:<%.4f, %.4f>\n", pole.xPosition, pole.yPosition);
             } else { // Case where only SoccerBalls were involved
