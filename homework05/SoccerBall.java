@@ -26,6 +26,12 @@ public class SoccerBall {
     }
 
     public static void main(String[] args) {
-
+        /**
+         * No tests here!
+         * SoccerSim handles input arguements, thus any errors will be caught before they are fed to
+         *  SoccerBall() constructor
+         * 
+         * Variet of tests can be found in "tests" folder of this directory
+         */
     }
 }

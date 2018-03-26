@@ -3,22 +3,21 @@ public class SoccerSim {
     /**
      * Defining class variables and constants
      */
-    final static double XMAX = 1000;    // These MIN/MAX values are the dimensions of the soccer field
+    final static double XMAX = 1000; // These MIN/MAX values are the dimensions of the soccer field
     final static double XMIN = -1000;
     final static double YMAX = 1000;
     final static double YMIN = -1000;
     final static double minVelocity = (double) 1 / (double) 12; // The minimum velocity a ball can be at before being forced to stop
     static boolean noCollision = true; // A boolean of whether a collision has happened or not so far
 
-    static double timeSlice = 1.0;  // Amount of time that passes between each "tick"
-    static double timeElapsed = 0;  // Total time elapsed since start of simulation
+    static double timeSlice = 1.0; // Amount of time that passes between each "tick"
+    static double timeElapsed = 0; // Total time elapsed since start of simulation
 
-    static int ballCount = 0;   // Total of how many balls are in the simulation
+    static int ballCount = 0; // Total of how many balls are in the simulation
     static int[] collided = new int[2]; // A small array holding the name (number) of the two balls that collided
 
-    static SoccerBall pole = new SoccerBall(10, 10, 0, 0);  // A stationary pole that can collide with the other balls
-                                                            // Has the radius of a normal SoccerBall, positioned at <10,10>
-
+    static SoccerBall pole = new SoccerBall(10, 10, 0, 0); // A stationary pole that can collide with the other balls
+                                                           // Has the radius of a normal SoccerBall, positioned at <10,10>
 
     /**
      * Does all the neccessary calculations for when time passes
@@ -26,7 +25,7 @@ public class SoccerSim {
      */
     public static void tick(SoccerBall[] allBalls) {
 
-        timeElapsed += timeSlice;   // Account for time passing
+        timeElapsed += timeSlice; // Account for time passing
 
         // If the balls total speed > 1 inch per second, alter ball's speed accordingly
         for (int i = 0; i < ballCount; i++) {
@@ -35,7 +34,7 @@ public class SoccerSim {
 
                 SoccerBall ball = allBalls[i]; // For convience sake
 
-                ball.xPosition += ball.xVelocity * timeSlice;   //Increase x/y position accordingly
+                ball.xPosition += ball.xVelocity * timeSlice; //Increase x/y position accordingly
                 ball.yPosition += ball.yVelocity * timeSlice;
 
                 if (Math.sqrt(Math.pow(ball.xVelocity, 2) + Math.pow(ball.yVelocity, 2)) > minVelocity) {
@@ -95,7 +94,8 @@ public class SoccerSim {
                 System.out.println("\nInvalid input, please enter a real number for every arguement\n");
                 System.exit(2);
             }
-            if (Double.POSITIVE_INFINITY == Double.parseDouble(args[i]) || Double.NEGATIVE_INFINITY == Double.parseDouble(args[i])) {
+            if (Double.POSITIVE_INFINITY == Double.parseDouble(args[i])
+                    || Double.NEGATIVE_INFINITY == Double.parseDouble(args[i])) {
                 System.out.println("\nYou can't just place a ball at Infinity.....");
                 System.out.println("Please enter a FINITE location\n");
                 System.exit(10000);
@@ -176,7 +176,7 @@ public class SoccerSim {
      *  then reports current position and velocity of every ball in format <xP,yP>, <xV,yV>
      */
     public static void report(SoccerBall[] allBalls) {
-        System.out.format("Time: %02.0f:%02.0f:%.2f:\n", Math.floor(timeElapsed / 360), Math.floor(timeElapsed / 60),
+        System.out.format("Time: %02.0f:%02.0f:%.2f:\n", Math.floor(timeElapsed / 3600), Math.floor(timeElapsed / 60),
                 timeElapsed % 60);
         for (int i = 0; i < allBalls.length; i++) {
             System.out.format("Ball %d: position: <%.4f,%.4f>, velocity: <%.4f,%.4f>\n", i, allBalls[i].xPosition,
@@ -207,17 +207,19 @@ public class SoccerSim {
         }
 
         if (noCollision) {
-            System.out.println("There was no collision");
-            System.exit(0);
+            report(allBalls);
+            System.out.println("NO COLLISION IS POSSIBLE");
         } else { // If there was a collision, print out the properties of collided objects
-            System.out.println("There was a collision");
-            System.out.format("Time: %.4f seconds\n", timeElapsed);
-            System.out.format("SoccerBall %d: Position:<%.4f, %.4f>\n", collided[0], allBalls[collided[0]].xPosition,
+            System.out.println("THERE WAS A COLLISION");
+            System.out.format("Time: %02.0f:%02.0f:%.2f\n", Math.floor(timeElapsed / 3600),
+                    Math.floor(timeElapsed / 60), timeElapsed % 60);
+            System.out.println("Information of collided objects:");
+            System.out.format("    SoccerBall %d: Position:<%.4f, %.4f>\n", collided[0], allBalls[collided[0]].xPosition,
                     allBalls[collided[0]].yPosition);
             if (-1 == collided[1]) { // Special case for if pole was involved in collision
-                System.out.format("Pole: Position:<%.4f, %.4f>\n", pole.xPosition, pole.yPosition);
+                System.out.format("    Pole: Position:<%.4f, %.4f>\n", pole.xPosition, pole.yPosition);
             } else { // Case where only SoccerBalls were involved
-                System.out.format("SoccerBall %d: Position:<%.4f, %.4f>\n", collided[1],
+                System.out.format("    SoccerBall %d: Position:<%.4f, %.4f>\n", collided[1],
                         allBalls[collided[1]].xPosition, allBalls[collided[1]].yPosition);
             }
             System.exit(0);
