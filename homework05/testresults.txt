@@ -1,0 +1,3309 @@
+.
+.
+======================================
+... Testing Ball class ...
+======================================
+Not needed because of implementation
+.
+.
+======================================
+... Testing Timer class ...
+======================================
+Not needed because of implementation
+.
+.
+======================================
+... Testing SoccerSim no args...
+======================================
+Please enter 4 arguements for every ball
+format: [x position] [y position] [x velocity] [y velocity]
+
+An optional final arguement for timeSlice can be put at end of input as well
+.
+.
+======================================
+... Testing SoccerSim one arg...
+======================================
+Time: 00:00:0.00:
+
+NO COLLISION IS POSSIBLE
+.
+.
+======================================
+... Testing SoccerSim two args...
+======================================
+
+Invalid amount of arguements
+Please enter 4 arguements for every ball
+format: [x position] [y position] [x velocity] [y velocity]
+
+.
+.
+======================================
+... Testing SoccerSim three args...
+======================================
+
+Invalid amount of arguements
+Please enter 4 arguements for every ball
+format: [x position] [y position] [x velocity] [y velocity]
+
+.
+.
+======================================
+... Testing SoccerSim six args...
+======================================
+
+Invalid amount of arguements
+Please enter 4 arguements for every ball
+format: [x position] [y position] [x velocity] [y velocity]
+
+.
+.
+======================================
+... Testing SoccerSim out of bounds...
+======================================
+Time: 00:00:0.00:
+Ball 0: position: <1100.0000,1100.0000>, velocity: <99.0000,99.0000>
+
+Time: 00:00:1.00:
+Ball 0: position: <1199.0000,1199.0000>, velocity: <0.0000,0.0000>
+
+NO COLLISION IS POSSIBLE
+.
+.
+======================================
+... Testing SoccerSim negative time slice...
+======================================
+Time: 00:00:0.00:
+Ball 0: position: <10.0000,10.0000>, velocity: <5.0000,5.0000>
+
+THERE WAS A COLLISION
+Time: 00:00:0.00
+Information of collided objects:
+    SoccerBall 0: Position:<10.0000, 10.0000>
+    Pole: Position:<10.0000, 10.0000>
+.
+.
+======================================
+... Testing SoccerSim time slice too large...
+======================================
+Time: 00:00:0.00:
+Ball 0: position: <10.0000,10.0000>, velocity: <5.0000,5.0000>
+
+THERE WAS A COLLISION
+Time: 00:00:0.00
+Information of collided objects:
+    SoccerBall 0: Position:<10.0000, 10.0000>
+    Pole: Position:<10.0000, 10.0000>
+.
+.
+======================================
+... Testing SoccerSim time slice value of zero...
+======================================
+Time: 00:00:0.00:
+Ball 0: position: <10.0000,10.0000>, velocity: <5.0000,5.0000>
+
+THERE WAS A COLLISION
+Time: 00:00:0.00
+Information of collided objects:
+    SoccerBall 0: Position:<10.0000, 10.0000>
+    Pole: Position:<10.0000, 10.0000>
+.
+.
+======================================
+... Testing SoccerSim check for collision...
+======================================
+Time: 00:00:0.00:
+Ball 0: position: <10.0000,10.0000>, velocity: <1.0000,1.0000>
+Ball 1: position: <20.0000,20.0000>, velocity: <-1.0000,-1.0000>
+
+THERE WAS A COLLISION
+Time: 00:00:0.00
+Information of collided objects:
+    SoccerBall 0: Position:<10.0000, 10.0000>
+    Pole: Position:<10.0000, 10.0000>
+.
+.
+======================================
+... Testing SoccerSim valid ball should come to rest...
+======================================
+Time: 00:00:0.00:
+Ball 0: position: <10.0000,10.0000>, velocity: <1.0000,1.0000>
+
+THERE WAS A COLLISION
+Time: 00:00:0.00
+Information of collided objects:
+    SoccerBall 0: Position:<10.0000, 10.0000>
+    Pole: Position:<10.0000, 10.0000>
+.
+.
+======================================
+... Testing SoccerSim valid ball should go out of bounds...
+======================================
+Time: 00:00:0.00:
+Ball 0: position: <10.0000,10.0000>, velocity: <1000.0000,1000.0000>
+
+THERE WAS A COLLISION
+Time: 00:00:0.00
+Information of collided objects:
+    SoccerBall 0: Position:<10.0000, 10.0000>
+    Pole: Position:<10.0000, 10.0000>
+.
+.
+======================================
+... Testing SoccerSim valid ball set six balls subsecond time slice...
+======================================
+Time: 00:00:0.00:
+Ball 0: position: <200.0000,200.0000>, velocity: <10.0000,10.0000>
+Ball 1: position: <100.0000,100.0000>, velocity: <-100.0000,-100.0000>
+Ball 2: position: <150.0000,150.0000>, velocity: <200.0000,200.0000>
+Ball 3: position: <175.0000,175.0000>, velocity: <-110.0000,-110.0000>
+Ball 4: position: <20.0000,20.0000>, velocity: <1.0000,1.0000>
+Ball 5: position: <50.0000,50.0000>, velocity: <-5.0000,-5.0000>
+
+Time: 00:00:0.10:
+Ball 0: position: <201.0000,201.0000>, velocity: <9.9900,9.9900>
+Ball 1: position: <90.0000,90.0000>, velocity: <-99.9000,-99.9000>
+Ball 2: position: <170.0000,170.0000>, velocity: <199.8000,199.8000>
+Ball 3: position: <164.0000,164.0000>, velocity: <-109.8900,-109.8900>
+Ball 4: position: <20.1000,20.1000>, velocity: <0.9990,0.9990>
+Ball 5: position: <49.5000,49.5000>, velocity: <-4.9950,-4.9950>
+
+Time: 00:00:0.20:
+Ball 0: position: <201.9990,201.9990>, velocity: <9.9800,9.9800>
+Ball 1: position: <80.0100,80.0100>, velocity: <-99.8001,-99.8001>
+Ball 2: position: <189.9800,189.9800>, velocity: <199.6002,199.6002>
+Ball 3: position: <153.0110,153.0110>, velocity: <-109.7801,-109.7801>
+Ball 4: position: <20.1999,20.1999>, velocity: <0.9980,0.9980>
+Ball 5: position: <49.0005,49.0005>, velocity: <-4.9900,-4.9900>
+
+Time: 00:00:0.30:
+Ball 0: position: <202.9970,202.9970>, velocity: <9.9700,9.9700>
+Ball 1: position: <70.0300,70.0300>, velocity: <-99.7003,-99.7003>
+Ball 2: position: <209.9400,209.9400>, velocity: <199.4006,199.4006>
+Ball 3: position: <142.0330,142.0330>, velocity: <-109.6703,-109.6703>
+Ball 4: position: <20.2997,20.2997>, velocity: <0.9970,0.9970>
+Ball 5: position: <48.5015,48.5015>, velocity: <-4.9850,-4.9850>
+
+Time: 00:00:0.40:
+Ball 0: position: <203.9940,203.9940>, velocity: <9.9601,9.9601>
+Ball 1: position: <60.0600,60.0600>, velocity: <-99.6006,-99.6006>
+Ball 2: position: <229.8801,229.8801>, velocity: <199.2012,199.2012>
+Ball 3: position: <131.0660,131.0660>, velocity: <-109.5607,-109.5607>
+Ball 4: position: <20.3994,20.3994>, velocity: <0.9960,0.9960>
+Ball 5: position: <48.0030,48.0030>, velocity: <-4.9800,-4.9800>
+
+Time: 00:00:0.50:
+Ball 0: position: <204.9900,204.9900>, velocity: <9.9501,9.9501>
+Ball 1: position: <50.0999,50.0999>, velocity: <-99.5010,-99.5010>
+Ball 2: position: <249.8002,249.8002>, velocity: <199.0020,199.0020>
+Ball 3: position: <120.1099,120.1099>, velocity: <-109.4511,-109.4511>
+Ball 4: position: <20.4990,20.4990>, velocity: <0.9950,0.9950>
+Ball 5: position: <47.5050,47.5050>, velocity: <-4.9750,-4.9750>
+
+Time: 00:00:0.60:
+Ball 0: position: <205.9850,205.9850>, velocity: <9.9401,9.9401>
+Ball 1: position: <40.1498,40.1498>, velocity: <-99.4015,-99.4015>
+Ball 2: position: <269.7004,269.7004>, velocity: <198.8030,198.8030>
+Ball 3: position: <109.1648,109.1648>, velocity: <-109.3416,-109.3416>
+Ball 4: position: <20.5985,20.5985>, velocity: <0.9940,0.9940>
+Ball 5: position: <47.0075,47.0075>, velocity: <-4.9701,-4.9701>
+
+Time: 00:00:0.70:
+Ball 0: position: <206.9790,206.9790>, velocity: <9.9302,9.9302>
+Ball 1: position: <30.2097,30.2097>, velocity: <-99.3021,-99.3021>
+Ball 2: position: <289.5807,289.5807>, velocity: <198.6042,198.6042>
+Ball 3: position: <98.2306,98.2306>, velocity: <-109.2323,-109.2323>
+Ball 4: position: <20.6979,20.6979>, velocity: <0.9930,0.9930>
+Ball 5: position: <46.5105,46.5105>, velocity: <-4.9651,-4.9651>
+
+Time: 00:00:0.80:
+Ball 0: position: <207.9721,207.9721>, velocity: <9.9203,9.9203>
+Ball 1: position: <20.2794,20.2794>, velocity: <-99.2028,-99.2028>
+Ball 2: position: <309.4411,309.4411>, velocity: <198.4056,198.4056>
+Ball 3: position: <87.3074,87.3074>, velocity: <-109.1231,-109.1231>
+Ball 4: position: <20.7972,20.7972>, velocity: <0.9920,0.9920>
+Ball 5: position: <46.0140,46.0140>, velocity: <-4.9601,-4.9601>
+
+THERE WAS A COLLISION
+Time: 00:00:0.80
+Information of collided objects:
+    SoccerBall 4: Position:<20.7972, 20.7972>
+    SoccerBall 1: Position:<20.2794, 20.2794>
+.
+.
+======================================
+... Testing SoccerSim valid ball set five balls 1.234 second time slice...
+======================================
+Time: 00:00:0.00:
+Ball 0: position: <200.0000,200.0000>, velocity: <10.0000,10.0000>
+Ball 1: position: <100.0000,100.0000>, velocity: <-100.0000,-100.0000>
+Ball 2: position: <175.0000,175.0000>, velocity: <-110.0000,-110.0000>
+Ball 3: position: <20.0000,20.0000>, velocity: <1.0000,1.0000>
+Ball 4: position: <50.0000,50.0000>, velocity: <-5.0000,-5.0000>
+
+Time: 00:00:1.23:
+Ball 0: position: <212.3400,212.3400>, velocity: <9.8766,9.8766>
+Ball 1: position: <-23.4000,-23.4000>, velocity: <-98.7660,-98.7660>
+Ball 2: position: <39.2600,39.2600>, velocity: <-108.6426,-108.6426>
+Ball 3: position: <21.2340,21.2340>, velocity: <0.9877,0.9877>
+Ball 4: position: <43.8300,43.8300>, velocity: <-4.9383,-4.9383>
+
+Time: 00:00:2.47:
+Ball 0: position: <224.5277,224.5277>, velocity: <9.7547,9.7547>
+Ball 1: position: <-145.2772,-145.2772>, velocity: <-97.5472,-97.5472>
+Ball 2: position: <-94.8050,-94.8050>, velocity: <-107.3020,-107.3020>
+Ball 3: position: <22.4528,22.4528>, velocity: <0.9755,0.9755>
+Ball 4: position: <37.7361,37.7361>, velocity: <-4.8774,-4.8774>
+
+Time: 00:00:3.70:
+Ball 0: position: <236.5651,236.5651>, velocity: <9.6343,9.6343>
+Ball 1: position: <-265.6505,-265.6505>, velocity: <-96.3435,-96.3435>
+Ball 2: position: <-227.2156,-227.2156>, velocity: <-105.9778,-105.9778>
+Ball 3: position: <23.6565,23.6565>, velocity: <0.9634,0.9634>
+Ball 4: position: <31.7175,31.7175>, velocity: <-4.8172,-4.8172>
+
+Time: 00:00:4.94:
+Ball 0: position: <248.4538,248.4538>, velocity: <9.5155,9.5155>
+Ball 1: position: <-384.5384,-384.5384>, velocity: <-95.1546,-95.1546>
+Ball 2: position: <-357.9922,-357.9922>, velocity: <-104.6701,-104.6701>
+Ball 3: position: <24.8454,24.8454>, velocity: <0.9515,0.9515>
+Ball 4: position: <25.7731,25.7731>, velocity: <-4.7577,-4.7577>
+
+Time: 00:00:6.17:
+Ball 0: position: <260.1959,260.1959>, velocity: <9.3980,9.3980>
+Ball 1: position: <-501.9592,-501.9592>, velocity: <-93.9804,-93.9804>
+Ball 2: position: <-487.1551,-487.1551>, velocity: <-103.3784,-103.3784>
+Ball 3: position: <26.0196,26.0196>, velocity: <0.9398,0.9398>
+Ball 4: position: <19.9020,19.9020>, velocity: <-4.6990,-4.6990>
+
+Time: 00:00:7.40:
+Ball 0: position: <271.7931,271.7931>, velocity: <9.2821,9.2821>
+Ball 1: position: <-617.9310,-617.9310>, velocity: <-92.8207,-92.8207>
+Ball 2: position: <-614.7241,-614.7241>, velocity: <-102.1028,-102.1028>
+Ball 3: position: <27.1793,27.1793>, velocity: <0.9282,0.9282>
+Ball 4: position: <14.1034,14.1034>, velocity: <-4.6410,-4.6410>
+
+Time: 00:00:8.64:
+Ball 0: position: <283.2472,283.2472>, velocity: <9.1675,9.1675>
+Ball 1: position: <-732.4717,-732.4717>, velocity: <-91.6753,-91.6753>
+Ball 2: position: <-740.7189,-740.7189>, velocity: <-100.8428,-100.8428>
+Ball 3: position: <28.3247,28.3247>, velocity: <0.9168,0.9168>
+Ball 4: position: <8.3764,8.3764>, velocity: <-4.5838,-4.5838>
+
+Time: 00:00:9.87:
+Ball 0: position: <294.5599,294.5599>, velocity: <9.0544,9.0544>
+Ball 1: position: <-845.5990,-845.5990>, velocity: <-90.5440,-90.5440>
+Ball 2: position: <-865.1589,-865.1589>, velocity: <-99.5984,-99.5984>
+Ball 3: position: <29.4560,29.4560>, velocity: <0.9054,0.9054>
+Ball 4: position: <2.7200,2.7200>, velocity: <-4.5272,-4.5272>
+
+Time: 00:00:11.11:
+Ball 0: position: <305.7330,305.7330>, velocity: <8.9427,8.9427>
+Ball 1: position: <-957.3304,-957.3304>, velocity: <-89.4267,-89.4267>
+Ball 2: position: <-988.0634,-988.0634>, velocity: <-98.3694,-98.3694>
+Ball 3: position: <30.5733,30.5733>, velocity: <0.8943,0.8943>
+Ball 4: position: <-2.8665,-2.8665>, velocity: <-4.4713,-4.4713>
+
+Time: 00:00:12.34:
+Ball 0: position: <316.7683,316.7683>, velocity: <8.8323,8.8323>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <31.6768,31.6768>, velocity: <0.8832,0.8832>
+Ball 4: position: <-8.3841,-8.3841>, velocity: <-4.4162,-4.4162>
+
+Time: 00:00:13.57:
+Ball 0: position: <327.6674,327.6674>, velocity: <8.7233,8.7233>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <32.7667,32.7667>, velocity: <0.8723,0.8723>
+Ball 4: position: <-13.8337,-13.8337>, velocity: <-4.3617,-4.3617>
+
+Time: 00:00:14.81:
+Ball 0: position: <338.4320,338.4320>, velocity: <8.6157,8.6157>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <33.8432,33.8432>, velocity: <0.8616,0.8616>
+Ball 4: position: <-19.2160,-19.2160>, velocity: <-4.3078,-4.3078>
+
+Time: 00:00:16.04:
+Ball 0: position: <349.0637,349.0637>, velocity: <8.5094,8.5094>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <34.9064,34.9064>, velocity: <0.8509,0.8509>
+Ball 4: position: <-24.5319,-24.5319>, velocity: <-4.2547,-4.2547>
+
+Time: 00:00:17.28:
+Ball 0: position: <359.5643,359.5643>, velocity: <8.4044,8.4044>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <35.9564,35.9564>, velocity: <0.8404,0.8404>
+Ball 4: position: <-29.7821,-29.7821>, velocity: <-4.2022,-4.2022>
+
+Time: 00:00:18.51:
+Ball 0: position: <369.9352,369.9352>, velocity: <8.3006,8.3006>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <36.9935,36.9935>, velocity: <0.8301,0.8301>
+Ball 4: position: <-34.9676,-34.9676>, velocity: <-4.1503,-4.1503>
+
+Time: 00:00:19.74:
+Ball 0: position: <380.1782,380.1782>, velocity: <8.1982,8.1982>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <38.0178,38.0178>, velocity: <0.8198,0.8198>
+Ball 4: position: <-40.0891,-40.0891>, velocity: <-4.0991,-4.0991>
+
+Time: 00:00:20.98:
+Ball 0: position: <390.2948,390.2948>, velocity: <8.0971,8.0971>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <39.0295,39.0295>, velocity: <0.8097,0.8097>
+Ball 4: position: <-45.1474,-45.1474>, velocity: <-4.0485,-4.0485>
+
+Time: 00:00:22.21:
+Ball 0: position: <400.2866,400.2866>, velocity: <7.9971,7.9971>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <40.0287,40.0287>, velocity: <0.7997,0.7997>
+Ball 4: position: <-50.1433,-50.1433>, velocity: <-3.9986,-3.9986>
+
+Time: 00:00:23.45:
+Ball 0: position: <410.1551,410.1551>, velocity: <7.8984,7.8984>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <41.0155,41.0155>, velocity: <0.7898,0.7898>
+Ball 4: position: <-55.0775,-55.0775>, velocity: <-3.9492,-3.9492>
+
+Time: 00:00:24.68:
+Ball 0: position: <419.9017,419.9017>, velocity: <7.8010,7.8010>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <41.9902,41.9902>, velocity: <0.7801,0.7801>
+Ball 4: position: <-59.9509,-59.9509>, velocity: <-3.9005,-3.9005>
+
+Time: 00:00:25.91:
+Ball 0: position: <429.5282,429.5282>, velocity: <7.7047,7.7047>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <42.9528,42.9528>, velocity: <0.7705,0.7705>
+Ball 4: position: <-64.7641,-64.7641>, velocity: <-3.8524,-3.8524>
+
+Time: 00:00:27.15:
+Ball 0: position: <439.0358,439.0358>, velocity: <7.6096,7.6096>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <43.9036,43.9036>, velocity: <0.7610,0.7610>
+Ball 4: position: <-69.5179,-69.5179>, velocity: <-3.8048,-3.8048>
+
+Time: 00:00:28.38:
+Ball 0: position: <448.4261,448.4261>, velocity: <7.5157,7.5157>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <44.8426,44.8426>, velocity: <0.7516,0.7516>
+Ball 4: position: <-74.2130,-74.2130>, velocity: <-3.7579,-3.7579>
+
+Time: 00:00:29.62:
+Ball 0: position: <457.7005,457.7005>, velocity: <7.4230,7.4230>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <45.7701,45.7701>, velocity: <0.7423,0.7423>
+Ball 4: position: <-78.8503,-78.8503>, velocity: <-3.7115,-3.7115>
+
+Time: 00:00:30.85:
+Ball 0: position: <466.8605,466.8605>, velocity: <7.3314,7.3314>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <46.6860,46.6860>, velocity: <0.7331,0.7331>
+Ball 4: position: <-83.4302,-83.4302>, velocity: <-3.6657,-3.6657>
+
+Time: 00:00:32.08:
+Ball 0: position: <475.9074,475.9074>, velocity: <7.2409,7.2409>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <47.5907,47.5907>, velocity: <0.7241,0.7241>
+Ball 4: position: <-87.9537,-87.9537>, velocity: <-3.6205,-3.6205>
+
+Time: 00:00:33.32:
+Ball 0: position: <484.8427,484.8427>, velocity: <7.1516,7.1516>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <48.4843,48.4843>, velocity: <0.7152,0.7152>
+Ball 4: position: <-92.4214,-92.4214>, velocity: <-3.5758,-3.5758>
+
+Time: 00:00:34.55:
+Ball 0: position: <493.6678,493.6678>, velocity: <7.0633,7.0633>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <49.3668,49.3668>, velocity: <0.7063,0.7063>
+Ball 4: position: <-96.8339,-96.8339>, velocity: <-3.5317,-3.5317>
+
+Time: 00:00:35.79:
+Ball 0: position: <502.3839,502.3839>, velocity: <6.9762,6.9762>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <50.2384,50.2384>, velocity: <0.6976,0.6976>
+Ball 4: position: <-101.1920,-101.1920>, velocity: <-3.4881,-3.4881>
+
+Time: 00:00:37.02:
+Ball 0: position: <510.9925,510.9925>, velocity: <6.8901,6.8901>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <51.0992,51.0992>, velocity: <0.6890,0.6890>
+Ball 4: position: <-105.4962,-105.4962>, velocity: <-3.4450,-3.4450>
+
+Time: 00:00:38.25:
+Ball 0: position: <519.4948,519.4948>, velocity: <6.8051,6.8051>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <51.9495,51.9495>, velocity: <0.6805,0.6805>
+Ball 4: position: <-109.7474,-109.7474>, velocity: <-3.4025,-3.4025>
+
+Time: 00:00:39.49:
+Ball 0: position: <527.8923,527.8923>, velocity: <6.7211,6.7211>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <52.7892,52.7892>, velocity: <0.6721,0.6721>
+Ball 4: position: <-113.9461,-113.9461>, velocity: <-3.3605,-3.3605>
+
+Time: 00:00:40.72:
+Ball 0: position: <536.1861,536.1861>, velocity: <6.6381,6.6381>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <53.6186,53.6186>, velocity: <0.6638,0.6638>
+Ball 4: position: <-118.0930,-118.0930>, velocity: <-3.3191,-3.3191>
+
+Time: 00:00:41.96:
+Ball 0: position: <544.3775,544.3775>, velocity: <6.5562,6.5562>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <54.4378,54.4378>, velocity: <0.6556,0.6556>
+Ball 4: position: <-122.1888,-122.1888>, velocity: <-3.2781,-3.2781>
+
+Time: 00:00:43.19:
+Ball 0: position: <552.4679,552.4679>, velocity: <6.4753,6.4753>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <55.2468,55.2468>, velocity: <0.6475,0.6475>
+Ball 4: position: <-126.2340,-126.2340>, velocity: <-3.2377,-3.2377>
+
+Time: 00:00:44.42:
+Ball 0: position: <560.4585,560.4585>, velocity: <6.3954,6.3954>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <56.0458,56.0458>, velocity: <0.6395,0.6395>
+Ball 4: position: <-130.2292,-130.2292>, velocity: <-3.1977,-3.1977>
+
+Time: 00:00:45.66:
+Ball 0: position: <568.3504,568.3504>, velocity: <6.3165,6.3165>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <56.8350,56.8350>, velocity: <0.6316,0.6316>
+Ball 4: position: <-134.1752,-134.1752>, velocity: <-3.1582,-3.1582>
+
+Time: 00:00:46.89:
+Ball 0: position: <576.1450,576.1450>, velocity: <6.2386,6.2386>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <57.6145,57.6145>, velocity: <0.6239,0.6239>
+Ball 4: position: <-138.0725,-138.0725>, velocity: <-3.1193,-3.1193>
+
+Time: 00:00:48.13:
+Ball 0: position: <583.8433,583.8433>, velocity: <6.1616,6.1616>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <58.3843,58.3843>, velocity: <0.6162,0.6162>
+Ball 4: position: <-141.9217,-141.9217>, velocity: <-3.0808,-3.0808>
+
+Time: 00:00:49.36:
+Ball 0: position: <591.4467,591.4467>, velocity: <6.0855,6.0855>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <59.1447,59.1447>, velocity: <0.6086,0.6086>
+Ball 4: position: <-145.7234,-145.7234>, velocity: <-3.0428,-3.0428>
+
+Time: 00:00:50.59:
+Ball 0: position: <598.9563,598.9563>, velocity: <6.0104,6.0104>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <59.8956,59.8956>, velocity: <0.6010,0.6010>
+Ball 4: position: <-149.4781,-149.4781>, velocity: <-3.0052,-3.0052>
+
+Time: 00:00:51.83:
+Ball 0: position: <606.3731,606.3731>, velocity: <5.9363,5.9363>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <60.6373,60.6373>, velocity: <0.5936,0.5936>
+Ball 4: position: <-153.1866,-153.1866>, velocity: <-2.9681,-2.9681>
+
+Time: 00:00:53.06:
+Ball 0: position: <613.6985,613.6985>, velocity: <5.8630,5.8630>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <61.3698,61.3698>, velocity: <0.5863,0.5863>
+Ball 4: position: <-156.8492,-156.8492>, velocity: <-2.9315,-2.9315>
+
+Time: 00:00:54.30:
+Ball 0: position: <620.9335,620.9335>, velocity: <5.7907,5.7907>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <62.0933,62.0933>, velocity: <0.5791,0.5791>
+Ball 4: position: <-160.4667,-160.4667>, velocity: <-2.8953,-2.8953>
+
+Time: 00:00:55.53:
+Ball 0: position: <628.0791,628.0791>, velocity: <5.7192,5.7192>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <62.8079,62.8079>, velocity: <0.5719,0.5719>
+Ball 4: position: <-164.0396,-164.0396>, velocity: <-2.8596,-2.8596>
+
+Time: 00:00:56.76:
+Ball 0: position: <635.1366,635.1366>, velocity: <5.6486,5.6486>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <63.5137,63.5137>, velocity: <0.5649,0.5649>
+Ball 4: position: <-167.5683,-167.5683>, velocity: <-2.8243,-2.8243>
+
+Time: 00:00:58.00:
+Ball 0: position: <642.1071,642.1071>, velocity: <5.5789,5.5789>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <64.2107,64.2107>, velocity: <0.5579,0.5579>
+Ball 4: position: <-171.0535,-171.0535>, velocity: <-2.7895,-2.7895>
+
+Time: 00:00:59.23:
+Ball 0: position: <648.9915,648.9915>, velocity: <5.5101,5.5101>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <64.8991,64.8991>, velocity: <0.5510,0.5510>
+Ball 4: position: <-174.4957,-174.4957>, velocity: <-2.7550,-2.7550>
+
+Time: 00:01:0.47:
+Ball 0: position: <655.7909,655.7909>, velocity: <5.4421,5.4421>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <65.5791,65.5791>, velocity: <0.5442,0.5442>
+Ball 4: position: <-177.8954,-177.8954>, velocity: <-2.7210,-2.7210>
+
+Time: 00:01:1.70:
+Ball 0: position: <662.5064,662.5064>, velocity: <5.3749,5.3749>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <66.2506,66.2506>, velocity: <0.5375,0.5375>
+Ball 4: position: <-181.2532,-181.2532>, velocity: <-2.6875,-2.6875>
+
+Time: 00:01:2.93:
+Ball 0: position: <669.1391,669.1391>, velocity: <5.3086,5.3086>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <66.9139,66.9139>, velocity: <0.5309,0.5309>
+Ball 4: position: <-184.5696,-184.5696>, velocity: <-2.6543,-2.6543>
+
+Time: 00:01:4.17:
+Ball 0: position: <675.6899,675.6899>, velocity: <5.2431,5.2431>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <67.5690,67.5690>, velocity: <0.5243,0.5243>
+Ball 4: position: <-187.8450,-187.8450>, velocity: <-2.6216,-2.6216>
+
+Time: 00:01:5.40:
+Ball 0: position: <682.1599,682.1599>, velocity: <5.1784,5.1784>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <68.2160,68.2160>, velocity: <0.5178,0.5178>
+Ball 4: position: <-191.0800,-191.0800>, velocity: <-2.5892,-2.5892>
+
+Time: 00:01:6.64:
+Ball 0: position: <688.5501,688.5501>, velocity: <5.1145,5.1145>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <68.8550,68.8550>, velocity: <0.5114,0.5114>
+Ball 4: position: <-194.2750,-194.2750>, velocity: <-2.5572,-2.5572>
+
+Time: 00:01:7.87:
+Ball 0: position: <694.8614,694.8614>, velocity: <5.0514,5.0514>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <69.4861,69.4861>, velocity: <0.5051,0.5051>
+Ball 4: position: <-197.4307,-197.4307>, velocity: <-2.5257,-2.5257>
+
+Time: 00:01:9.10:
+Ball 0: position: <701.0948,701.0948>, velocity: <4.9891,4.9891>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <70.1095,70.1095>, velocity: <0.4989,0.4989>
+Ball 4: position: <-200.5474,-200.5474>, velocity: <-2.4945,-2.4945>
+
+Time: 00:01:10.34:
+Ball 0: position: <707.2513,707.2513>, velocity: <4.9275,4.9275>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <70.7251,70.7251>, velocity: <0.4927,0.4927>
+Ball 4: position: <-203.6256,-203.6256>, velocity: <-2.4637,-2.4637>
+
+Time: 00:01:11.57:
+Ball 0: position: <713.3318,713.3318>, velocity: <4.8667,4.8667>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <71.3332,71.3332>, velocity: <0.4867,0.4867>
+Ball 4: position: <-206.6659,-206.6659>, velocity: <-2.4333,-2.4333>
+
+Time: 00:01:12.81:
+Ball 0: position: <719.3373,719.3373>, velocity: <4.8066,4.8066>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <71.9337,71.9337>, velocity: <0.4807,0.4807>
+Ball 4: position: <-209.6686,-209.6686>, velocity: <-2.4033,-2.4033>
+
+Time: 00:01:14.04:
+Ball 0: position: <725.2686,725.2686>, velocity: <4.7473,4.7473>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <72.5269,72.5269>, velocity: <0.4747,0.4747>
+Ball 4: position: <-212.6343,-212.6343>, velocity: <-2.3737,-2.3737>
+
+Time: 00:01:15.27:
+Ball 0: position: <731.1268,731.1268>, velocity: <4.6887,4.6887>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <73.1127,73.1127>, velocity: <0.4689,0.4689>
+Ball 4: position: <-215.5634,-215.5634>, velocity: <-2.3444,-2.3444>
+
+Time: 00:01:16.51:
+Ball 0: position: <736.9127,736.9127>, velocity: <4.6309,4.6309>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <73.6913,73.6913>, velocity: <0.4631,0.4631>
+Ball 4: position: <-218.4564,-218.4564>, velocity: <-2.3154,-2.3154>
+
+Time: 00:01:17.74:
+Ball 0: position: <742.6272,742.6272>, velocity: <4.5737,4.5737>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <74.2627,74.2627>, velocity: <0.4574,0.4574>
+Ball 4: position: <-221.3136,-221.3136>, velocity: <-2.2869,-2.2869>
+
+Time: 00:01:18.98:
+Ball 0: position: <748.2712,748.2712>, velocity: <4.5173,4.5173>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <74.8271,74.8271>, velocity: <0.4517,0.4517>
+Ball 4: position: <-224.1356,-224.1356>, velocity: <-2.2586,-2.2586>
+
+Time: 00:01:20.21:
+Ball 0: position: <753.8455,753.8455>, velocity: <4.4615,4.4615>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <75.3846,75.3846>, velocity: <0.4462,0.4462>
+Ball 4: position: <-226.9228,-226.9228>, velocity: <-2.2308,-2.2308>
+
+Time: 00:01:21.44:
+Ball 0: position: <759.3511,759.3511>, velocity: <4.4065,4.4065>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <75.9351,75.9351>, velocity: <0.4406,0.4406>
+Ball 4: position: <-229.6755,-229.6755>, velocity: <-2.2032,-2.2032>
+
+Time: 00:01:22.68:
+Ball 0: position: <764.7887,764.7887>, velocity: <4.3521,4.3521>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <76.4789,76.4789>, velocity: <0.4352,0.4352>
+Ball 4: position: <-232.3943,-232.3943>, velocity: <-2.1761,-2.1761>
+
+Time: 00:01:23.91:
+Ball 0: position: <770.1592,770.1592>, velocity: <4.2984,4.2984>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <77.0159,77.0159>, velocity: <0.4298,0.4298>
+Ball 4: position: <-235.0796,-235.0796>, velocity: <-2.1492,-2.1492>
+
+Time: 00:01:25.15:
+Ball 0: position: <775.4634,775.4634>, velocity: <4.2454,4.2454>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <77.5463,77.5463>, velocity: <0.4245,0.4245>
+Ball 4: position: <-237.7317,-237.7317>, velocity: <-2.1227,-2.1227>
+
+Time: 00:01:26.38:
+Ball 0: position: <780.7022,780.7022>, velocity: <4.1930,4.1930>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <78.0702,78.0702>, velocity: <0.4193,0.4193>
+Ball 4: position: <-240.3511,-240.3511>, velocity: <-2.0965,-2.0965>
+
+Time: 00:01:27.61:
+Ball 0: position: <785.8763,785.8763>, velocity: <4.1412,4.1412>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <78.5876,78.5876>, velocity: <0.4141,0.4141>
+Ball 4: position: <-242.9382,-242.9382>, velocity: <-2.0706,-2.0706>
+
+Time: 00:01:28.85:
+Ball 0: position: <790.9866,790.9866>, velocity: <4.0901,4.0901>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <79.0987,79.0987>, velocity: <0.4090,0.4090>
+Ball 4: position: <-245.4933,-245.4933>, velocity: <-2.0451,-2.0451>
+
+Time: 00:01:30.08:
+Ball 0: position: <796.0339,796.0339>, velocity: <4.0397,4.0397>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <79.6034,79.6034>, velocity: <0.4040,0.4040>
+Ball 4: position: <-248.0169,-248.0169>, velocity: <-2.0198,-2.0198>
+
+Time: 00:01:31.32:
+Ball 0: position: <801.0188,801.0188>, velocity: <3.9898,3.9898>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <80.1019,80.1019>, velocity: <0.3990,0.3990>
+Ball 4: position: <-250.5094,-250.5094>, velocity: <-1.9949,-1.9949>
+
+Time: 00:01:32.55:
+Ball 0: position: <805.9422,805.9422>, velocity: <3.9406,3.9406>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <80.5942,80.5942>, velocity: <0.3941,0.3941>
+Ball 4: position: <-252.9711,-252.9711>, velocity: <-1.9703,-1.9703>
+
+Time: 00:01:33.78:
+Ball 0: position: <810.8049,810.8049>, velocity: <3.8920,3.8920>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <81.0805,81.0805>, velocity: <0.3892,0.3892>
+Ball 4: position: <-255.4025,-255.4025>, velocity: <-1.9460,-1.9460>
+
+Time: 00:01:35.02:
+Ball 0: position: <815.6076,815.6076>, velocity: <3.8439,3.8439>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <81.5608,81.5608>, velocity: <0.3844,0.3844>
+Ball 4: position: <-257.8038,-257.8038>, velocity: <-1.9220,-1.9220>
+
+Time: 00:01:36.25:
+Ball 0: position: <820.3510,820.3510>, velocity: <3.7965,3.7965>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <82.0351,82.0351>, velocity: <0.3796,0.3796>
+Ball 4: position: <-260.1755,-260.1755>, velocity: <-1.8982,-1.8982>
+
+Time: 00:01:37.49:
+Ball 0: position: <825.0358,825.0358>, velocity: <3.7496,3.7496>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <82.5036,82.5036>, velocity: <0.3750,0.3750>
+Ball 4: position: <-262.5179,-262.5179>, velocity: <-1.8748,-1.8748>
+
+Time: 00:01:38.72:
+Ball 0: position: <829.6629,829.6629>, velocity: <3.7034,3.7034>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <82.9663,82.9663>, velocity: <0.3703,0.3703>
+Ball 4: position: <-264.8314,-264.8314>, velocity: <-1.8517,-1.8517>
+
+Time: 00:01:39.95:
+Ball 0: position: <834.2329,834.2329>, velocity: <3.6577,3.6577>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <83.4233,83.4233>, velocity: <0.3658,0.3658>
+Ball 4: position: <-267.1164,-267.1164>, velocity: <-1.8288,-1.8288>
+
+Time: 00:01:41.19:
+Ball 0: position: <838.7464,838.7464>, velocity: <3.6125,3.6125>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <83.8746,83.8746>, velocity: <0.3613,0.3613>
+Ball 4: position: <-269.3732,-269.3732>, velocity: <-1.8063,-1.8063>
+
+Time: 00:01:42.42:
+Ball 0: position: <843.2043,843.2043>, velocity: <3.5680,3.5680>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <84.3204,84.3204>, velocity: <0.3568,0.3568>
+Ball 4: position: <-271.6021,-271.6021>, velocity: <-1.7840,-1.7840>
+
+Time: 00:01:43.66:
+Ball 0: position: <847.6072,847.6072>, velocity: <3.5239,3.5239>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <84.7607,84.7607>, velocity: <0.3524,0.3524>
+Ball 4: position: <-273.8036,-273.8036>, velocity: <-1.7620,-1.7620>
+
+Time: 00:01:44.89:
+Ball 0: position: <851.9557,851.9557>, velocity: <3.4804,3.4804>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <85.1956,85.1956>, velocity: <0.3480,0.3480>
+Ball 4: position: <-275.9778,-275.9778>, velocity: <-1.7402,-1.7402>
+
+Time: 00:01:46.12:
+Ball 0: position: <856.2505,856.2505>, velocity: <3.4375,3.4375>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <85.6251,85.6251>, velocity: <0.3437,0.3437>
+Ball 4: position: <-278.1253,-278.1253>, velocity: <-1.7187,-1.7187>
+
+Time: 00:01:47.36:
+Ball 0: position: <860.4924,860.4924>, velocity: <3.3951,3.3951>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <86.0492,86.0492>, velocity: <0.3395,0.3395>
+Ball 4: position: <-280.2462,-280.2462>, velocity: <-1.6975,-1.6975>
+
+Time: 00:01:48.59:
+Ball 0: position: <864.6819,864.6819>, velocity: <3.3532,3.3532>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <86.4682,86.4682>, velocity: <0.3353,0.3353>
+Ball 4: position: <-282.3410,-282.3410>, velocity: <-1.6766,-1.6766>
+
+Time: 00:01:49.83:
+Ball 0: position: <868.8198,868.8198>, velocity: <3.3118,3.3118>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <86.8820,86.8820>, velocity: <0.3312,0.3312>
+Ball 4: position: <-284.4099,-284.4099>, velocity: <-1.6559,-1.6559>
+
+Time: 00:01:51.06:
+Ball 0: position: <872.9065,872.9065>, velocity: <3.2709,3.2709>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <87.2907,87.2907>, velocity: <0.3271,0.3271>
+Ball 4: position: <-286.4533,-286.4533>, velocity: <-1.6355,-1.6355>
+
+Time: 00:01:52.29:
+Ball 0: position: <876.9429,876.9429>, velocity: <3.2306,3.2306>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <87.6943,87.6943>, velocity: <0.3231,0.3231>
+Ball 4: position: <-288.4714,-288.4714>, velocity: <-1.6153,-1.6153>
+
+Time: 00:01:53.53:
+Ball 0: position: <880.9294,880.9294>, velocity: <3.1907,3.1907>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <88.0929,88.0929>, velocity: <0.3191,0.3191>
+Ball 4: position: <-290.4647,-290.4647>, velocity: <-1.5954,-1.5954>
+
+Time: 00:01:54.76:
+Ball 0: position: <884.8667,884.8667>, velocity: <3.1513,3.1513>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <88.4867,88.4867>, velocity: <0.3151,0.3151>
+Ball 4: position: <-292.4334,-292.4334>, velocity: <-1.5757,-1.5757>
+
+Time: 00:01:56.00:
+Ball 0: position: <888.7555,888.7555>, velocity: <3.1124,3.1124>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <88.8755,88.8755>, velocity: <0.3112,0.3112>
+Ball 4: position: <-294.3777,-294.3777>, velocity: <-1.5562,-1.5562>
+
+Time: 00:01:57.23:
+Ball 0: position: <892.5962,892.5962>, velocity: <3.0740,3.0740>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <89.2596,89.2596>, velocity: <0.3074,0.3074>
+Ball 4: position: <-296.2981,-296.2981>, velocity: <-1.5370,-1.5370>
+
+Time: 00:01:58.46:
+Ball 0: position: <896.3896,896.3896>, velocity: <3.0361,3.0361>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <89.6390,89.6390>, velocity: <0.3036,0.3036>
+Ball 4: position: <-298.1948,-298.1948>, velocity: <-1.5181,-1.5181>
+
+Time: 00:01:59.70:
+Ball 0: position: <900.1361,900.1361>, velocity: <2.9986,2.9986>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <90.0136,90.0136>, velocity: <0.2999,0.2999>
+Ball 4: position: <-300.0681,-300.0681>, velocity: <-1.4993,-1.4993>
+
+Time: 00:02:0.93:
+Ball 0: position: <903.8365,903.8365>, velocity: <2.9616,2.9616>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <90.3836,90.3836>, velocity: <0.2962,0.2962>
+Ball 4: position: <-301.9182,-301.9182>, velocity: <-1.4808,-1.4808>
+
+Time: 00:02:2.17:
+Ball 0: position: <907.4911,907.4911>, velocity: <2.9251,2.9251>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <90.7491,90.7491>, velocity: <0.2925,0.2925>
+Ball 4: position: <-303.7456,-303.7456>, velocity: <-1.4625,-1.4625>
+
+Time: 00:02:3.40:
+Ball 0: position: <911.1007,911.1007>, velocity: <2.8890,2.8890>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <91.1101,91.1101>, velocity: <0.2889,0.2889>
+Ball 4: position: <-305.5503,-305.5503>, velocity: <-1.4445,-1.4445>
+
+Time: 00:02:4.63:
+Ball 0: position: <914.6657,914.6657>, velocity: <2.8533,2.8533>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <91.4666,91.4666>, velocity: <0.2853,0.2853>
+Ball 4: position: <-307.3328,-307.3328>, velocity: <-1.4267,-1.4267>
+
+Time: 00:02:5.87:
+Ball 0: position: <918.1867,918.1867>, velocity: <2.8181,2.8181>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <91.8187,91.8187>, velocity: <0.2818,0.2818>
+Ball 4: position: <-309.0934,-309.0934>, velocity: <-1.4091,-1.4091>
+
+Time: 00:02:7.10:
+Ball 0: position: <921.6643,921.6643>, velocity: <2.7834,2.7834>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <92.1664,92.1664>, velocity: <0.2783,0.2783>
+Ball 4: position: <-310.8321,-310.8321>, velocity: <-1.3917,-1.3917>
+
+Time: 00:02:8.34:
+Ball 0: position: <925.0990,925.0990>, velocity: <2.7490,2.7490>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <92.5099,92.5099>, velocity: <0.2749,0.2749>
+Ball 4: position: <-312.5495,-312.5495>, velocity: <-1.3745,-1.3745>
+
+Time: 00:02:9.57:
+Ball 0: position: <928.4912,928.4912>, velocity: <2.7151,2.7151>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <92.8491,92.8491>, velocity: <0.2715,0.2715>
+Ball 4: position: <-314.2456,-314.2456>, velocity: <-1.3575,-1.3575>
+
+Time: 00:02:10.80:
+Ball 0: position: <931.8417,931.8417>, velocity: <2.6816,2.6816>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <93.1842,93.1842>, velocity: <0.2682,0.2682>
+Ball 4: position: <-315.9208,-315.9208>, velocity: <-1.3408,-1.3408>
+
+Time: 00:02:12.04:
+Ball 0: position: <935.1507,935.1507>, velocity: <2.6485,2.6485>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <93.5151,93.5151>, velocity: <0.2648,0.2648>
+Ball 4: position: <-317.5754,-317.5754>, velocity: <-1.3242,-1.3242>
+
+Time: 00:02:13.27:
+Ball 0: position: <938.4190,938.4190>, velocity: <2.6158,2.6158>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <93.8419,93.8419>, velocity: <0.2616,0.2616>
+Ball 4: position: <-319.2095,-319.2095>, velocity: <-1.3079,-1.3079>
+
+Time: 00:02:14.51:
+Ball 0: position: <941.6469,941.6469>, velocity: <2.5835,2.5835>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <94.1647,94.1647>, velocity: <0.2584,0.2584>
+Ball 4: position: <-320.8234,-320.8234>, velocity: <-1.2918,-1.2918>
+
+Time: 00:02:15.74:
+Ball 0: position: <944.8350,944.8350>, velocity: <2.5517,2.5517>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <94.4835,94.4835>, velocity: <0.2552,0.2552>
+Ball 4: position: <-322.4175,-322.4175>, velocity: <-1.2758,-1.2758>
+
+Time: 00:02:16.97:
+Ball 0: position: <947.9837,947.9837>, velocity: <2.5202,2.5202>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <94.7984,94.7984>, velocity: <0.2520,0.2520>
+Ball 4: position: <-323.9918,-323.9918>, velocity: <-1.2601,-1.2601>
+
+Time: 00:02:18.21:
+Ball 0: position: <951.0936,951.0936>, velocity: <2.4891,2.4891>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <95.1094,95.1094>, velocity: <0.2489,0.2489>
+Ball 4: position: <-325.5468,-325.5468>, velocity: <-1.2445,-1.2445>
+
+Time: 00:02:19.44:
+Ball 0: position: <954.1651,954.1651>, velocity: <2.4583,2.4583>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <95.4165,95.4165>, velocity: <0.2458,0.2458>
+Ball 4: position: <-327.0825,-327.0825>, velocity: <-1.2292,-1.2292>
+
+Time: 00:02:20.68:
+Ball 0: position: <957.1987,957.1987>, velocity: <2.4280,2.4280>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <95.7199,95.7199>, velocity: <0.2428,0.2428>
+Ball 4: position: <-328.5993,-328.5993>, velocity: <-1.2140,-1.2140>
+
+Time: 00:02:21.91:
+Ball 0: position: <960.1948,960.1948>, velocity: <2.3981,2.3981>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <96.0195,96.0195>, velocity: <0.2398,0.2398>
+Ball 4: position: <-330.0974,-330.0974>, velocity: <-1.1990,-1.1990>
+
+Time: 00:02:23.14:
+Ball 0: position: <963.1540,963.1540>, velocity: <2.3685,2.3685>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <96.3154,96.3154>, velocity: <0.2368,0.2368>
+Ball 4: position: <-331.5770,-331.5770>, velocity: <-1.1842,-1.1842>
+
+Time: 00:02:24.38:
+Ball 0: position: <966.0767,966.0767>, velocity: <2.3392,2.3392>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <96.6077,96.6077>, velocity: <0.2339,0.2339>
+Ball 4: position: <-333.0384,-333.0384>, velocity: <-1.1696,-1.1696>
+
+Time: 00:02:25.61:
+Ball 0: position: <968.9633,968.9633>, velocity: <2.3104,2.3104>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <96.8963,96.8963>, velocity: <0.2310,0.2310>
+Ball 4: position: <-334.4817,-334.4817>, velocity: <-1.1552,-1.1552>
+
+Time: 00:02:26.85:
+Ball 0: position: <971.8143,971.8143>, velocity: <2.2819,2.2819>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <97.1814,97.1814>, velocity: <0.2282,0.2282>
+Ball 4: position: <-335.9072,-335.9072>, velocity: <-1.1409,-1.1409>
+
+Time: 00:02:28.08:
+Ball 0: position: <974.6301,974.6301>, velocity: <2.2537,2.2537>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <97.4630,97.4630>, velocity: <0.2254,0.2254>
+Ball 4: position: <-337.3151,-337.3151>, velocity: <-1.1268,-1.1268>
+
+Time: 00:02:29.31:
+Ball 0: position: <977.4112,977.4112>, velocity: <2.2259,2.2259>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <97.7411,97.7411>, velocity: <0.2226,0.2226>
+Ball 4: position: <-338.7056,-338.7056>, velocity: <-1.1129,-1.1129>
+
+Time: 00:02:30.55:
+Ball 0: position: <980.1579,980.1579>, velocity: <2.1984,2.1984>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <98.0158,98.0158>, velocity: <0.2198,0.2198>
+Ball 4: position: <-340.0790,-340.0790>, velocity: <-1.0992,-1.0992>
+
+Time: 00:02:31.78:
+Ball 0: position: <982.8708,982.8708>, velocity: <2.1713,2.1713>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <98.2871,98.2871>, velocity: <0.2171,0.2171>
+Ball 4: position: <-341.4354,-341.4354>, velocity: <-1.0856,-1.0856>
+
+Time: 00:02:33.02:
+Ball 0: position: <985.5502,985.5502>, velocity: <2.1445,2.1445>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <98.5550,98.5550>, velocity: <0.2144,0.2144>
+Ball 4: position: <-342.7751,-342.7751>, velocity: <-1.0722,-1.0722>
+
+Time: 00:02:34.25:
+Ball 0: position: <988.1965,988.1965>, velocity: <2.1180,2.1180>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <98.8196,98.8196>, velocity: <0.2118,0.2118>
+Ball 4: position: <-344.0982,-344.0982>, velocity: <-1.0590,-1.0590>
+
+Time: 00:02:35.48:
+Ball 0: position: <990.8101,990.8101>, velocity: <2.0919,2.0919>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <99.0810,99.0810>, velocity: <0.2092,0.2092>
+Ball 4: position: <-345.4051,-345.4051>, velocity: <-1.0459,-1.0459>
+
+Time: 00:02:36.72:
+Ball 0: position: <993.3915,993.3915>, velocity: <2.0661,2.0661>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <99.3392,99.3392>, velocity: <0.2066,0.2066>
+Ball 4: position: <-346.6958,-346.6958>, velocity: <-1.0330,-1.0330>
+
+Time: 00:02:37.95:
+Ball 0: position: <995.9411,995.9411>, velocity: <2.0406,2.0406>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <99.5941,99.5941>, velocity: <0.2041,0.2041>
+Ball 4: position: <-347.9705,-347.9705>, velocity: <-1.0203,-1.0203>
+
+Time: 00:02:39.19:
+Ball 0: position: <998.4592,998.4592>, velocity: <2.0154,2.0154>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <99.8459,99.8459>, velocity: <0.2015,0.2015>
+Ball 4: position: <-349.2296,-349.2296>, velocity: <-1.0077,-1.0077>
+
+Time: 00:02:40.42:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <100.0946,100.0946>, velocity: <0.1991,0.1991>
+Ball 4: position: <-350.4731,-350.4731>, velocity: <-0.9953,-0.9953>
+
+Time: 00:02:41.65:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <100.3403,100.3403>, velocity: <0.1966,0.1966>
+Ball 4: position: <-351.7013,-351.7013>, velocity: <-0.9830,-0.9830>
+
+Time: 00:02:42.89:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <100.5829,100.5829>, velocity: <0.1942,0.1942>
+Ball 4: position: <-352.9143,-352.9143>, velocity: <-0.9709,-0.9709>
+
+Time: 00:02:44.12:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <100.8225,100.8225>, velocity: <0.1918,0.1918>
+Ball 4: position: <-354.1123,-354.1123>, velocity: <-0.9589,-0.9589>
+
+Time: 00:02:45.36:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <101.0591,101.0591>, velocity: <0.1894,0.1894>
+Ball 4: position: <-355.2956,-355.2956>, velocity: <-0.9470,-0.9470>
+
+Time: 00:02:46.59:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <101.2928,101.2928>, velocity: <0.1871,0.1871>
+Ball 4: position: <-356.4642,-356.4642>, velocity: <-0.9354,-0.9354>
+
+Time: 00:02:47.82:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <101.5237,101.5237>, velocity: <0.1848,0.1848>
+Ball 4: position: <-357.6184,-357.6184>, velocity: <-0.9238,-0.9238>
+
+Time: 00:02:49.06:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <101.7517,101.7517>, velocity: <0.1825,0.1825>
+Ball 4: position: <-358.7584,-358.7584>, velocity: <-0.9124,-0.9124>
+
+Time: 00:02:50.29:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <101.9769,101.9769>, velocity: <0.1802,0.1802>
+Ball 4: position: <-359.8844,-359.8844>, velocity: <-0.9012,-0.9012>
+
+Time: 00:02:51.53:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <102.1993,102.1993>, velocity: <0.1780,0.1780>
+Ball 4: position: <-360.9964,-360.9964>, velocity: <-0.8900,-0.8900>
+
+Time: 00:02:52.76:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <102.4189,102.4189>, velocity: <0.1758,0.1758>
+Ball 4: position: <-362.0947,-362.0947>, velocity: <-0.8791,-0.8791>
+
+Time: 00:02:53.99:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <102.6359,102.6359>, velocity: <0.1736,0.1736>
+Ball 4: position: <-363.1794,-363.1794>, velocity: <-0.8682,-0.8682>
+
+Time: 00:02:55.23:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <102.8502,102.8502>, velocity: <0.1715,0.1715>
+Ball 4: position: <-364.2508,-364.2508>, velocity: <-0.8575,-0.8575>
+
+Time: 00:02:56.46:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <103.0618,103.0618>, velocity: <0.1694,0.1694>
+Ball 4: position: <-365.3089,-365.3089>, velocity: <-0.8469,-0.8469>
+
+Time: 00:02:57.70:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <103.2708,103.2708>, velocity: <0.1673,0.1673>
+Ball 4: position: <-366.3540,-366.3540>, velocity: <-0.8365,-0.8365>
+
+Time: 00:02:58.93:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <103.4772,103.4772>, velocity: <0.1652,0.1652>
+Ball 4: position: <-367.3862,-367.3862>, velocity: <-0.8261,-0.8261>
+
+Time: 00:03:0.16:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <103.6811,103.6811>, velocity: <0.1632,0.1632>
+Ball 4: position: <-368.4057,-368.4057>, velocity: <-0.8159,-0.8159>
+
+Time: 00:03:1.40:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <103.8825,103.8825>, velocity: <0.1612,0.1612>
+Ball 4: position: <-369.4126,-369.4126>, velocity: <-0.8059,-0.8059>
+
+Time: 00:03:2.63:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <104.0814,104.0814>, velocity: <0.1592,0.1592>
+Ball 4: position: <-370.4070,-370.4070>, velocity: <-0.7959,-0.7959>
+
+Time: 00:03:3.87:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <104.2778,104.2778>, velocity: <0.1572,0.1572>
+Ball 4: position: <-371.3892,-371.3892>, velocity: <-0.7861,-0.7861>
+
+Time: 00:03:5.10:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <104.4718,104.4718>, velocity: <0.1553,0.1553>
+Ball 4: position: <-372.3592,-372.3592>, velocity: <-0.7764,-0.7764>
+
+Time: 00:03:6.33:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <104.6635,104.6635>, velocity: <0.1534,0.1534>
+Ball 4: position: <-373.3173,-373.3173>, velocity: <-0.7668,-0.7668>
+
+Time: 00:03:7.57:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <104.8527,104.8527>, velocity: <0.1515,0.1515>
+Ball 4: position: <-374.2636,-374.2636>, velocity: <-0.7574,-0.7574>
+
+Time: 00:03:8.80:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <105.0396,105.0396>, velocity: <0.1496,0.1496>
+Ball 4: position: <-375.1982,-375.1982>, velocity: <-0.7480,-0.7480>
+
+Time: 00:03:10.04:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <105.2242,105.2242>, velocity: <0.1478,0.1478>
+Ball 4: position: <-376.1212,-376.1212>, velocity: <-0.7388,-0.7388>
+
+Time: 00:03:11.27:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <105.4066,105.4066>, velocity: <0.1459,0.1459>
+Ball 4: position: <-377.0329,-377.0329>, velocity: <-0.7297,-0.7297>
+
+Time: 00:03:12.50:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <105.5867,105.5867>, velocity: <0.1441,0.1441>
+Ball 4: position: <-377.9333,-377.9333>, velocity: <-0.7207,-0.7207>
+
+Time: 00:03:13.74:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <105.7645,105.7645>, velocity: <0.1424,0.1424>
+Ball 4: position: <-378.8226,-378.8226>, velocity: <-0.7118,-0.7118>
+
+Time: 00:03:14.97:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <105.9402,105.9402>, velocity: <0.1406,0.1406>
+Ball 4: position: <-379.7009,-379.7009>, velocity: <-0.7030,-0.7030>
+
+Time: 00:03:16.21:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <106.1137,106.1137>, velocity: <0.1389,0.1389>
+Ball 4: position: <-380.5684,-380.5684>, velocity: <-0.6943,-0.6943>
+
+Time: 00:03:17.44:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <106.2850,106.2850>, velocity: <0.1371,0.1371>
+Ball 4: position: <-381.4252,-381.4252>, velocity: <-0.6857,-0.6857>
+
+Time: 00:03:18.67:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <106.4543,106.4543>, velocity: <0.1355,0.1355>
+Ball 4: position: <-382.2714,-382.2714>, velocity: <-0.6773,-0.6773>
+
+Time: 00:03:19.91:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <106.6214,106.6214>, velocity: <0.1338,0.1338>
+Ball 4: position: <-383.1072,-383.1072>, velocity: <-0.6689,-0.6689>
+
+Time: 00:03:21.14:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <106.7865,106.7865>, velocity: <0.1321,0.1321>
+Ball 4: position: <-383.9327,-383.9327>, velocity: <-0.6607,-0.6607>
+
+Time: 00:03:22.38:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <106.9496,106.9496>, velocity: <0.1305,0.1305>
+Ball 4: position: <-384.7479,-384.7479>, velocity: <-0.6525,-0.6525>
+
+Time: 00:03:23.61:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <107.1106,107.1106>, velocity: <0.1289,0.1289>
+Ball 4: position: <-385.5531,-385.5531>, velocity: <-0.6445,-0.6445>
+
+Time: 00:03:24.84:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <107.2697,107.2697>, velocity: <0.1273,0.1273>
+Ball 4: position: <-386.3484,-386.3484>, velocity: <-0.6365,-0.6365>
+
+Time: 00:03:26.08:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <107.4268,107.4268>, velocity: <0.1257,0.1257>
+Ball 4: position: <-387.1339,-387.1339>, velocity: <-0.6287,-0.6287>
+
+Time: 00:03:27.31:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <107.5819,107.5819>, velocity: <0.1242,0.1242>
+Ball 4: position: <-387.9096,-387.9096>, velocity: <-0.6209,-0.6209>
+
+Time: 00:03:28.55:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <107.7352,107.7352>, velocity: <0.1226,0.1226>
+Ball 4: position: <-388.6758,-388.6758>, velocity: <-0.6132,-0.6132>
+
+Time: 00:03:29.78:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <107.8865,107.8865>, velocity: <0.1211,0.1211>
+Ball 4: position: <-389.4326,-389.4326>, velocity: <-0.6057,-0.6057>
+
+Time: 00:03:31.01:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <108.0360,108.0360>, velocity: <0.1196,0.1196>
+Ball 4: position: <-390.1800,-390.1800>, velocity: <-0.5982,-0.5982>
+
+Time: 00:03:32.25:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <108.1836,108.1836>, velocity: <0.1182,0.1182>
+Ball 4: position: <-390.9182,-390.9182>, velocity: <-0.5908,-0.5908>
+
+Time: 00:03:33.48:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <108.3294,108.3294>, velocity: <0.1167,0.1167>
+Ball 4: position: <-391.6472,-391.6472>, velocity: <-0.5835,-0.5835>
+
+Time: 00:03:34.72:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <108.4735,108.4735>, velocity: <0.1153,0.1153>
+Ball 4: position: <-392.3673,-392.3673>, velocity: <-0.5763,-0.5763>
+
+Time: 00:03:35.95:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <108.6157,108.6157>, velocity: <0.1138,0.1138>
+Ball 4: position: <-393.0785,-393.0785>, velocity: <-0.5692,-0.5692>
+
+Time: 00:03:37.18:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <108.7562,108.7562>, velocity: <0.1124,0.1124>
+Ball 4: position: <-393.7809,-393.7809>, velocity: <-0.5622,-0.5622>
+
+Time: 00:03:38.42:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <108.8949,108.8949>, velocity: <0.1111,0.1111>
+Ball 4: position: <-394.4746,-394.4746>, velocity: <-0.5553,-0.5553>
+
+Time: 00:03:39.65:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <109.0320,109.0320>, velocity: <0.1097,0.1097>
+Ball 4: position: <-395.1598,-395.1598>, velocity: <-0.5484,-0.5484>
+
+Time: 00:03:40.89:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <109.1673,109.1673>, velocity: <0.1083,0.1083>
+Ball 4: position: <-395.8366,-395.8366>, velocity: <-0.5416,-0.5416>
+
+Time: 00:03:42.12:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <109.3010,109.3010>, velocity: <0.1070,0.1070>
+Ball 4: position: <-396.5049,-396.5049>, velocity: <-0.5350,-0.5350>
+
+Time: 00:03:43.35:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <109.4330,109.4330>, velocity: <0.1057,0.1057>
+Ball 4: position: <-397.1651,-397.1651>, velocity: <-0.5283,-0.5283>
+
+Time: 00:03:44.59:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <109.5634,109.5634>, velocity: <0.1044,0.1044>
+Ball 4: position: <-397.8170,-397.8170>, velocity: <-0.5218,-0.5218>
+
+Time: 00:03:45.82:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <109.6922,109.6922>, velocity: <0.1031,0.1031>
+Ball 4: position: <-398.4610,-398.4610>, velocity: <-0.5154,-0.5154>
+
+Time: 00:03:47.06:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <109.8194,109.8194>, velocity: <0.1018,0.1018>
+Ball 4: position: <-399.0970,-399.0970>, velocity: <-0.5090,-0.5090>
+
+Time: 00:03:48.29:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <109.9450,109.9450>, velocity: <0.1005,0.1005>
+Ball 4: position: <-399.7251,-399.7251>, velocity: <-0.5027,-0.5027>
+
+Time: 00:03:49.52:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <110.0691,110.0691>, velocity: <0.0993,0.0993>
+Ball 4: position: <-400.3455,-400.3455>, velocity: <-0.4965,-0.4965>
+
+Time: 00:03:50.76:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <110.1916,110.1916>, velocity: <0.0981,0.0981>
+Ball 4: position: <-400.9582,-400.9582>, velocity: <-0.4904,-0.4904>
+
+Time: 00:03:51.99:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <110.3127,110.3127>, velocity: <0.0969,0.0969>
+Ball 4: position: <-401.5634,-401.5634>, velocity: <-0.4844,-0.4844>
+
+Time: 00:03:53.23:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <110.4322,110.4322>, velocity: <0.0957,0.0957>
+Ball 4: position: <-402.1611,-402.1611>, velocity: <-0.4784,-0.4784>
+
+Time: 00:03:54.46:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <110.5503,110.5503>, velocity: <0.0945,0.0945>
+Ball 4: position: <-402.7515,-402.7515>, velocity: <-0.4725,-0.4725>
+
+Time: 00:03:55.69:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <110.6669,110.6669>, velocity: <0.0933,0.0933>
+Ball 4: position: <-403.3345,-403.3345>, velocity: <-0.4667,-0.4667>
+
+Time: 00:03:56.93:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <110.7821,110.7821>, velocity: <0.0922,0.0922>
+Ball 4: position: <-403.9104,-403.9104>, velocity: <-0.4609,-0.4609>
+
+Time: 00:03:58.16:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <110.8958,110.8958>, velocity: <0.0910,0.0910>
+Ball 4: position: <-404.4791,-404.4791>, velocity: <-0.4552,-0.4552>
+
+Time: 00:03:59.40:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <111.0082,111.0082>, velocity: <0.0899,0.0899>
+Ball 4: position: <-405.0408,-405.0408>, velocity: <-0.4496,-0.4496>
+
+Time: 00:04:0.63:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <111.1191,111.1191>, velocity: <0.0888,0.0888>
+Ball 4: position: <-405.5956,-405.5956>, velocity: <-0.4440,-0.4440>
+
+Time: 00:04:1.86:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <111.2287,111.2287>, velocity: <0.0877,0.0877>
+Ball 4: position: <-406.1436,-406.1436>, velocity: <-0.4386,-0.4386>
+
+Time: 00:04:3.10:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <111.3370,111.3370>, velocity: <0.0866,0.0866>
+Ball 4: position: <-406.6848,-406.6848>, velocity: <-0.4332,-0.4332>
+
+Time: 00:04:4.33:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <111.4439,111.4439>, velocity: <0.0856,0.0856>
+Ball 4: position: <-407.2193,-407.2193>, velocity: <-0.4278,-0.4278>
+
+Time: 00:04:5.57:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <111.5494,111.5494>, velocity: <0.0845,0.0845>
+Ball 4: position: <-407.7472,-407.7472>, velocity: <-0.4225,-0.4225>
+
+Time: 00:04:6.80:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <111.6537,111.6537>, velocity: <0.0835,0.0835>
+Ball 4: position: <-408.2686,-408.2686>, velocity: <-0.4173,-0.4173>
+
+Time: 00:04:8.03:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <111.7567,111.7567>, velocity: <0.0824,0.0824>
+Ball 4: position: <-408.7836,-408.7836>, velocity: <-0.4122,-0.4122>
+
+Time: 00:04:9.27:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <111.8584,111.8584>, velocity: <0.0814,0.0814>
+Ball 4: position: <-409.2922,-409.2922>, velocity: <-0.4071,-0.4071>
+
+Time: 00:04:10.50:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <111.9589,111.9589>, velocity: <0.0804,0.0804>
+Ball 4: position: <-409.7945,-409.7945>, velocity: <-0.4021,-0.4021>
+
+Time: 00:04:11.74:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <112.0581,112.0581>, velocity: <0.0794,0.0794>
+Ball 4: position: <-410.2906,-410.2906>, velocity: <-0.3971,-0.3971>
+
+Time: 00:04:12.97:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <112.1561,112.1561>, velocity: <0.0784,0.0784>
+Ball 4: position: <-410.7807,-410.7807>, velocity: <-0.3922,-0.3922>
+
+Time: 00:04:14.20:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <112.2529,112.2529>, velocity: <0.0775,0.0775>
+Ball 4: position: <-411.2646,-411.2646>, velocity: <-0.3874,-0.3874>
+
+Time: 00:04:15.44:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <112.3485,112.3485>, velocity: <0.0765,0.0765>
+Ball 4: position: <-411.7426,-411.7426>, velocity: <-0.3826,-0.3826>
+
+Time: 00:04:16.67:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <112.4429,112.4429>, velocity: <0.0756,0.0756>
+Ball 4: position: <-412.2147,-412.2147>, velocity: <-0.3779,-0.3779>
+
+Time: 00:04:17.91:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <112.5362,112.5362>, velocity: <0.0746,0.0746>
+Ball 4: position: <-412.6810,-412.6810>, velocity: <-0.3732,-0.3732>
+
+Time: 00:04:19.14:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <112.6283,112.6283>, velocity: <0.0737,0.0737>
+Ball 4: position: <-413.1415,-413.1415>, velocity: <-0.3686,-0.3686>
+
+Time: 00:04:20.37:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <112.7193,112.7193>, velocity: <0.0728,0.0728>
+Ball 4: position: <-413.5963,-413.5963>, velocity: <-0.3640,-0.3640>
+
+Time: 00:04:21.61:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <112.8091,112.8091>, velocity: <0.0719,0.0719>
+Ball 4: position: <-414.0456,-414.0456>, velocity: <-0.3595,-0.3595>
+
+Time: 00:04:22.84:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <112.8978,112.8978>, velocity: <0.0710,0.0710>
+Ball 4: position: <-414.4892,-414.4892>, velocity: <-0.3551,-0.3551>
+
+Time: 00:04:24.08:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <112.9855,112.9855>, velocity: <0.0701,0.0701>
+Ball 4: position: <-414.9274,-414.9274>, velocity: <-0.3507,-0.3507>
+
+Time: 00:04:25.31:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <113.0720,113.0720>, velocity: <0.0693,0.0693>
+Ball 4: position: <-415.3602,-415.3602>, velocity: <-0.3464,-0.3464>
+
+Time: 00:04:26.54:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <113.1575,113.1575>, velocity: <0.0684,0.0684>
+Ball 4: position: <-415.7877,-415.7877>, velocity: <-0.3421,-0.3421>
+
+Time: 00:04:27.78:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <113.2420,113.2420>, velocity: <0.0676,0.0676>
+Ball 4: position: <-416.2099,-416.2099>, velocity: <-0.3379,-0.3379>
+
+Time: 00:04:29.01:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <113.3254,113.3254>, velocity: <0.0667,0.0667>
+Ball 4: position: <-416.6268,-416.6268>, velocity: <-0.3337,-0.3337>
+
+Time: 00:04:30.25:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <113.4077,113.4077>, velocity: <0.0659,0.0659>
+Ball 4: position: <-417.0387,-417.0387>, velocity: <-0.3296,-0.3296>
+
+Time: 00:04:31.48:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <113.4891,113.4891>, velocity: <0.0651,0.0651>
+Ball 4: position: <-417.4454,-417.4454>, velocity: <-0.3255,-0.3255>
+
+Time: 00:04:32.71:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <113.5694,113.5694>, velocity: <0.0643,0.0643>
+Ball 4: position: <-417.8471,-417.8471>, velocity: <-0.3215,-0.3215>
+
+Time: 00:04:33.95:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <113.6488,113.6488>, velocity: <0.0635,0.0635>
+Ball 4: position: <-418.2439,-418.2439>, velocity: <-0.3176,-0.3176>
+
+Time: 00:04:35.18:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <113.7272,113.7272>, velocity: <0.0627,0.0627>
+Ball 4: position: <-418.6358,-418.6358>, velocity: <-0.3136,-0.3136>
+
+Time: 00:04:36.42:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <113.8046,113.8046>, velocity: <0.0620,0.0620>
+Ball 4: position: <-419.0228,-419.0228>, velocity: <-0.3098,-0.3098>
+
+Time: 00:04:37.65:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <113.8810,113.8810>, velocity: <0.0612,0.0612>
+Ball 4: position: <-419.4051,-419.4051>, velocity: <-0.3059,-0.3059>
+
+Time: 00:04:38.88:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <113.9565,113.9565>, velocity: <0.0604,0.0604>
+Ball 4: position: <-419.7826,-419.7826>, velocity: <-0.3022,-0.3022>
+
+Time: 00:04:40.12:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <114.0311,114.0311>, velocity: <0.0597,0.0597>
+Ball 4: position: <-420.1555,-420.1555>, velocity: <-0.2984,-0.2984>
+
+Time: 00:04:41.35:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <114.1048,114.1048>, velocity: <0.0590,0.0590>
+Ball 4: position: <-420.5238,-420.5238>, velocity: <-0.2948,-0.2948>
+
+Time: 00:04:42.59:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <114.1775,114.1775>, velocity: <0.0582,0.0582>
+Ball 4: position: <-420.8875,-420.8875>, velocity: <-0.2911,-0.2911>
+
+Time: 00:04:43.82:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <114.2493,114.2493>, velocity: <0.0000,0.0000>
+Ball 4: position: <-421.2467,-421.2467>, velocity: <-0.2875,-0.2875>
+
+Time: 00:04:45.05:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <114.2493,114.2493>, velocity: <0.0000,0.0000>
+Ball 4: position: <-421.6016,-421.6016>, velocity: <-0.2840,-0.2840>
+
+Time: 00:04:46.29:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <114.2493,114.2493>, velocity: <0.0000,0.0000>
+Ball 4: position: <-421.9520,-421.9520>, velocity: <-0.2805,-0.2805>
+
+Time: 00:04:47.52:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <114.2493,114.2493>, velocity: <0.0000,0.0000>
+Ball 4: position: <-422.2981,-422.2981>, velocity: <-0.2770,-0.2770>
+
+Time: 00:04:48.76:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <114.2493,114.2493>, velocity: <0.0000,0.0000>
+Ball 4: position: <-422.6400,-422.6400>, velocity: <-0.2736,-0.2736>
+
+Time: 00:04:49.99:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <114.2493,114.2493>, velocity: <0.0000,0.0000>
+Ball 4: position: <-422.9776,-422.9776>, velocity: <-0.2702,-0.2702>
+
+Time: 00:04:51.22:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <114.2493,114.2493>, velocity: <0.0000,0.0000>
+Ball 4: position: <-423.3110,-423.3110>, velocity: <-0.2669,-0.2669>
+
+Time: 00:04:52.46:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <114.2493,114.2493>, velocity: <0.0000,0.0000>
+Ball 4: position: <-423.6404,-423.6404>, velocity: <-0.2636,-0.2636>
+
+Time: 00:04:53.69:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <114.2493,114.2493>, velocity: <0.0000,0.0000>
+Ball 4: position: <-423.9656,-423.9656>, velocity: <-0.2603,-0.2603>
+
+Time: 00:04:54.93:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <114.2493,114.2493>, velocity: <0.0000,0.0000>
+Ball 4: position: <-424.2869,-424.2869>, velocity: <-0.2571,-0.2571>
+
+Time: 00:04:56.16:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <114.2493,114.2493>, velocity: <0.0000,0.0000>
+Ball 4: position: <-424.6042,-424.6042>, velocity: <-0.2540,-0.2540>
+
+Time: 00:04:57.39:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <114.2493,114.2493>, velocity: <0.0000,0.0000>
+Ball 4: position: <-424.9176,-424.9176>, velocity: <-0.2508,-0.2508>
+
+Time: 00:04:58.63:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <114.2493,114.2493>, velocity: <0.0000,0.0000>
+Ball 4: position: <-425.2271,-425.2271>, velocity: <-0.2477,-0.2477>
+
+Time: 00:04:59.86:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <114.2493,114.2493>, velocity: <0.0000,0.0000>
+Ball 4: position: <-425.5328,-425.5328>, velocity: <-0.2447,-0.2447>
+
+Time: 00:05:1.10:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <114.2493,114.2493>, velocity: <0.0000,0.0000>
+Ball 4: position: <-425.8347,-425.8347>, velocity: <-0.2417,-0.2417>
+
+Time: 00:05:2.33:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <114.2493,114.2493>, velocity: <0.0000,0.0000>
+Ball 4: position: <-426.1329,-426.1329>, velocity: <-0.2387,-0.2387>
+
+Time: 00:05:3.56:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <114.2493,114.2493>, velocity: <0.0000,0.0000>
+Ball 4: position: <-426.4275,-426.4275>, velocity: <-0.2357,-0.2357>
+
+Time: 00:05:4.80:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <114.2493,114.2493>, velocity: <0.0000,0.0000>
+Ball 4: position: <-426.7183,-426.7183>, velocity: <-0.2328,-0.2328>
+
+Time: 00:05:6.03:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <114.2493,114.2493>, velocity: <0.0000,0.0000>
+Ball 4: position: <-427.0056,-427.0056>, velocity: <-0.2299,-0.2299>
+
+Time: 00:05:7.27:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <114.2493,114.2493>, velocity: <0.0000,0.0000>
+Ball 4: position: <-427.2894,-427.2894>, velocity: <-0.2271,-0.2271>
+
+Time: 00:05:8.50:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <114.2493,114.2493>, velocity: <0.0000,0.0000>
+Ball 4: position: <-427.5696,-427.5696>, velocity: <-0.2243,-0.2243>
+
+Time: 00:05:9.73:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <114.2493,114.2493>, velocity: <0.0000,0.0000>
+Ball 4: position: <-427.8464,-427.8464>, velocity: <-0.2215,-0.2215>
+
+Time: 00:05:10.97:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <114.2493,114.2493>, velocity: <0.0000,0.0000>
+Ball 4: position: <-428.1198,-428.1198>, velocity: <-0.2188,-0.2188>
+
+Time: 00:05:12.20:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <114.2493,114.2493>, velocity: <0.0000,0.0000>
+Ball 4: position: <-428.3898,-428.3898>, velocity: <-0.2161,-0.2161>
+
+Time: 00:05:13.44:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <114.2493,114.2493>, velocity: <0.0000,0.0000>
+Ball 4: position: <-428.6565,-428.6565>, velocity: <-0.2134,-0.2134>
+
+Time: 00:05:14.67:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <114.2493,114.2493>, velocity: <0.0000,0.0000>
+Ball 4: position: <-428.9199,-428.9199>, velocity: <-0.2108,-0.2108>
+
+Time: 00:05:15.90:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <114.2493,114.2493>, velocity: <0.0000,0.0000>
+Ball 4: position: <-429.1800,-429.1800>, velocity: <-0.2082,-0.2082>
+
+Time: 00:05:17.14:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <114.2493,114.2493>, velocity: <0.0000,0.0000>
+Ball 4: position: <-429.4369,-429.4369>, velocity: <-0.2056,-0.2056>
+
+Time: 00:05:18.37:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <114.2493,114.2493>, velocity: <0.0000,0.0000>
+Ball 4: position: <-429.6906,-429.6906>, velocity: <-0.2031,-0.2031>
+
+Time: 00:05:19.61:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <114.2493,114.2493>, velocity: <0.0000,0.0000>
+Ball 4: position: <-429.9413,-429.9413>, velocity: <-0.2006,-0.2006>
+
+Time: 00:05:20.84:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <114.2493,114.2493>, velocity: <0.0000,0.0000>
+Ball 4: position: <-430.1888,-430.1888>, velocity: <-0.1981,-0.1981>
+
+Time: 00:05:22.07:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <114.2493,114.2493>, velocity: <0.0000,0.0000>
+Ball 4: position: <-430.4333,-430.4333>, velocity: <-0.1957,-0.1957>
+
+Time: 00:05:23.31:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <114.2493,114.2493>, velocity: <0.0000,0.0000>
+Ball 4: position: <-430.6747,-430.6747>, velocity: <-0.1933,-0.1933>
+
+Time: 00:05:24.54:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <114.2493,114.2493>, velocity: <0.0000,0.0000>
+Ball 4: position: <-430.9132,-430.9132>, velocity: <-0.1909,-0.1909>
+
+Time: 00:05:25.78:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <114.2493,114.2493>, velocity: <0.0000,0.0000>
+Ball 4: position: <-431.1487,-431.1487>, velocity: <-0.1885,-0.1885>
+
+Time: 00:05:27.01:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <114.2493,114.2493>, velocity: <0.0000,0.0000>
+Ball 4: position: <-431.3813,-431.3813>, velocity: <-0.1862,-0.1862>
+
+Time: 00:05:28.24:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <114.2493,114.2493>, velocity: <0.0000,0.0000>
+Ball 4: position: <-431.6111,-431.6111>, velocity: <-0.1839,-0.1839>
+
+Time: 00:05:29.48:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <114.2493,114.2493>, velocity: <0.0000,0.0000>
+Ball 4: position: <-431.8380,-431.8380>, velocity: <-0.1816,-0.1816>
+
+Time: 00:05:30.71:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <114.2493,114.2493>, velocity: <0.0000,0.0000>
+Ball 4: position: <-432.0621,-432.0621>, velocity: <-0.1794,-0.1794>
+
+Time: 00:05:31.95:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <114.2493,114.2493>, velocity: <0.0000,0.0000>
+Ball 4: position: <-432.2835,-432.2835>, velocity: <-0.1772,-0.1772>
+
+Time: 00:05:33.18:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <114.2493,114.2493>, velocity: <0.0000,0.0000>
+Ball 4: position: <-432.5021,-432.5021>, velocity: <-0.1750,-0.1750>
+
+Time: 00:05:34.41:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <114.2493,114.2493>, velocity: <0.0000,0.0000>
+Ball 4: position: <-432.7180,-432.7180>, velocity: <-0.1728,-0.1728>
+
+Time: 00:05:35.65:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <114.2493,114.2493>, velocity: <0.0000,0.0000>
+Ball 4: position: <-432.9313,-432.9313>, velocity: <-0.1707,-0.1707>
+
+Time: 00:05:36.88:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <114.2493,114.2493>, velocity: <0.0000,0.0000>
+Ball 4: position: <-433.1419,-433.1419>, velocity: <-0.1686,-0.1686>
+
+Time: 00:05:38.12:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <114.2493,114.2493>, velocity: <0.0000,0.0000>
+Ball 4: position: <-433.3500,-433.3500>, velocity: <-0.1665,-0.1665>
+
+Time: 00:05:39.35:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <114.2493,114.2493>, velocity: <0.0000,0.0000>
+Ball 4: position: <-433.5554,-433.5554>, velocity: <-0.1644,-0.1644>
+
+Time: 00:05:40.58:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <114.2493,114.2493>, velocity: <0.0000,0.0000>
+Ball 4: position: <-433.7583,-433.7583>, velocity: <-0.1624,-0.1624>
+
+Time: 00:05:41.82:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <114.2493,114.2493>, velocity: <0.0000,0.0000>
+Ball 4: position: <-433.9588,-433.9588>, velocity: <-0.1604,-0.1604>
+
+Time: 00:05:43.05:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <114.2493,114.2493>, velocity: <0.0000,0.0000>
+Ball 4: position: <-434.1567,-434.1567>, velocity: <-0.1584,-0.1584>
+
+Time: 00:05:44.29:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <114.2493,114.2493>, velocity: <0.0000,0.0000>
+Ball 4: position: <-434.3522,-434.3522>, velocity: <-0.1565,-0.1565>
+
+Time: 00:05:45.52:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <114.2493,114.2493>, velocity: <0.0000,0.0000>
+Ball 4: position: <-434.5453,-434.5453>, velocity: <-0.1545,-0.1545>
+
+Time: 00:05:46.75:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <114.2493,114.2493>, velocity: <0.0000,0.0000>
+Ball 4: position: <-434.7360,-434.7360>, velocity: <-0.1526,-0.1526>
+
+Time: 00:05:47.99:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <114.2493,114.2493>, velocity: <0.0000,0.0000>
+Ball 4: position: <-434.9244,-434.9244>, velocity: <-0.1508,-0.1508>
+
+Time: 00:05:49.22:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <114.2493,114.2493>, velocity: <0.0000,0.0000>
+Ball 4: position: <-435.1104,-435.1104>, velocity: <-0.1489,-0.1489>
+
+Time: 00:05:50.46:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <114.2493,114.2493>, velocity: <0.0000,0.0000>
+Ball 4: position: <-435.2941,-435.2941>, velocity: <-0.1471,-0.1471>
+
+Time: 00:05:51.69:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <114.2493,114.2493>, velocity: <0.0000,0.0000>
+Ball 4: position: <-435.4756,-435.4756>, velocity: <-0.1452,-0.1452>
+
+Time: 00:05:52.92:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <114.2493,114.2493>, velocity: <0.0000,0.0000>
+Ball 4: position: <-435.6549,-435.6549>, velocity: <-0.1435,-0.1435>
+
+Time: 00:05:54.16:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <114.2493,114.2493>, velocity: <0.0000,0.0000>
+Ball 4: position: <-435.8319,-435.8319>, velocity: <-0.1417,-0.1417>
+
+Time: 00:05:55.39:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <114.2493,114.2493>, velocity: <0.0000,0.0000>
+Ball 4: position: <-436.0067,-436.0067>, velocity: <-0.1399,-0.1399>
+
+Time: 00:05:56.63:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <114.2493,114.2493>, velocity: <0.0000,0.0000>
+Ball 4: position: <-436.1794,-436.1794>, velocity: <-0.1382,-0.1382>
+
+Time: 00:05:57.86:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <114.2493,114.2493>, velocity: <0.0000,0.0000>
+Ball 4: position: <-436.3499,-436.3499>, velocity: <-0.1365,-0.1365>
+
+Time: 00:05:59.09:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <114.2493,114.2493>, velocity: <0.0000,0.0000>
+Ball 4: position: <-436.5184,-436.5184>, velocity: <-0.1348,-0.1348>
+
+Time: 00:06:0.33:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <114.2493,114.2493>, velocity: <0.0000,0.0000>
+Ball 4: position: <-436.6847,-436.6847>, velocity: <-0.1332,-0.1332>
+
+Time: 00:06:1.56:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <114.2493,114.2493>, velocity: <0.0000,0.0000>
+Ball 4: position: <-436.8490,-436.8490>, velocity: <-0.1315,-0.1315>
+
+Time: 00:06:2.80:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <114.2493,114.2493>, velocity: <0.0000,0.0000>
+Ball 4: position: <-437.0113,-437.0113>, velocity: <-0.1299,-0.1299>
+
+Time: 00:06:4.03:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <114.2493,114.2493>, velocity: <0.0000,0.0000>
+Ball 4: position: <-437.1716,-437.1716>, velocity: <-0.1283,-0.1283>
+
+Time: 00:06:5.26:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <114.2493,114.2493>, velocity: <0.0000,0.0000>
+Ball 4: position: <-437.3299,-437.3299>, velocity: <-0.1267,-0.1267>
+
+Time: 00:06:6.50:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <114.2493,114.2493>, velocity: <0.0000,0.0000>
+Ball 4: position: <-437.4863,-437.4863>, velocity: <-0.1251,-0.1251>
+
+Time: 00:06:7.73:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <114.2493,114.2493>, velocity: <0.0000,0.0000>
+Ball 4: position: <-437.6407,-437.6407>, velocity: <-0.1236,-0.1236>
+
+Time: 00:06:8.97:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <114.2493,114.2493>, velocity: <0.0000,0.0000>
+Ball 4: position: <-437.7932,-437.7932>, velocity: <-0.1221,-0.1221>
+
+Time: 00:06:10.20:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <114.2493,114.2493>, velocity: <0.0000,0.0000>
+Ball 4: position: <-437.9438,-437.9438>, velocity: <-0.1206,-0.1206>
+
+Time: 00:06:11.43:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <114.2493,114.2493>, velocity: <0.0000,0.0000>
+Ball 4: position: <-438.0926,-438.0926>, velocity: <-0.1191,-0.1191>
+
+Time: 00:06:12.67:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <114.2493,114.2493>, velocity: <0.0000,0.0000>
+Ball 4: position: <-438.2395,-438.2395>, velocity: <-0.1176,-0.1176>
+
+Time: 00:06:13.90:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <114.2493,114.2493>, velocity: <0.0000,0.0000>
+Ball 4: position: <-438.3847,-438.3847>, velocity: <-0.1162,-0.1162>
+
+Time: 00:06:15.14:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <114.2493,114.2493>, velocity: <0.0000,0.0000>
+Ball 4: position: <-438.5280,-438.5280>, velocity: <-0.1147,-0.1147>
+
+Time: 00:06:16.37:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <114.2493,114.2493>, velocity: <0.0000,0.0000>
+Ball 4: position: <-438.6696,-438.6696>, velocity: <-0.1133,-0.1133>
+
+Time: 00:06:17.60:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <114.2493,114.2493>, velocity: <0.0000,0.0000>
+Ball 4: position: <-438.8094,-438.8094>, velocity: <-0.1119,-0.1119>
+
+Time: 00:06:18.84:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <114.2493,114.2493>, velocity: <0.0000,0.0000>
+Ball 4: position: <-438.9475,-438.9475>, velocity: <-0.1105,-0.1105>
+
+Time: 00:06:20.07:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <114.2493,114.2493>, velocity: <0.0000,0.0000>
+Ball 4: position: <-439.0839,-439.0839>, velocity: <-0.1092,-0.1092>
+
+Time: 00:06:21.31:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <114.2493,114.2493>, velocity: <0.0000,0.0000>
+Ball 4: position: <-439.2186,-439.2186>, velocity: <-0.1078,-0.1078>
+
+Time: 00:06:22.54:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <114.2493,114.2493>, velocity: <0.0000,0.0000>
+Ball 4: position: <-439.3516,-439.3516>, velocity: <-0.1065,-0.1065>
+
+Time: 00:06:23.77:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <114.2493,114.2493>, velocity: <0.0000,0.0000>
+Ball 4: position: <-439.4830,-439.4830>, velocity: <-0.1052,-0.1052>
+
+Time: 00:06:25.01:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <114.2493,114.2493>, velocity: <0.0000,0.0000>
+Ball 4: position: <-439.6128,-439.6128>, velocity: <-0.1039,-0.1039>
+
+Time: 00:06:26.24:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <114.2493,114.2493>, velocity: <0.0000,0.0000>
+Ball 4: position: <-439.7410,-439.7410>, velocity: <-0.1026,-0.1026>
+
+Time: 00:06:27.48:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <114.2493,114.2493>, velocity: <0.0000,0.0000>
+Ball 4: position: <-439.8676,-439.8676>, velocity: <-0.1013,-0.1013>
+
+Time: 00:06:28.71:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <114.2493,114.2493>, velocity: <0.0000,0.0000>
+Ball 4: position: <-439.9926,-439.9926>, velocity: <-0.1001,-0.1001>
+
+Time: 00:06:29.94:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <114.2493,114.2493>, velocity: <0.0000,0.0000>
+Ball 4: position: <-440.1161,-440.1161>, velocity: <-0.0988,-0.0988>
+
+Time: 00:06:31.18:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <114.2493,114.2493>, velocity: <0.0000,0.0000>
+Ball 4: position: <-440.2381,-440.2381>, velocity: <-0.0976,-0.0976>
+
+Time: 00:06:32.41:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <114.2493,114.2493>, velocity: <0.0000,0.0000>
+Ball 4: position: <-440.3585,-440.3585>, velocity: <-0.0964,-0.0964>
+
+Time: 00:06:33.65:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <114.2493,114.2493>, velocity: <0.0000,0.0000>
+Ball 4: position: <-440.4775,-440.4775>, velocity: <-0.0952,-0.0952>
+
+Time: 00:06:34.88:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <114.2493,114.2493>, velocity: <0.0000,0.0000>
+Ball 4: position: <-440.5950,-440.5950>, velocity: <-0.0941,-0.0941>
+
+Time: 00:06:36.11:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <114.2493,114.2493>, velocity: <0.0000,0.0000>
+Ball 4: position: <-440.7111,-440.7111>, velocity: <-0.0929,-0.0929>
+
+Time: 00:06:37.35:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <114.2493,114.2493>, velocity: <0.0000,0.0000>
+Ball 4: position: <-440.8257,-440.8257>, velocity: <-0.0917,-0.0917>
+
+Time: 00:06:38.58:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <114.2493,114.2493>, velocity: <0.0000,0.0000>
+Ball 4: position: <-440.9389,-440.9389>, velocity: <-0.0906,-0.0906>
+
+Time: 00:06:39.82:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <114.2493,114.2493>, velocity: <0.0000,0.0000>
+Ball 4: position: <-441.0507,-441.0507>, velocity: <-0.0895,-0.0895>
+
+Time: 00:06:41.05:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <114.2493,114.2493>, velocity: <0.0000,0.0000>
+Ball 4: position: <-441.1611,-441.1611>, velocity: <-0.0884,-0.0884>
+
+Time: 00:06:42.28:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <114.2493,114.2493>, velocity: <0.0000,0.0000>
+Ball 4: position: <-441.2702,-441.2702>, velocity: <-0.0873,-0.0873>
+
+Time: 00:06:43.52:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <114.2493,114.2493>, velocity: <0.0000,0.0000>
+Ball 4: position: <-441.3779,-441.3779>, velocity: <-0.0862,-0.0862>
+
+Time: 00:06:44.75:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <114.2493,114.2493>, velocity: <0.0000,0.0000>
+Ball 4: position: <-441.4843,-441.4843>, velocity: <-0.0852,-0.0852>
+
+Time: 00:06:45.99:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <114.2493,114.2493>, velocity: <0.0000,0.0000>
+Ball 4: position: <-441.5894,-441.5894>, velocity: <-0.0841,-0.0841>
+
+Time: 00:06:47.22:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <114.2493,114.2493>, velocity: <0.0000,0.0000>
+Ball 4: position: <-441.6932,-441.6932>, velocity: <-0.0831,-0.0831>
+
+Time: 00:06:48.45:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <114.2493,114.2493>, velocity: <0.0000,0.0000>
+Ball 4: position: <-441.7957,-441.7957>, velocity: <-0.0820,-0.0820>
+
+Time: 00:06:49.69:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <114.2493,114.2493>, velocity: <0.0000,0.0000>
+Ball 4: position: <-441.8970,-441.8970>, velocity: <-0.0810,-0.0810>
+
+Time: 00:06:50.92:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <114.2493,114.2493>, velocity: <0.0000,0.0000>
+Ball 4: position: <-441.9969,-441.9969>, velocity: <-0.0800,-0.0800>
+
+Time: 00:06:52.16:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <114.2493,114.2493>, velocity: <0.0000,0.0000>
+Ball 4: position: <-442.0957,-442.0957>, velocity: <-0.0790,-0.0790>
+
+Time: 00:06:53.39:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <114.2493,114.2493>, velocity: <0.0000,0.0000>
+Ball 4: position: <-442.1932,-442.1932>, velocity: <-0.0781,-0.0781>
+
+Time: 00:06:54.62:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <114.2493,114.2493>, velocity: <0.0000,0.0000>
+Ball 4: position: <-442.2896,-442.2896>, velocity: <-0.0771,-0.0771>
+
+Time: 00:06:55.86:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <114.2493,114.2493>, velocity: <0.0000,0.0000>
+Ball 4: position: <-442.3847,-442.3847>, velocity: <-0.0762,-0.0762>
+
+Time: 00:06:57.09:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <114.2493,114.2493>, velocity: <0.0000,0.0000>
+Ball 4: position: <-442.4787,-442.4787>, velocity: <-0.0752,-0.0752>
+
+Time: 00:06:58.33:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <114.2493,114.2493>, velocity: <0.0000,0.0000>
+Ball 4: position: <-442.5715,-442.5715>, velocity: <-0.0743,-0.0743>
+
+Time: 00:06:59.56:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <114.2493,114.2493>, velocity: <0.0000,0.0000>
+Ball 4: position: <-442.6632,-442.6632>, velocity: <-0.0734,-0.0734>
+
+Time: 00:07:0.79:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <114.2493,114.2493>, velocity: <0.0000,0.0000>
+Ball 4: position: <-442.7537,-442.7537>, velocity: <-0.0725,-0.0725>
+
+Time: 00:07:2.03:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <114.2493,114.2493>, velocity: <0.0000,0.0000>
+Ball 4: position: <-442.8431,-442.8431>, velocity: <-0.0716,-0.0716>
+
+Time: 00:07:3.26:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <114.2493,114.2493>, velocity: <0.0000,0.0000>
+Ball 4: position: <-442.9314,-442.9314>, velocity: <-0.0707,-0.0707>
+
+Time: 00:07:4.50:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <114.2493,114.2493>, velocity: <0.0000,0.0000>
+Ball 4: position: <-443.0187,-443.0187>, velocity: <-0.0698,-0.0698>
+
+Time: 00:07:5.73:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <114.2493,114.2493>, velocity: <0.0000,0.0000>
+Ball 4: position: <-443.1048,-443.1048>, velocity: <-0.0690,-0.0690>
+
+Time: 00:07:6.96:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <114.2493,114.2493>, velocity: <0.0000,0.0000>
+Ball 4: position: <-443.1899,-443.1899>, velocity: <-0.0681,-0.0681>
+
+Time: 00:07:8.20:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <114.2493,114.2493>, velocity: <0.0000,0.0000>
+Ball 4: position: <-443.2739,-443.2739>, velocity: <-0.0673,-0.0673>
+
+Time: 00:07:9.43:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <114.2493,114.2493>, velocity: <0.0000,0.0000>
+Ball 4: position: <-443.3569,-443.3569>, velocity: <-0.0664,-0.0664>
+
+Time: 00:07:10.67:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <114.2493,114.2493>, velocity: <0.0000,0.0000>
+Ball 4: position: <-443.4389,-443.4389>, velocity: <-0.0656,-0.0656>
+
+Time: 00:07:11.90:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <114.2493,114.2493>, velocity: <0.0000,0.0000>
+Ball 4: position: <-443.5199,-443.5199>, velocity: <-0.0648,-0.0648>
+
+Time: 00:07:13.13:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <114.2493,114.2493>, velocity: <0.0000,0.0000>
+Ball 4: position: <-443.5998,-443.5998>, velocity: <-0.0640,-0.0640>
+
+Time: 00:07:14.37:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <114.2493,114.2493>, velocity: <0.0000,0.0000>
+Ball 4: position: <-443.6788,-443.6788>, velocity: <-0.0632,-0.0632>
+
+Time: 00:07:15.60:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <114.2493,114.2493>, velocity: <0.0000,0.0000>
+Ball 4: position: <-443.7568,-443.7568>, velocity: <-0.0624,-0.0624>
+
+Time: 00:07:16.84:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <114.2493,114.2493>, velocity: <0.0000,0.0000>
+Ball 4: position: <-443.8339,-443.8339>, velocity: <-0.0617,-0.0617>
+
+Time: 00:07:18.07:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <114.2493,114.2493>, velocity: <0.0000,0.0000>
+Ball 4: position: <-443.9100,-443.9100>, velocity: <-0.0609,-0.0609>
+
+Time: 00:07:19.30:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <114.2493,114.2493>, velocity: <0.0000,0.0000>
+Ball 4: position: <-443.9851,-443.9851>, velocity: <-0.0601,-0.0601>
+
+Time: 00:07:20.54:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <114.2493,114.2493>, velocity: <0.0000,0.0000>
+Ball 4: position: <-444.0593,-444.0593>, velocity: <-0.0594,-0.0594>
+
+Time: 00:07:21.77:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <114.2493,114.2493>, velocity: <0.0000,0.0000>
+Ball 4: position: <-444.1326,-444.1326>, velocity: <-0.0587,-0.0587>
+
+Time: 00:07:23.01:
+Ball 0: position: <1000.9462,1000.9462>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1067.6829,-1067.6829>, velocity: <0.0000,0.0000>
+Ball 2: position: <-1109.4512,-1109.4512>, velocity: <0.0000,0.0000>
+Ball 3: position: <114.2493,114.2493>, velocity: <0.0000,0.0000>
+Ball 4: position: <-444.2050,-444.2050>, velocity: <0.0000,0.0000>
+
+NO COLLISION IS POSSIBLE
+.
+.
+======================================
+... Testing SoccerSim valid ball set ten balls 10 second time slice...
+======================================
+Time: 00:00:0.00:
+Ball 0: position: <150.0000,150.0000>, velocity: <10.0000,10.0000>
+Ball 1: position: <100.0000,100.0000>, velocity: <-100.0000,-100.0000>
+Ball 2: position: <200.0000,200.0000>, velocity: <200.0000,200.0000>
+Ball 3: position: <250.0000,250.0000>, velocity: <-110.0000,-110.0000>
+Ball 4: position: <20.0000,20.0000>, velocity: <1.0000,1.0000>
+Ball 5: position: <50.0000,50.0000>, velocity: <-5.0000,-5.0000>
+Ball 6: position: <-100.0000,-100.0000>, velocity: <200.0000,200.0000>
+Ball 7: position: <-200.0000,-200.0000>, velocity: <300.0000,300.0000>
+Ball 8: position: <-110.0000,-110.0000>, velocity: <20.0000,20.0000>
+Ball 9: position: <1.0000,1.0000>, velocity: <50.0000,50.0000>
+
+Time: 00:00:10.00:
+Ball 0: position: <250.0000,250.0000>, velocity: <9.0000,9.0000>
+Ball 1: position: <-900.0000,-900.0000>, velocity: <-90.0000,-90.0000>
+Ball 2: position: <2200.0000,2200.0000>, velocity: <0.0000,0.0000>
+Ball 3: position: <-850.0000,-850.0000>, velocity: <-99.0000,-99.0000>
+Ball 4: position: <30.0000,30.0000>, velocity: <0.9000,0.9000>
+Ball 5: position: <0.0000,0.0000>, velocity: <-4.5000,-4.5000>
+Ball 6: position: <1900.0000,1900.0000>, velocity: <0.0000,0.0000>
+Ball 7: position: <2800.0000,2800.0000>, velocity: <0.0000,0.0000>
+Ball 8: position: <90.0000,90.0000>, velocity: <18.0000,18.0000>
+Ball 9: position: <501.0000,501.0000>, velocity: <45.0000,45.0000>
+
+Time: 00:00:20.00:
+Ball 0: position: <340.0000,340.0000>, velocity: <8.1000,8.1000>
+Ball 1: position: <-1800.0000,-1800.0000>, velocity: <0.0000,0.0000>
+Ball 2: position: <2200.0000,2200.0000>, velocity: <0.0000,0.0000>
+Ball 3: position: <-1840.0000,-1840.0000>, velocity: <0.0000,0.0000>
+Ball 4: position: <39.0000,39.0000>, velocity: <0.8100,0.8100>
+Ball 5: position: <-45.0000,-45.0000>, velocity: <-4.0500,-4.0500>
+Ball 6: position: <1900.0000,1900.0000>, velocity: <0.0000,0.0000>
+Ball 7: position: <2800.0000,2800.0000>, velocity: <0.0000,0.0000>
+Ball 8: position: <270.0000,270.0000>, velocity: <16.2000,16.2000>
+Ball 9: position: <951.0000,951.0000>, velocity: <40.5000,40.5000>
+
+Time: 00:00:30.00:
+Ball 0: position: <421.0000,421.0000>, velocity: <7.2900,7.2900>
+Ball 1: position: <-1800.0000,-1800.0000>, velocity: <0.0000,0.0000>
+Ball 2: position: <2200.0000,2200.0000>, velocity: <0.0000,0.0000>
+Ball 3: position: <-1840.0000,-1840.0000>, velocity: <0.0000,0.0000>
+Ball 4: position: <47.1000,47.1000>, velocity: <0.7290,0.7290>
+Ball 5: position: <-85.5000,-85.5000>, velocity: <-3.6450,-3.6450>
+Ball 6: position: <1900.0000,1900.0000>, velocity: <0.0000,0.0000>
+Ball 7: position: <2800.0000,2800.0000>, velocity: <0.0000,0.0000>
+Ball 8: position: <432.0000,432.0000>, velocity: <14.5800,14.5800>
+Ball 9: position: <1356.0000,1356.0000>, velocity: <0.0000,0.0000>
+
+Time: 00:00:40.00:
+Ball 0: position: <493.9000,493.9000>, velocity: <6.5610,6.5610>
+Ball 1: position: <-1800.0000,-1800.0000>, velocity: <0.0000,0.0000>
+Ball 2: position: <2200.0000,2200.0000>, velocity: <0.0000,0.0000>
+Ball 3: position: <-1840.0000,-1840.0000>, velocity: <0.0000,0.0000>
+Ball 4: position: <54.3900,54.3900>, velocity: <0.6561,0.6561>
+Ball 5: position: <-121.9500,-121.9500>, velocity: <-3.2805,-3.2805>
+Ball 6: position: <1900.0000,1900.0000>, velocity: <0.0000,0.0000>
+Ball 7: position: <2800.0000,2800.0000>, velocity: <0.0000,0.0000>
+Ball 8: position: <577.8000,577.8000>, velocity: <13.1220,13.1220>
+Ball 9: position: <1356.0000,1356.0000>, velocity: <0.0000,0.0000>
+
+Time: 00:00:50.00:
+Ball 0: position: <559.5100,559.5100>, velocity: <5.9049,5.9049>
+Ball 1: position: <-1800.0000,-1800.0000>, velocity: <0.0000,0.0000>
+Ball 2: position: <2200.0000,2200.0000>, velocity: <0.0000,0.0000>
+Ball 3: position: <-1840.0000,-1840.0000>, velocity: <0.0000,0.0000>
+Ball 4: position: <60.9510,60.9510>, velocity: <0.5905,0.5905>
+Ball 5: position: <-154.7550,-154.7550>, velocity: <-2.9525,-2.9525>
+Ball 6: position: <1900.0000,1900.0000>, velocity: <0.0000,0.0000>
+Ball 7: position: <2800.0000,2800.0000>, velocity: <0.0000,0.0000>
+Ball 8: position: <709.0200,709.0200>, velocity: <11.8098,11.8098>
+Ball 9: position: <1356.0000,1356.0000>, velocity: <0.0000,0.0000>
+
+Time: 00:01:0.00:
+Ball 0: position: <618.5590,618.5590>, velocity: <5.3144,5.3144>
+Ball 1: position: <-1800.0000,-1800.0000>, velocity: <0.0000,0.0000>
+Ball 2: position: <2200.0000,2200.0000>, velocity: <0.0000,0.0000>
+Ball 3: position: <-1840.0000,-1840.0000>, velocity: <0.0000,0.0000>
+Ball 4: position: <66.8559,66.8559>, velocity: <0.5314,0.5314>
+Ball 5: position: <-184.2795,-184.2795>, velocity: <-2.6572,-2.6572>
+Ball 6: position: <1900.0000,1900.0000>, velocity: <0.0000,0.0000>
+Ball 7: position: <2800.0000,2800.0000>, velocity: <0.0000,0.0000>
+Ball 8: position: <827.1180,827.1180>, velocity: <10.6288,10.6288>
+Ball 9: position: <1356.0000,1356.0000>, velocity: <0.0000,0.0000>
+
+Time: 00:01:10.00:
+Ball 0: position: <671.7031,671.7031>, velocity: <4.7830,4.7830>
+Ball 1: position: <-1800.0000,-1800.0000>, velocity: <0.0000,0.0000>
+Ball 2: position: <2200.0000,2200.0000>, velocity: <0.0000,0.0000>
+Ball 3: position: <-1840.0000,-1840.0000>, velocity: <0.0000,0.0000>
+Ball 4: position: <72.1703,72.1703>, velocity: <0.4783,0.4783>
+Ball 5: position: <-210.8515,-210.8515>, velocity: <-2.3915,-2.3915>
+Ball 6: position: <1900.0000,1900.0000>, velocity: <0.0000,0.0000>
+Ball 7: position: <2800.0000,2800.0000>, velocity: <0.0000,0.0000>
+Ball 8: position: <933.4062,933.4062>, velocity: <9.5659,9.5659>
+Ball 9: position: <1356.0000,1356.0000>, velocity: <0.0000,0.0000>
+
+Time: 00:01:20.00:
+Ball 0: position: <719.5328,719.5328>, velocity: <4.3047,4.3047>
+Ball 1: position: <-1800.0000,-1800.0000>, velocity: <0.0000,0.0000>
+Ball 2: position: <2200.0000,2200.0000>, velocity: <0.0000,0.0000>
+Ball 3: position: <-1840.0000,-1840.0000>, velocity: <0.0000,0.0000>
+Ball 4: position: <76.9533,76.9533>, velocity: <0.4305,0.4305>
+Ball 5: position: <-234.7664,-234.7664>, velocity: <-2.1523,-2.1523>
+Ball 6: position: <1900.0000,1900.0000>, velocity: <0.0000,0.0000>
+Ball 7: position: <2800.0000,2800.0000>, velocity: <0.0000,0.0000>
+Ball 8: position: <1029.0656,1029.0656>, velocity: <0.0000,0.0000>
+Ball 9: position: <1356.0000,1356.0000>, velocity: <0.0000,0.0000>
+
+Time: 00:01:30.00:
+Ball 0: position: <762.5795,762.5795>, velocity: <3.8742,3.8742>
+Ball 1: position: <-1800.0000,-1800.0000>, velocity: <0.0000,0.0000>
+Ball 2: position: <2200.0000,2200.0000>, velocity: <0.0000,0.0000>
+Ball 3: position: <-1840.0000,-1840.0000>, velocity: <0.0000,0.0000>
+Ball 4: position: <81.2580,81.2580>, velocity: <0.3874,0.3874>
+Ball 5: position: <-256.2898,-256.2898>, velocity: <-1.9371,-1.9371>
+Ball 6: position: <1900.0000,1900.0000>, velocity: <0.0000,0.0000>
+Ball 7: position: <2800.0000,2800.0000>, velocity: <0.0000,0.0000>
+Ball 8: position: <1029.0656,1029.0656>, velocity: <0.0000,0.0000>
+Ball 9: position: <1356.0000,1356.0000>, velocity: <0.0000,0.0000>
+
+Time: 00:01:40.00:
+Ball 0: position: <801.3216,801.3216>, velocity: <3.4868,3.4868>
+Ball 1: position: <-1800.0000,-1800.0000>, velocity: <0.0000,0.0000>
+Ball 2: position: <2200.0000,2200.0000>, velocity: <0.0000,0.0000>
+Ball 3: position: <-1840.0000,-1840.0000>, velocity: <0.0000,0.0000>
+Ball 4: position: <85.1322,85.1322>, velocity: <0.3487,0.3487>
+Ball 5: position: <-275.6608,-275.6608>, velocity: <-1.7434,-1.7434>
+Ball 6: position: <1900.0000,1900.0000>, velocity: <0.0000,0.0000>
+Ball 7: position: <2800.0000,2800.0000>, velocity: <0.0000,0.0000>
+Ball 8: position: <1029.0656,1029.0656>, velocity: <0.0000,0.0000>
+Ball 9: position: <1356.0000,1356.0000>, velocity: <0.0000,0.0000>
+
+Time: 00:01:50.00:
+Ball 0: position: <836.1894,836.1894>, velocity: <3.1381,3.1381>
+Ball 1: position: <-1800.0000,-1800.0000>, velocity: <0.0000,0.0000>
+Ball 2: position: <2200.0000,2200.0000>, velocity: <0.0000,0.0000>
+Ball 3: position: <-1840.0000,-1840.0000>, velocity: <0.0000,0.0000>
+Ball 4: position: <88.6189,88.6189>, velocity: <0.3138,0.3138>
+Ball 5: position: <-293.0947,-293.0947>, velocity: <-1.5691,-1.5691>
+Ball 6: position: <1900.0000,1900.0000>, velocity: <0.0000,0.0000>
+Ball 7: position: <2800.0000,2800.0000>, velocity: <0.0000,0.0000>
+Ball 8: position: <1029.0656,1029.0656>, velocity: <0.0000,0.0000>
+Ball 9: position: <1356.0000,1356.0000>, velocity: <0.0000,0.0000>
+
+Time: 00:02:0.00:
+Ball 0: position: <867.5705,867.5705>, velocity: <2.8243,2.8243>
+Ball 1: position: <-1800.0000,-1800.0000>, velocity: <0.0000,0.0000>
+Ball 2: position: <2200.0000,2200.0000>, velocity: <0.0000,0.0000>
+Ball 3: position: <-1840.0000,-1840.0000>, velocity: <0.0000,0.0000>
+Ball 4: position: <91.7570,91.7570>, velocity: <0.2824,0.2824>
+Ball 5: position: <-308.7852,-308.7852>, velocity: <-1.4121,-1.4121>
+Ball 6: position: <1900.0000,1900.0000>, velocity: <0.0000,0.0000>
+Ball 7: position: <2800.0000,2800.0000>, velocity: <0.0000,0.0000>
+Ball 8: position: <1029.0656,1029.0656>, velocity: <0.0000,0.0000>
+Ball 9: position: <1356.0000,1356.0000>, velocity: <0.0000,0.0000>
+
+Time: 00:02:10.00:
+Ball 0: position: <895.8134,895.8134>, velocity: <2.5419,2.5419>
+Ball 1: position: <-1800.0000,-1800.0000>, velocity: <0.0000,0.0000>
+Ball 2: position: <2200.0000,2200.0000>, velocity: <0.0000,0.0000>
+Ball 3: position: <-1840.0000,-1840.0000>, velocity: <0.0000,0.0000>
+Ball 4: position: <94.5813,94.5813>, velocity: <0.2542,0.2542>
+Ball 5: position: <-322.9067,-322.9067>, velocity: <-1.2709,-1.2709>
+Ball 6: position: <1900.0000,1900.0000>, velocity: <0.0000,0.0000>
+Ball 7: position: <2800.0000,2800.0000>, velocity: <0.0000,0.0000>
+Ball 8: position: <1029.0656,1029.0656>, velocity: <0.0000,0.0000>
+Ball 9: position: <1356.0000,1356.0000>, velocity: <0.0000,0.0000>
+
+Time: 00:02:20.00:
+Ball 0: position: <921.2321,921.2321>, velocity: <2.2877,2.2877>
+Ball 1: position: <-1800.0000,-1800.0000>, velocity: <0.0000,0.0000>
+Ball 2: position: <2200.0000,2200.0000>, velocity: <0.0000,0.0000>
+Ball 3: position: <-1840.0000,-1840.0000>, velocity: <0.0000,0.0000>
+Ball 4: position: <97.1232,97.1232>, velocity: <0.2288,0.2288>
+Ball 5: position: <-335.6160,-335.6160>, velocity: <-1.1438,-1.1438>
+Ball 6: position: <1900.0000,1900.0000>, velocity: <0.0000,0.0000>
+Ball 7: position: <2800.0000,2800.0000>, velocity: <0.0000,0.0000>
+Ball 8: position: <1029.0656,1029.0656>, velocity: <0.0000,0.0000>
+Ball 9: position: <1356.0000,1356.0000>, velocity: <0.0000,0.0000>
+
+Time: 00:02:30.00:
+Ball 0: position: <944.1089,944.1089>, velocity: <2.0589,2.0589>
+Ball 1: position: <-1800.0000,-1800.0000>, velocity: <0.0000,0.0000>
+Ball 2: position: <2200.0000,2200.0000>, velocity: <0.0000,0.0000>
+Ball 3: position: <-1840.0000,-1840.0000>, velocity: <0.0000,0.0000>
+Ball 4: position: <99.4109,99.4109>, velocity: <0.2059,0.2059>
+Ball 5: position: <-347.0544,-347.0544>, velocity: <-1.0295,-1.0295>
+Ball 6: position: <1900.0000,1900.0000>, velocity: <0.0000,0.0000>
+Ball 7: position: <2800.0000,2800.0000>, velocity: <0.0000,0.0000>
+Ball 8: position: <1029.0656,1029.0656>, velocity: <0.0000,0.0000>
+Ball 9: position: <1356.0000,1356.0000>, velocity: <0.0000,0.0000>
+
+Time: 00:02:40.00:
+Ball 0: position: <964.6980,964.6980>, velocity: <1.8530,1.8530>
+Ball 1: position: <-1800.0000,-1800.0000>, velocity: <0.0000,0.0000>
+Ball 2: position: <2200.0000,2200.0000>, velocity: <0.0000,0.0000>
+Ball 3: position: <-1840.0000,-1840.0000>, velocity: <0.0000,0.0000>
+Ball 4: position: <101.4698,101.4698>, velocity: <0.1853,0.1853>
+Ball 5: position: <-357.3490,-357.3490>, velocity: <-0.9265,-0.9265>
+Ball 6: position: <1900.0000,1900.0000>, velocity: <0.0000,0.0000>
+Ball 7: position: <2800.0000,2800.0000>, velocity: <0.0000,0.0000>
+Ball 8: position: <1029.0656,1029.0656>, velocity: <0.0000,0.0000>
+Ball 9: position: <1356.0000,1356.0000>, velocity: <0.0000,0.0000>
+
+Time: 00:02:50.00:
+Ball 0: position: <983.2282,983.2282>, velocity: <1.6677,1.6677>
+Ball 1: position: <-1800.0000,-1800.0000>, velocity: <0.0000,0.0000>
+Ball 2: position: <2200.0000,2200.0000>, velocity: <0.0000,0.0000>
+Ball 3: position: <-1840.0000,-1840.0000>, velocity: <0.0000,0.0000>
+Ball 4: position: <103.3228,103.3228>, velocity: <0.1668,0.1668>
+Ball 5: position: <-366.6141,-366.6141>, velocity: <-0.8339,-0.8339>
+Ball 6: position: <1900.0000,1900.0000>, velocity: <0.0000,0.0000>
+Ball 7: position: <2800.0000,2800.0000>, velocity: <0.0000,0.0000>
+Ball 8: position: <1029.0656,1029.0656>, velocity: <0.0000,0.0000>
+Ball 9: position: <1356.0000,1356.0000>, velocity: <0.0000,0.0000>
+
+Time: 00:03:0.00:
+Ball 0: position: <999.9054,999.9054>, velocity: <1.5009,1.5009>
+Ball 1: position: <-1800.0000,-1800.0000>, velocity: <0.0000,0.0000>
+Ball 2: position: <2200.0000,2200.0000>, velocity: <0.0000,0.0000>
+Ball 3: position: <-1840.0000,-1840.0000>, velocity: <0.0000,0.0000>
+Ball 4: position: <104.9905,104.9905>, velocity: <0.1501,0.1501>
+Ball 5: position: <-374.9527,-374.9527>, velocity: <-0.7505,-0.7505>
+Ball 6: position: <1900.0000,1900.0000>, velocity: <0.0000,0.0000>
+Ball 7: position: <2800.0000,2800.0000>, velocity: <0.0000,0.0000>
+Ball 8: position: <1029.0656,1029.0656>, velocity: <0.0000,0.0000>
+Ball 9: position: <1356.0000,1356.0000>, velocity: <0.0000,0.0000>
+
+Time: 00:03:10.00:
+Ball 0: position: <1014.9148,1014.9148>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1800.0000,-1800.0000>, velocity: <0.0000,0.0000>
+Ball 2: position: <2200.0000,2200.0000>, velocity: <0.0000,0.0000>
+Ball 3: position: <-1840.0000,-1840.0000>, velocity: <0.0000,0.0000>
+Ball 4: position: <106.4915,106.4915>, velocity: <0.1351,0.1351>
+Ball 5: position: <-382.4574,-382.4574>, velocity: <-0.6754,-0.6754>
+Ball 6: position: <1900.0000,1900.0000>, velocity: <0.0000,0.0000>
+Ball 7: position: <2800.0000,2800.0000>, velocity: <0.0000,0.0000>
+Ball 8: position: <1029.0656,1029.0656>, velocity: <0.0000,0.0000>
+Ball 9: position: <1356.0000,1356.0000>, velocity: <0.0000,0.0000>
+
+Time: 00:03:20.00:
+Ball 0: position: <1014.9148,1014.9148>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1800.0000,-1800.0000>, velocity: <0.0000,0.0000>
+Ball 2: position: <2200.0000,2200.0000>, velocity: <0.0000,0.0000>
+Ball 3: position: <-1840.0000,-1840.0000>, velocity: <0.0000,0.0000>
+Ball 4: position: <107.8423,107.8423>, velocity: <0.1216,0.1216>
+Ball 5: position: <-389.2117,-389.2117>, velocity: <-0.6079,-0.6079>
+Ball 6: position: <1900.0000,1900.0000>, velocity: <0.0000,0.0000>
+Ball 7: position: <2800.0000,2800.0000>, velocity: <0.0000,0.0000>
+Ball 8: position: <1029.0656,1029.0656>, velocity: <0.0000,0.0000>
+Ball 9: position: <1356.0000,1356.0000>, velocity: <0.0000,0.0000>
+
+Time: 00:03:30.00:
+Ball 0: position: <1014.9148,1014.9148>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1800.0000,-1800.0000>, velocity: <0.0000,0.0000>
+Ball 2: position: <2200.0000,2200.0000>, velocity: <0.0000,0.0000>
+Ball 3: position: <-1840.0000,-1840.0000>, velocity: <0.0000,0.0000>
+Ball 4: position: <109.0581,109.0581>, velocity: <0.1094,0.1094>
+Ball 5: position: <-395.2905,-395.2905>, velocity: <-0.5471,-0.5471>
+Ball 6: position: <1900.0000,1900.0000>, velocity: <0.0000,0.0000>
+Ball 7: position: <2800.0000,2800.0000>, velocity: <0.0000,0.0000>
+Ball 8: position: <1029.0656,1029.0656>, velocity: <0.0000,0.0000>
+Ball 9: position: <1356.0000,1356.0000>, velocity: <0.0000,0.0000>
+
+Time: 00:03:40.00:
+Ball 0: position: <1014.9148,1014.9148>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1800.0000,-1800.0000>, velocity: <0.0000,0.0000>
+Ball 2: position: <2200.0000,2200.0000>, velocity: <0.0000,0.0000>
+Ball 3: position: <-1840.0000,-1840.0000>, velocity: <0.0000,0.0000>
+Ball 4: position: <110.1523,110.1523>, velocity: <0.0985,0.0985>
+Ball 5: position: <-400.7615,-400.7615>, velocity: <-0.4924,-0.4924>
+Ball 6: position: <1900.0000,1900.0000>, velocity: <0.0000,0.0000>
+Ball 7: position: <2800.0000,2800.0000>, velocity: <0.0000,0.0000>
+Ball 8: position: <1029.0656,1029.0656>, velocity: <0.0000,0.0000>
+Ball 9: position: <1356.0000,1356.0000>, velocity: <0.0000,0.0000>
+
+Time: 00:03:50.00:
+Ball 0: position: <1014.9148,1014.9148>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1800.0000,-1800.0000>, velocity: <0.0000,0.0000>
+Ball 2: position: <2200.0000,2200.0000>, velocity: <0.0000,0.0000>
+Ball 3: position: <-1840.0000,-1840.0000>, velocity: <0.0000,0.0000>
+Ball 4: position: <111.1371,111.1371>, velocity: <0.0886,0.0886>
+Ball 5: position: <-405.6853,-405.6853>, velocity: <-0.4431,-0.4431>
+Ball 6: position: <1900.0000,1900.0000>, velocity: <0.0000,0.0000>
+Ball 7: position: <2800.0000,2800.0000>, velocity: <0.0000,0.0000>
+Ball 8: position: <1029.0656,1029.0656>, velocity: <0.0000,0.0000>
+Ball 9: position: <1356.0000,1356.0000>, velocity: <0.0000,0.0000>
+
+Time: 00:04:0.00:
+Ball 0: position: <1014.9148,1014.9148>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1800.0000,-1800.0000>, velocity: <0.0000,0.0000>
+Ball 2: position: <2200.0000,2200.0000>, velocity: <0.0000,0.0000>
+Ball 3: position: <-1840.0000,-1840.0000>, velocity: <0.0000,0.0000>
+Ball 4: position: <112.0234,112.0234>, velocity: <0.0798,0.0798>
+Ball 5: position: <-410.1168,-410.1168>, velocity: <-0.3988,-0.3988>
+Ball 6: position: <1900.0000,1900.0000>, velocity: <0.0000,0.0000>
+Ball 7: position: <2800.0000,2800.0000>, velocity: <0.0000,0.0000>
+Ball 8: position: <1029.0656,1029.0656>, velocity: <0.0000,0.0000>
+Ball 9: position: <1356.0000,1356.0000>, velocity: <0.0000,0.0000>
+
+Time: 00:04:10.00:
+Ball 0: position: <1014.9148,1014.9148>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1800.0000,-1800.0000>, velocity: <0.0000,0.0000>
+Ball 2: position: <2200.0000,2200.0000>, velocity: <0.0000,0.0000>
+Ball 3: position: <-1840.0000,-1840.0000>, velocity: <0.0000,0.0000>
+Ball 4: position: <112.8210,112.8210>, velocity: <0.0718,0.0718>
+Ball 5: position: <-414.1051,-414.1051>, velocity: <-0.3589,-0.3589>
+Ball 6: position: <1900.0000,1900.0000>, velocity: <0.0000,0.0000>
+Ball 7: position: <2800.0000,2800.0000>, velocity: <0.0000,0.0000>
+Ball 8: position: <1029.0656,1029.0656>, velocity: <0.0000,0.0000>
+Ball 9: position: <1356.0000,1356.0000>, velocity: <0.0000,0.0000>
+
+Time: 00:04:20.00:
+Ball 0: position: <1014.9148,1014.9148>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1800.0000,-1800.0000>, velocity: <0.0000,0.0000>
+Ball 2: position: <2200.0000,2200.0000>, velocity: <0.0000,0.0000>
+Ball 3: position: <-1840.0000,-1840.0000>, velocity: <0.0000,0.0000>
+Ball 4: position: <113.5389,113.5389>, velocity: <0.0646,0.0646>
+Ball 5: position: <-417.6946,-417.6946>, velocity: <-0.3231,-0.3231>
+Ball 6: position: <1900.0000,1900.0000>, velocity: <0.0000,0.0000>
+Ball 7: position: <2800.0000,2800.0000>, velocity: <0.0000,0.0000>
+Ball 8: position: <1029.0656,1029.0656>, velocity: <0.0000,0.0000>
+Ball 9: position: <1356.0000,1356.0000>, velocity: <0.0000,0.0000>
+
+Time: 00:04:30.00:
+Ball 0: position: <1014.9148,1014.9148>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1800.0000,-1800.0000>, velocity: <0.0000,0.0000>
+Ball 2: position: <2200.0000,2200.0000>, velocity: <0.0000,0.0000>
+Ball 3: position: <-1840.0000,-1840.0000>, velocity: <0.0000,0.0000>
+Ball 4: position: <114.1850,114.1850>, velocity: <0.0581,0.0581>
+Ball 5: position: <-420.9251,-420.9251>, velocity: <-0.2907,-0.2907>
+Ball 6: position: <1900.0000,1900.0000>, velocity: <0.0000,0.0000>
+Ball 7: position: <2800.0000,2800.0000>, velocity: <0.0000,0.0000>
+Ball 8: position: <1029.0656,1029.0656>, velocity: <0.0000,0.0000>
+Ball 9: position: <1356.0000,1356.0000>, velocity: <0.0000,0.0000>
+
+Time: 00:04:40.00:
+Ball 0: position: <1014.9148,1014.9148>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1800.0000,-1800.0000>, velocity: <0.0000,0.0000>
+Ball 2: position: <2200.0000,2200.0000>, velocity: <0.0000,0.0000>
+Ball 3: position: <-1840.0000,-1840.0000>, velocity: <0.0000,0.0000>
+Ball 4: position: <114.7665,114.7665>, velocity: <0.0000,0.0000>
+Ball 5: position: <-423.8326,-423.8326>, velocity: <-0.2617,-0.2617>
+Ball 6: position: <1900.0000,1900.0000>, velocity: <0.0000,0.0000>
+Ball 7: position: <2800.0000,2800.0000>, velocity: <0.0000,0.0000>
+Ball 8: position: <1029.0656,1029.0656>, velocity: <0.0000,0.0000>
+Ball 9: position: <1356.0000,1356.0000>, velocity: <0.0000,0.0000>
+
+Time: 00:04:50.00:
+Ball 0: position: <1014.9148,1014.9148>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1800.0000,-1800.0000>, velocity: <0.0000,0.0000>
+Ball 2: position: <2200.0000,2200.0000>, velocity: <0.0000,0.0000>
+Ball 3: position: <-1840.0000,-1840.0000>, velocity: <0.0000,0.0000>
+Ball 4: position: <114.7665,114.7665>, velocity: <0.0000,0.0000>
+Ball 5: position: <-426.4494,-426.4494>, velocity: <-0.2355,-0.2355>
+Ball 6: position: <1900.0000,1900.0000>, velocity: <0.0000,0.0000>
+Ball 7: position: <2800.0000,2800.0000>, velocity: <0.0000,0.0000>
+Ball 8: position: <1029.0656,1029.0656>, velocity: <0.0000,0.0000>
+Ball 9: position: <1356.0000,1356.0000>, velocity: <0.0000,0.0000>
+
+Time: 00:05:0.00:
+Ball 0: position: <1014.9148,1014.9148>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1800.0000,-1800.0000>, velocity: <0.0000,0.0000>
+Ball 2: position: <2200.0000,2200.0000>, velocity: <0.0000,0.0000>
+Ball 3: position: <-1840.0000,-1840.0000>, velocity: <0.0000,0.0000>
+Ball 4: position: <114.7665,114.7665>, velocity: <0.0000,0.0000>
+Ball 5: position: <-428.8044,-428.8044>, velocity: <-0.2120,-0.2120>
+Ball 6: position: <1900.0000,1900.0000>, velocity: <0.0000,0.0000>
+Ball 7: position: <2800.0000,2800.0000>, velocity: <0.0000,0.0000>
+Ball 8: position: <1029.0656,1029.0656>, velocity: <0.0000,0.0000>
+Ball 9: position: <1356.0000,1356.0000>, velocity: <0.0000,0.0000>
+
+Time: 00:05:10.00:
+Ball 0: position: <1014.9148,1014.9148>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1800.0000,-1800.0000>, velocity: <0.0000,0.0000>
+Ball 2: position: <2200.0000,2200.0000>, velocity: <0.0000,0.0000>
+Ball 3: position: <-1840.0000,-1840.0000>, velocity: <0.0000,0.0000>
+Ball 4: position: <114.7665,114.7665>, velocity: <0.0000,0.0000>
+Ball 5: position: <-430.9240,-430.9240>, velocity: <-0.1908,-0.1908>
+Ball 6: position: <1900.0000,1900.0000>, velocity: <0.0000,0.0000>
+Ball 7: position: <2800.0000,2800.0000>, velocity: <0.0000,0.0000>
+Ball 8: position: <1029.0656,1029.0656>, velocity: <0.0000,0.0000>
+Ball 9: position: <1356.0000,1356.0000>, velocity: <0.0000,0.0000>
+
+Time: 00:05:20.00:
+Ball 0: position: <1014.9148,1014.9148>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1800.0000,-1800.0000>, velocity: <0.0000,0.0000>
+Ball 2: position: <2200.0000,2200.0000>, velocity: <0.0000,0.0000>
+Ball 3: position: <-1840.0000,-1840.0000>, velocity: <0.0000,0.0000>
+Ball 4: position: <114.7665,114.7665>, velocity: <0.0000,0.0000>
+Ball 5: position: <-432.8316,-432.8316>, velocity: <-0.1717,-0.1717>
+Ball 6: position: <1900.0000,1900.0000>, velocity: <0.0000,0.0000>
+Ball 7: position: <2800.0000,2800.0000>, velocity: <0.0000,0.0000>
+Ball 8: position: <1029.0656,1029.0656>, velocity: <0.0000,0.0000>
+Ball 9: position: <1356.0000,1356.0000>, velocity: <0.0000,0.0000>
+
+Time: 00:05:30.00:
+Ball 0: position: <1014.9148,1014.9148>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1800.0000,-1800.0000>, velocity: <0.0000,0.0000>
+Ball 2: position: <2200.0000,2200.0000>, velocity: <0.0000,0.0000>
+Ball 3: position: <-1840.0000,-1840.0000>, velocity: <0.0000,0.0000>
+Ball 4: position: <114.7665,114.7665>, velocity: <0.0000,0.0000>
+Ball 5: position: <-434.5484,-434.5484>, velocity: <-0.1545,-0.1545>
+Ball 6: position: <1900.0000,1900.0000>, velocity: <0.0000,0.0000>
+Ball 7: position: <2800.0000,2800.0000>, velocity: <0.0000,0.0000>
+Ball 8: position: <1029.0656,1029.0656>, velocity: <0.0000,0.0000>
+Ball 9: position: <1356.0000,1356.0000>, velocity: <0.0000,0.0000>
+
+Time: 00:05:40.00:
+Ball 0: position: <1014.9148,1014.9148>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1800.0000,-1800.0000>, velocity: <0.0000,0.0000>
+Ball 2: position: <2200.0000,2200.0000>, velocity: <0.0000,0.0000>
+Ball 3: position: <-1840.0000,-1840.0000>, velocity: <0.0000,0.0000>
+Ball 4: position: <114.7665,114.7665>, velocity: <0.0000,0.0000>
+Ball 5: position: <-436.0936,-436.0936>, velocity: <-0.1391,-0.1391>
+Ball 6: position: <1900.0000,1900.0000>, velocity: <0.0000,0.0000>
+Ball 7: position: <2800.0000,2800.0000>, velocity: <0.0000,0.0000>
+Ball 8: position: <1029.0656,1029.0656>, velocity: <0.0000,0.0000>
+Ball 9: position: <1356.0000,1356.0000>, velocity: <0.0000,0.0000>
+
+Time: 00:05:50.00:
+Ball 0: position: <1014.9148,1014.9148>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1800.0000,-1800.0000>, velocity: <0.0000,0.0000>
+Ball 2: position: <2200.0000,2200.0000>, velocity: <0.0000,0.0000>
+Ball 3: position: <-1840.0000,-1840.0000>, velocity: <0.0000,0.0000>
+Ball 4: position: <114.7665,114.7665>, velocity: <0.0000,0.0000>
+Ball 5: position: <-437.4842,-437.4842>, velocity: <-0.1252,-0.1252>
+Ball 6: position: <1900.0000,1900.0000>, velocity: <0.0000,0.0000>
+Ball 7: position: <2800.0000,2800.0000>, velocity: <0.0000,0.0000>
+Ball 8: position: <1029.0656,1029.0656>, velocity: <0.0000,0.0000>
+Ball 9: position: <1356.0000,1356.0000>, velocity: <0.0000,0.0000>
+
+Time: 00:06:0.00:
+Ball 0: position: <1014.9148,1014.9148>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1800.0000,-1800.0000>, velocity: <0.0000,0.0000>
+Ball 2: position: <2200.0000,2200.0000>, velocity: <0.0000,0.0000>
+Ball 3: position: <-1840.0000,-1840.0000>, velocity: <0.0000,0.0000>
+Ball 4: position: <114.7665,114.7665>, velocity: <0.0000,0.0000>
+Ball 5: position: <-438.7358,-438.7358>, velocity: <-0.1126,-0.1126>
+Ball 6: position: <1900.0000,1900.0000>, velocity: <0.0000,0.0000>
+Ball 7: position: <2800.0000,2800.0000>, velocity: <0.0000,0.0000>
+Ball 8: position: <1029.0656,1029.0656>, velocity: <0.0000,0.0000>
+Ball 9: position: <1356.0000,1356.0000>, velocity: <0.0000,0.0000>
+
+Time: 00:06:10.00:
+Ball 0: position: <1014.9148,1014.9148>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1800.0000,-1800.0000>, velocity: <0.0000,0.0000>
+Ball 2: position: <2200.0000,2200.0000>, velocity: <0.0000,0.0000>
+Ball 3: position: <-1840.0000,-1840.0000>, velocity: <0.0000,0.0000>
+Ball 4: position: <114.7665,114.7665>, velocity: <0.0000,0.0000>
+Ball 5: position: <-439.8622,-439.8622>, velocity: <-0.1014,-0.1014>
+Ball 6: position: <1900.0000,1900.0000>, velocity: <0.0000,0.0000>
+Ball 7: position: <2800.0000,2800.0000>, velocity: <0.0000,0.0000>
+Ball 8: position: <1029.0656,1029.0656>, velocity: <0.0000,0.0000>
+Ball 9: position: <1356.0000,1356.0000>, velocity: <0.0000,0.0000>
+
+Time: 00:06:20.00:
+Ball 0: position: <1014.9148,1014.9148>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1800.0000,-1800.0000>, velocity: <0.0000,0.0000>
+Ball 2: position: <2200.0000,2200.0000>, velocity: <0.0000,0.0000>
+Ball 3: position: <-1840.0000,-1840.0000>, velocity: <0.0000,0.0000>
+Ball 4: position: <114.7665,114.7665>, velocity: <0.0000,0.0000>
+Ball 5: position: <-440.8760,-440.8760>, velocity: <-0.0912,-0.0912>
+Ball 6: position: <1900.0000,1900.0000>, velocity: <0.0000,0.0000>
+Ball 7: position: <2800.0000,2800.0000>, velocity: <0.0000,0.0000>
+Ball 8: position: <1029.0656,1029.0656>, velocity: <0.0000,0.0000>
+Ball 9: position: <1356.0000,1356.0000>, velocity: <0.0000,0.0000>
+
+Time: 00:06:30.00:
+Ball 0: position: <1014.9148,1014.9148>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1800.0000,-1800.0000>, velocity: <0.0000,0.0000>
+Ball 2: position: <2200.0000,2200.0000>, velocity: <0.0000,0.0000>
+Ball 3: position: <-1840.0000,-1840.0000>, velocity: <0.0000,0.0000>
+Ball 4: position: <114.7665,114.7665>, velocity: <0.0000,0.0000>
+Ball 5: position: <-441.7884,-441.7884>, velocity: <-0.0821,-0.0821>
+Ball 6: position: <1900.0000,1900.0000>, velocity: <0.0000,0.0000>
+Ball 7: position: <2800.0000,2800.0000>, velocity: <0.0000,0.0000>
+Ball 8: position: <1029.0656,1029.0656>, velocity: <0.0000,0.0000>
+Ball 9: position: <1356.0000,1356.0000>, velocity: <0.0000,0.0000>
+
+Time: 00:06:40.00:
+Ball 0: position: <1014.9148,1014.9148>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1800.0000,-1800.0000>, velocity: <0.0000,0.0000>
+Ball 2: position: <2200.0000,2200.0000>, velocity: <0.0000,0.0000>
+Ball 3: position: <-1840.0000,-1840.0000>, velocity: <0.0000,0.0000>
+Ball 4: position: <114.7665,114.7665>, velocity: <0.0000,0.0000>
+Ball 5: position: <-442.6096,-442.6096>, velocity: <-0.0739,-0.0739>
+Ball 6: position: <1900.0000,1900.0000>, velocity: <0.0000,0.0000>
+Ball 7: position: <2800.0000,2800.0000>, velocity: <0.0000,0.0000>
+Ball 8: position: <1029.0656,1029.0656>, velocity: <0.0000,0.0000>
+Ball 9: position: <1356.0000,1356.0000>, velocity: <0.0000,0.0000>
+
+Time: 00:06:50.00:
+Ball 0: position: <1014.9148,1014.9148>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1800.0000,-1800.0000>, velocity: <0.0000,0.0000>
+Ball 2: position: <2200.0000,2200.0000>, velocity: <0.0000,0.0000>
+Ball 3: position: <-1840.0000,-1840.0000>, velocity: <0.0000,0.0000>
+Ball 4: position: <114.7665,114.7665>, velocity: <0.0000,0.0000>
+Ball 5: position: <-443.3486,-443.3486>, velocity: <-0.0665,-0.0665>
+Ball 6: position: <1900.0000,1900.0000>, velocity: <0.0000,0.0000>
+Ball 7: position: <2800.0000,2800.0000>, velocity: <0.0000,0.0000>
+Ball 8: position: <1029.0656,1029.0656>, velocity: <0.0000,0.0000>
+Ball 9: position: <1356.0000,1356.0000>, velocity: <0.0000,0.0000>
+
+Time: 00:07:0.00:
+Ball 0: position: <1014.9148,1014.9148>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1800.0000,-1800.0000>, velocity: <0.0000,0.0000>
+Ball 2: position: <2200.0000,2200.0000>, velocity: <0.0000,0.0000>
+Ball 3: position: <-1840.0000,-1840.0000>, velocity: <0.0000,0.0000>
+Ball 4: position: <114.7665,114.7665>, velocity: <0.0000,0.0000>
+Ball 5: position: <-444.0137,-444.0137>, velocity: <-0.0599,-0.0599>
+Ball 6: position: <1900.0000,1900.0000>, velocity: <0.0000,0.0000>
+Ball 7: position: <2800.0000,2800.0000>, velocity: <0.0000,0.0000>
+Ball 8: position: <1029.0656,1029.0656>, velocity: <0.0000,0.0000>
+Ball 9: position: <1356.0000,1356.0000>, velocity: <0.0000,0.0000>
+
+Time: 00:07:10.00:
+Ball 0: position: <1014.9148,1014.9148>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1800.0000,-1800.0000>, velocity: <0.0000,0.0000>
+Ball 2: position: <2200.0000,2200.0000>, velocity: <0.0000,0.0000>
+Ball 3: position: <-1840.0000,-1840.0000>, velocity: <0.0000,0.0000>
+Ball 4: position: <114.7665,114.7665>, velocity: <0.0000,0.0000>
+Ball 5: position: <-444.6124,-444.6124>, velocity: <-0.0539,-0.0539>
+Ball 6: position: <1900.0000,1900.0000>, velocity: <0.0000,0.0000>
+Ball 7: position: <2800.0000,2800.0000>, velocity: <0.0000,0.0000>
+Ball 8: position: <1029.0656,1029.0656>, velocity: <0.0000,0.0000>
+Ball 9: position: <1356.0000,1356.0000>, velocity: <0.0000,0.0000>
+
+Time: 00:07:20.00:
+Ball 0: position: <1014.9148,1014.9148>, velocity: <0.0000,0.0000>
+Ball 1: position: <-1800.0000,-1800.0000>, velocity: <0.0000,0.0000>
+Ball 2: position: <2200.0000,2200.0000>, velocity: <0.0000,0.0000>
+Ball 3: position: <-1840.0000,-1840.0000>, velocity: <0.0000,0.0000>
+Ball 4: position: <114.7665,114.7665>, velocity: <0.0000,0.0000>
+Ball 5: position: <-445.1511,-445.1511>, velocity: <0.0000,0.0000>
+Ball 6: position: <1900.0000,1900.0000>, velocity: <0.0000,0.0000>
+Ball 7: position: <2800.0000,2800.0000>, velocity: <0.0000,0.0000>
+Ball 8: position: <1029.0656,1029.0656>, velocity: <0.0000,0.0000>
+Ball 9: position: <1356.0000,1356.0000>, velocity: <0.0000,0.0000>
+
+NO COLLISION IS POSSIBLE
+.
+.
+======================================
+... End of SoccerSim Testing...
+======================================
