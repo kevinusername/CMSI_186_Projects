@@ -25,6 +25,18 @@ import java.util.Objects;
 
 public class BrobInt {
 
+    public static final BrobInt ZERO = new BrobInt("0"); /// Constant for "zero"
+    public static final BrobInt ONE = new BrobInt("1"); /// Constant for "one"
+    public static final BrobInt TWO = new BrobInt("2"); /// Constant for "two"
+    public static final BrobInt THREE = new BrobInt("3"); /// Constant for "three"
+    public static final BrobInt FOUR = new BrobInt("4"); /// Constant for "four"
+    public static final BrobInt FIVE = new BrobInt("5"); /// Constant for "five"
+    public static final BrobInt SIX = new BrobInt("6"); /// Constant for "six"
+    public static final BrobInt SEVEN = new BrobInt("7"); /// Constant for "seven"
+    public static final BrobInt EIGHT = new BrobInt("8"); /// Constant for "eight"
+    public static final BrobInt NINE = new BrobInt("9"); /// Constant for "nine"
+    public static final BrobInt TEN = new BrobInt("10"); /// Constant for "ten"
+
     /// These are the internal fields
     private String internalValue; // internal String representation of this BrobInt
     private int length;
@@ -136,9 +148,16 @@ public class BrobInt {
      *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
     public BrobInt add(BrobInt gint) {
 
+        String ogInternal = this.print();
+        String ogGint = gint.print();
+
+        boolean addSign = false;
+
         if (false == isNegative && gint.isNegative) {
             gint.isNegative = false;
             return subtract(gint);
+        } else if (isNegative && gint.isNegative) {
+            addSign = true;
         }
 
         byte finalcarry = 0; // local var for if sum exceeds array cappacity
@@ -172,7 +191,14 @@ public class BrobInt {
         }
         sumString.append(toString(sumByteArray));
 
-        return new BrobInt(sumString.toString());
+        inheritProperties(new BrobInt(ogInternal));
+        gint = new BrobInt(ogGint);
+
+        if (addSign) {
+            return new BrobInt("-".concat(sumString.toString()));
+        } else {
+            return new BrobInt(sumString.toString());
+        }
     }
 
     /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -181,6 +207,9 @@ public class BrobInt {
      *  @return BrobInt that is the difference of the value of this BrobInt and the one passed in
      *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
     public BrobInt subtract(BrobInt gint) {
+
+        String ogInternal = this.print();
+        String ogGint = gint.print();
 
         if (Objects.equals(internalValue, gint.internalValue)) {
             return new BrobInt("0");
@@ -192,7 +221,9 @@ public class BrobInt {
         } else if (isNegative && gint.isNegative) {
             isNegative = false;
             gint.isNegative = false;
-            return add(gint);
+            BrobInt tempBrob = add(gint);
+            tempBrob.isNegative = true;
+            return tempBrob;
         }
 
         boolean addSign = false;
@@ -219,6 +250,9 @@ public class BrobInt {
                 difByteArray[n] = byteVersion[n];
             }
         }
+
+        inheritProperties(new BrobInt(ogInternal));
+        gint = new BrobInt(ogGint);
 
         if (addSign) {
             return new BrobInt("-".concat(toString(difByteArray)));
@@ -303,11 +337,11 @@ public class BrobInt {
 
     }
 
-    public void print() {
+    public String print() {
         if (false == isNegative) {
-            System.out.println(internalValue);
+            return internalValue;
         } else {
-            System.out.println("-" + internalValue);
+            return "-".concat(internalValue);
         }
     }
 
@@ -333,19 +367,23 @@ public class BrobInt {
      *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
     public static void main(String[] args) {
 
-        BrobInt myBrob = new BrobInt("238947");
+        BrobInt myBrob = new BrobInt("-234567");
         // System.out.println(Arrays.toString(myBrob.byteVersion));
 
-        BrobInt myBrob2 = new BrobInt("-23934543634546");
+        BrobInt myBrob2 = new BrobInt("-999999");
         // System.out.println(Arrays.toString(myBrob2.byteVersion));
 
         BrobInt myBrob3 = new BrobInt("-23934546");
 
         // myBrob.subtract(myBrob2).print();
 
-        myBrob.add(myBrob2).print();
+        System.out.println(myBrob.print());
+        System.out.println(myBrob2.print());
 
-        myBrob.subtract(myBrob3).print();
+        System.out.println(myBrob.add(myBrob2).print());
+
+        System.out.println(myBrob.print());
+        System.out.println(myBrob2.print());
 
         System.exit(0);
     }
