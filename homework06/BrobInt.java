@@ -40,14 +40,23 @@ public class BrobInt {
      *  @param  value  String value to make into a BrobInt
      */
     public BrobInt(String value) {
-        internalValue = removeLeadingZeros(value);
-        determineSign();
-        length = internalValue.length();
-        reversed = reverse();
-        numBytes = (int) (Math.ceil((double) internalValue.length() / 2.0));
-        byteVersion = new byte[numBytes];
+        if (value == "0") {
+            internalValue = value;
+            length = 1;
+            reversed = "0";
+            numBytes = 1;
+            byteVersion = new byte[numBytes];
+            toByteArray();
+        } else {
+            internalValue = removeLeadingZeros(value);
+            determineSign();
+            length = internalValue.length();
+            reversed = reverse();
+            numBytes = (int) (Math.ceil((double) internalValue.length() / 2.0));
+            byteVersion = new byte[numBytes];
 
-        toByteArray();
+            toByteArray();
+        }
     }
 
     public void determineSign() {
@@ -127,6 +136,11 @@ public class BrobInt {
      *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
     public BrobInt add(BrobInt gint) {
 
+        if (false == isNegative && gint.isNegative) {
+            gint.isNegative = false;
+            return subtract(gint);
+        }
+
         byte finalcarry = 0; // local var for if sum exceeds array cappacity
 
         gint = determineBigger(gint); // ensure "gint" is the shorter of the two (in terms of decimal places)
@@ -167,7 +181,50 @@ public class BrobInt {
      *  @return BrobInt that is the difference of the value of this BrobInt and the one passed in
      *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
     public BrobInt subtract(BrobInt gint) {
-        throw new UnsupportedOperationException("\n         Sorry, that operation is not yet implemented.");
+
+        if (Objects.equals(internalValue, gint.internalValue)) {
+            return new BrobInt("0");
+        }
+
+        if (isNegative == false && gint.isNegative) {
+            gint.isNegative = false;
+            return add(gint);
+        } else if (isNegative && gint.isNegative) {
+            isNegative = false;
+            gint.isNegative = false;
+            return add(gint);
+        }
+
+        boolean addSign = false;
+
+        if (compareTo(gint) < 0) {
+            addSign = true;
+        }
+
+        gint = determineBigger(gint);
+
+        byte[] difByteArray = new byte[byteVersion.length];
+
+        for (int i = gint.byteVersion.length - 1, j = byteVersion.length - 1; i >= 0; i--, j--) {
+            short tempDif = (short) (byteVersion[j] - gint.byteVersion[i]); // sum of bytes in same decimal palces
+            if (tempDif < 0) { // Accounts for the process of carrying when the sum exceeds 100 for a given 2 decimal places
+                tempDif += 100;
+                byteVersion[j - 1] -= 1; // increases the value of the next decimal place by 1 (i.e. carrying the 1)
+            }
+            difByteArray[j] = (byte) tempDif; // Adds this value as the digits for the sum
+        }
+
+        if (length > gint.length) { // For digit places that don't exist in the smaller BrobInt, place those of the larger BrobInt (since they are unchanged)
+            for (int n = (byteVersion.length - gint.byteVersion.length - 1); n >= 0; n--) { // n = the first decimal place in the larger BrobInt where the other number has no digit
+                difByteArray[n] = byteVersion[n];
+            }
+        }
+
+        if (addSign) {
+            return new BrobInt("-".concat(toString(difByteArray)));
+        }
+
+        return new BrobInt(toString(difByteArray));
     }
 
     /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -226,7 +283,7 @@ public class BrobInt {
      *  @return BrobInt  which is the BrobInt representation of the long
      *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
     public static BrobInt valueOf(long value) throws NumberFormatException {
-        return new BrobInt("0");
+        return new BrobInt(Long.toString(value));
     }
 
     /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -244,6 +301,14 @@ public class BrobInt {
 
         return removeLeadingZeros(outputString.toString());
 
+    }
+
+    public void print() {
+        if (false == isNegative) {
+            System.out.println(internalValue);
+        } else {
+            System.out.println("-" + internalValue);
+        }
     }
 
     public String removeLeadingZeros(String s) {
@@ -268,13 +333,19 @@ public class BrobInt {
      *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
     public static void main(String[] args) {
 
-        BrobInt myBrob = new BrobInt("9463463463480");
+        BrobInt myBrob = new BrobInt("238947");
         // System.out.println(Arrays.toString(myBrob.byteVersion));
 
-        BrobInt myBrob2 = new BrobInt("6456455563463463463463480");
+        BrobInt myBrob2 = new BrobInt("-23934543634546");
         // System.out.println(Arrays.toString(myBrob2.byteVersion));
 
-        System.out.println(myBrob.add(myBrob2).internalValue);
+        BrobInt myBrob3 = new BrobInt("-23934546");
+
+        // myBrob.subtract(myBrob2).print();
+
+        myBrob.add(myBrob2).print();
+
+        myBrob.subtract(myBrob3).print();
 
         System.exit(0);
     }
