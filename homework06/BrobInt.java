@@ -361,16 +361,8 @@ public class BrobInt {
     *  note:  we don't really care about these
     *   */
     public static void main(String[] args) {
-        // System.out.println("\n  Hello, world, from the BrobInt program!!\n");
-        // System.out.println("\n   You should run your tests from the BrobIntTester...\n");
-
-        BrobInt myBrob = new BrobInt("-312352367");
-        BrobInt myBrob2 = new BrobInt("15412");
-
-        // // myBrob.createDigitArray();
-        // // System.out.println(Arrays.toString(myBrob.digitArray));
-
-        System.out.println(myBrob.multiply(myBrob2).toString());
+        System.out.println("\n  Hello, world, from the BrobInt program!!\n");
+        System.out.println("\n   You should run your tests from the BrobIntTester...\n");
 
         System.exit(0);
     }
