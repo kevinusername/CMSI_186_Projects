@@ -272,7 +272,25 @@ public class BrobInt {
     *  @return BrobInt that is the remainder of division of this BrobInt by the one passed in
     *   */
     public BrobInt remainder(BrobInt gint) {
-        throw new UnsupportedOperationException("\n         Sorry, that operation is not yet implemented.");
+        BrobInt[] tempBrobArray = setBigger(gint);
+        BrobInt bigBrob = new BrobInt(tempBrobArray[0].toString());
+        BrobInt littleBrob = new BrobInt(tempBrobArray[1].toString());
+
+        BrobInt solution = ZERO;
+        BrobInt nextValue = new BrobInt(bigBrob.toString());
+
+        boolean proceed = true;
+        while (proceed) {
+            nextValue = nextValue.subtract(littleBrob);
+            solution = solution.add(ONE);
+            if (nextValue.compareTo(ZERO) < 0) {
+                proceed = false;
+            }
+        }
+
+        nextValue = nextValue.add(littleBrob);
+
+        return nextValue;
     }
 
     /** 

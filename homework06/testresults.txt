@@ -249,9 +249,9 @@
     ===========================
 
       Test 058: Modding g17 by g18 [765 % 23]: 
-        Exception thrown:  java.lang.UnsupportedOperationException: 
-         Sorry, that operation is not yet implemented.
+      expecting: 6
+        and got: 6
 
       Test 059: Modding g19 by g20 [56789 % 37]: 
-        Exception thrown:  java.lang.UnsupportedOperationException: 
-         Sorry, that operation is not yet implemented.
+      expecting: 31
+        and got: 31
