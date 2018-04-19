@@ -1,25 +1,3 @@
-
-/** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
- * File name  :  BrobInt.java
- * Purpose    :  Learning exercise to implement arbitrarily large numbers and their operations
- * @author    :  B.J. Johnson
- * Date       :  2017-04-04
- * Description:  @see <a href='http://bjohnson.lmu.build/cmsi186web/homework06.html'>Assignment Page</a>
- * Notes      :  None
- * Warnings   :  None
- *
- *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
- * Revision History
- * ================
- *   Ver      Date     Modified by:  Reason for change or modification
- *  -----  ----------  ------------  ---------------------------------------------------------------------
- *  1.0.0  2017-04-04  B.J. Johnson  Initial writing and begin coding
- *  1.1.0  2017-04-13  B.J. Johnson  Completed addByt, addInt, compareTo, equals, toString, Constructor,
- *                                     validateDigits, two reversers, and valueOf methods; revamped equals
- *                                     and compareTo methods to use the Java String methods; ready to
- *                                     start work on subtractByte and subtractInt methods
- *
- *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 import java.util.Arrays;
 import java.util.Objects;
 
@@ -27,361 +5,222 @@ public class BrobInt {
 
     public static final BrobInt ZERO = new BrobInt("0"); /// Constant for "zero"
     public static final BrobInt ONE = new BrobInt("1"); /// Constant for "one"
-    public static final BrobInt TWO = new BrobInt("2"); /// Constant for "two"
-    public static final BrobInt THREE = new BrobInt("3"); /// Constant for "three"
-    public static final BrobInt FOUR = new BrobInt("4"); /// Constant for "four"
-    public static final BrobInt FIVE = new BrobInt("5"); /// Constant for "five"
-    public static final BrobInt SIX = new BrobInt("6"); /// Constant for "six"
-    public static final BrobInt SEVEN = new BrobInt("7"); /// Constant for "seven"
-    public static final BrobInt EIGHT = new BrobInt("8"); /// Constant for "eight"
-    public static final BrobInt NINE = new BrobInt("9"); /// Constant for "nine"
     public static final BrobInt TEN = new BrobInt("10"); /// Constant for "ten"
 
-    /// These are the internal fields
-    private String internalValue; // internal String representation of this BrobInt
-    private int length;
-    private boolean isNegative = false; // "0" is positive, "1" is negative
-    private String reversed; // the backwards version of the internal String representation
-    private byte[] byteVersion; // byte array for storing the string values; uses the reversed string
-    private int numBytes;
+    private String internalValue = "";
+    private boolean isNegative = false;
+    private byte[] byteVersion = null;
+    private int length = 0;
 
-    /**
-     *  Constructor takes a string and assigns it to the internal storage, checks for a sign character
-     *   and handles that accordingly;  it then checks to see if it's all valid digits, and reverses it
-     *   for later use
-     *  @param  value  String value to make into a BrobInt
-     */
     public BrobInt(String value) {
-        if (value == "0") {
-            internalValue = value;
-            length = 1;
-            reversed = "0";
-            numBytes = 1;
-            byteVersion = new byte[numBytes];
-            toByteArray();
-        } else {
-            internalValue = removeLeadingZeros(value);
-            determineSign();
-            length = internalValue.length();
-            reversed = reverse();
-            numBytes = (int) (Math.ceil((double) internalValue.length() / 2.0));
-            byteVersion = new byte[numBytes];
 
-            toByteArray();
-        }
-    }
-
-    public void determineSign() {
-        if (internalValue.charAt(0) == '-') {
+        if (value.charAt(0) == '-') { // Handles Negative numbers
             isNegative = true;
-            internalValue = internalValue.substring(1);
+            value = value.substring(1);
         }
-    }
 
-    public void toByteArray() {
+        internalValue = trimZeros(value);
 
-        String tempstring; //Initial declaration
-        try {
-            for (int i = 0, j = numBytes - 1; i < reversed.length(); i += 2, j--) {
-                if (reversed.length() % 2 != 0 && reversed.length() - 1 == i) {
-                    tempstring = String.valueOf(reversed.charAt(i));
-                } else {
-                    tempstring = new StringBuilder(reversed.substring(i, i + 2)).reverse().toString(); // Takes the substring and reverses it
-                }
-                byteVersion[j] = Byte.parseByte(tempstring);
+        length = internalValue.length();
+        byteVersion = new byte[(int) Math.ceil((double) length / 2.0)];
+
+        for (int i = 0, j = length; i < byteVersion.length; i++, j -= 2) {
+            try {
+                byteVersion[i] = Byte.parseByte(internalValue.substring(j - 2, j));
+            } catch (StringIndexOutOfBoundsException sob) {
+                byteVersion[i] = Byte.parseByte(internalValue.substring(j - 1, j));
+            } catch (NumberFormatException nfe) {
+                System.out.println("Please enter a valid Decimal only input");
+                System.exit(1);
             }
-        } catch (NumberFormatException nfe) {
-            System.out.println("Error, please enter only decimal digits");
-            System.exit(2);
         }
     }
 
-    public BrobInt determineBigger(BrobInt gint) { // Make "this" into the larger of the two BrobInts, and return the other one
-
-        if (length == gint.length && Character.getNumericValue(internalValue.charAt(0)) < Character
-                .getNumericValue(gint.internalValue.charAt(0))) {
-            String tempString = internalValue;
-            inheritProperties(gint);
-            return new BrobInt(tempString);
-        }
-
-        if (length < gint.length) { // ensures gint is the shorter of the two BrobInts
-            String tempString = internalValue;
-            inheritProperties(gint);
-            return new BrobInt(tempString);
-        } else {
-            return gint;
-        }
-    }
-
-    public void inheritProperties(BrobInt gint) { // Inherits the properties of another BrobInt
-        internalValue = gint.internalValue;
-        reversed = gint.reversed;
-        length = gint.length;
-        isNegative = gint.isNegative;
-        byteVersion = gint.byteVersion;
-        numBytes = gint.numBytes;
-    }
-
-    /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-     *  Method to reverse the value of this BrobInt
-     *  @return BrobInt that is the reverse of the value of this BrobInt
-     *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-    public String reverse() {
-        return new StringBuilder(internalValue).reverse().toString();
-    }
-
-    /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-     *  Method to reverse the value of a BrobIntk passed as argument
-     *  Note: static method
-     *  @param  gint         BrobInt to reverse its value
-     *  @return BrobInt that is the reverse of the value of the BrobInt passed as argument
-     *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-    public static BrobInt reverser(BrobInt gint) {
-        throw new UnsupportedOperationException("\n         Sorry, that operation is not yet implemented.");
-    }
-
-    /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-     *  Method to add the value of a BrobIntk passed as argument to this BrobInt using int array
-     *  @param  gint         BrobInt to add to this
-     *  @return BrobInt that is the sum of the value of this BrobInt and the one passed in
-     *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
     public BrobInt add(BrobInt gint) {
 
-        String ogInternal = this.print();
-        String ogGint = gint.print();
-
         boolean addSign = false;
+        boolean finalCarry = false;
 
-        if (false == isNegative && gint.isNegative) {
-            gint.isNegative = false;
-            return subtract(gint);
-        } else if (isNegative && gint.isNegative) {
+        if (isNegative && gint.isNegative) {
             addSign = true;
+        } else if (isNegative && false == gint.isNegative) {
+            return gint.subtract(new BrobInt(internalValue));
+        } else if (false == isNegative && gint.isNegative) {
+            return subtract(new BrobInt(gint.internalValue));
         }
 
-        byte finalcarry = 0; // local var for if sum exceeds array cappacity
+        BrobInt[] tempBrobArray = setBigger(gint);
+        BrobInt bigBrob = new BrobInt(tempBrobArray[0].toString());
+        BrobInt littleBrob = new BrobInt(tempBrobArray[1].toString());
 
-        gint = determineBigger(gint); // ensure "gint" is the shorter of the two (in terms of decimal places)
+        byte[] sumArray = new byte[bigBrob.byteVersion.length];
 
-        byte[] sumByteArray = new byte[byteVersion.length]; // Array of bytes for the sum with same length at the longer BrobInt
+        for (int i = 0; i < littleBrob.byteVersion.length; i++) {
 
-        for (int i = gint.byteVersion.length - 1, j = byteVersion.length - 1; i >= 0; i--, j--) {
-            short tempSum = (short) (byteVersion[j] + gint.byteVersion[i]); // sum of bytes in same decimal palces
-            if (tempSum >= 100) { // Accounts for the process of carrying when the sum exceeds 100 for a given 2 decimal places
-                tempSum -= 100;
-                if (length == gint.length && i == 0) { // Handles the special case when a new decimal place beyond the biggest BrobInt is needed
-                    finalcarry = 1;
-                } else {
-                    byteVersion[j - 1] += 1; // increases the value of the next decimal place by 1 (i.e. carrying the 1)
+            short tempSum = (short) (bigBrob.byteVersion[i] + littleBrob.byteVersion[i]);
+            try {
+                if (tempSum >= 100) {
+                    tempSum -= 100;
+                    bigBrob.byteVersion[i + 1] += 1;
                 }
+            } catch (ArrayIndexOutOfBoundsException aob) {
+                finalCarry = true;
             }
-            sumByteArray[j] = (byte) tempSum; // Adds this value as the digits for the sum
+            sumArray[i] = (byte) tempSum;
         }
 
-        if (length > gint.length) { // For digit places that don't exist in the smaller BrobInt, place those of the larger BrobInt (since they are unchanged)
-            for (int n = (byteVersion.length - gint.byteVersion.length - 1); n >= 0; n--) { // n = the first decimal place in the larger BrobInt where the other number has no digit
-                sumByteArray[n] = byteVersion[n];
+        if (bigBrob.byteVersion.length > littleBrob.byteVersion.length) {
+            for (int i = littleBrob.byteVersion.length; i < bigBrob.byteVersion.length; i++) {
+                sumArray[i] = bigBrob.byteVersion[i];
             }
         }
 
-        StringBuilder sumString = new StringBuilder();
-        if (finalcarry == 1) { // Adds on the extra decimal place without having to shift the entire array
-            sumString.append(finalcarry);
-        }
-        sumString.append(toString(sumByteArray));
+        String answer = byteToString(sumArray);
 
-        inheritProperties(new BrobInt(ogInternal));
-        gint = new BrobInt(ogGint);
+        if (finalCarry) {
+            answer = "1".concat(answer);
+        }
 
         if (addSign) {
-            return new BrobInt("-".concat(sumString.toString()));
-        } else {
-            return new BrobInt(sumString.toString());
+            answer = ("-".concat(answer));
         }
+
+        return new BrobInt(answer);
     }
 
-    /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-     *  Method to subtract the value of a BrobIntk passed as argument to this BrobInt using int array
-     *  @param  gint         BrobInt to subtract from this
-     *  @return BrobInt that is the difference of the value of this BrobInt and the one passed in
-     *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
     public BrobInt subtract(BrobInt gint) {
 
-        String ogInternal = this.print();
-        String ogGint = gint.print();
-
-        if (Objects.equals(internalValue, gint.internalValue)) {
-            return new BrobInt("0");
-        }
-
-        if (isNegative == false && gint.isNegative) {
-            gint.isNegative = false;
-            return add(gint);
-        } else if (isNegative && gint.isNegative) {
-            gint.isNegative = false;
-            return subtract(gint);
+        if (equals(gint)) {
+            return ZERO;
         }
 
         boolean addSign = false;
 
-        if (compareTo(gint) < 0) {
+        if (isNegative && gint.isNegative) {
+            return add(new BrobInt(gint.internalValue));
+        } else if (isNegative && false == gint.isNegative) {
+            return add(new BrobInt("-".concat(gint.internalValue)));
+        } else if (false == isNegative && gint.isNegative) {
+            return add(new BrobInt(gint.internalValue));
+        }
+
+        if (compareTo(gint) <= 0) {
             addSign = true;
         }
 
-        gint = determineBigger(gint);
+        BrobInt[] tempBrobArray = setBigger(gint);
+        BrobInt bigBrob = new BrobInt(tempBrobArray[0].toString());
+        BrobInt littleBrob = new BrobInt(tempBrobArray[1].toString());
 
-        byte[] difByteArray = new byte[byteVersion.length];
+        byte[] difArray = new byte[bigBrob.byteVersion.length];
 
-        for (int i = gint.byteVersion.length - 1, j = byteVersion.length - 1; i >= 0; i--, j--) {
-            short tempDif = (short) (byteVersion[j] - gint.byteVersion[i]); // sum of bytes in same decimal palces
-            if (tempDif < 0) { // Accounts for the process of carrying when the sum exceeds 100 for a given 2 decimal places
+        for (int i = 0; i < littleBrob.byteVersion.length; i++) {
+            short tempDif = (short) (bigBrob.byteVersion[i] - littleBrob.byteVersion[i]);
+            if (tempDif < 0) {
                 tempDif += 100;
-                byteVersion[j - 1] -= 1; // increases the value of the next decimal place by 1 (i.e. carrying the 1)
+                bigBrob.byteVersion[i + 1] -= 1;
             }
-            difByteArray[j] = (byte) tempDif; // Adds this value as the digits for the sum
+            difArray[i] = (byte) tempDif;
         }
 
-        if (length > gint.length) { // For digit places that don't exist in the smaller BrobInt, place those of the larger BrobInt (since they are unchanged)
-            for (int n = (byteVersion.length - gint.byteVersion.length - 1); n >= 0; n--) { // n = the first decimal place in the larger BrobInt where the other number has no digit
-                difByteArray[n] = byteVersion[n];
+        if (bigBrob.byteVersion.length > littleBrob.byteVersion.length) {
+            for (int i = littleBrob.byteVersion.length; i < bigBrob.byteVersion.length; i++) {
+                difArray[i] = bigBrob.byteVersion[i];
             }
         }
-
-        inheritProperties(new BrobInt(ogInternal));
-        gint = new BrobInt(ogGint);
 
         if (addSign) {
-            return new BrobInt("-".concat(toString(difByteArray)));
+            return new BrobInt("-".concat(byteToString(difArray)));
+
         }
 
-        return new BrobInt(toString(difByteArray));
+        return new BrobInt(byteToString(difArray));
+
     }
 
-    /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-     *  Method to multiply the value of a BrobIntk passed as argument to this BrobInt
-     *  @param  gint         BrobInt to multiply by this
-     *  @return BrobInt that is the product of the value of this BrobInt and the one passed in
-     *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
     public BrobInt multiply(BrobInt gint) {
         throw new UnsupportedOperationException("\n         Sorry, that operation is not yet implemented.");
     }
 
-    /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-     *  Method to divide the value of this BrobIntk by the BrobInt passed as argument
-     *  @param  gint         BrobInt to divide this by
-     *  @return BrobInt that is the dividend of this BrobInt divided by the one passed in
-     *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
     public BrobInt divide(BrobInt gint) {
         throw new UnsupportedOperationException("\n         Sorry, that operation is not yet implemented.");
     }
 
-    /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-     *  Method to get the remainder of division of this BrobInt by the one passed as argument
-     *  @param  gint         BrobInt to divide this one by
-     *  @return BrobInt that is the remainder of division of this BrobInt by the one passed in
-     *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
     public BrobInt remainder(BrobInt gint) {
         throw new UnsupportedOperationException("\n         Sorry, that operation is not yet implemented.");
     }
 
-    /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-     *  Method to compare a BrobInt passed as argument to this BrobInt
-     *  @param  gint  BrobInt to add to this
-     *  @return int   that is one of neg/0/pos if this BrobInt precedes/equals/follows the argument
-     *  NOTE: this method performs a lexicographical comparison using the java String "compareTo()" method
-     *        THAT was easy.....
-     *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-    public int compareTo(BrobInt gint) {
-        return internalValue.compareTo(gint.internalValue);
-    }
-
-    /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-     *  Method to check if a BrobInt passed as argument is equal to this BrobInt
-     *  @param  gint     BrobInt to compare to this
-     *  @return boolean  that is true if they are equal and false otherwise
-     *  NOTE: this method performs a similar lexicographical comparison as the "compareTo()" method above
-     *        also using the java String "equals()" method -- THAT was easy, too..........
-     *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-    public boolean equals(BrobInt gint) {
-        return Objects.equals(this.internalValue, gint.internalValue)
-                && Objects.equals(this.isNegative, gint.isNegative);
-    }
-
-    /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-     *  Method to return a BrobInt given a long value passed as argument
-     *  @param  value         long type number to make into a BrobInt
-     *  @return BrobInt  which is the BrobInt representation of the long
-     *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-    public static BrobInt valueOf(long value) throws NumberFormatException {
-        return new BrobInt(Long.toString(value));
-    }
-
-    /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-     *  Method to return a String representation of this BrobInt
-     *  @return String  which is the String representation of this BrobInt
-     *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-    public String toString(byte[] bArray) {
-        StringBuilder outputString = new StringBuilder();
-        for (int i = 0; i < bArray.length; i++) {
-            if (bArray[i] < 10 && i != 0) {
-                outputString.append(0); // Fills in zeros for middle decimal places with value of 0
-            }
-            outputString.append(bArray[i]);
-        }
-
-        return removeLeadingZeros(outputString.toString());
-
-    }
-
-    public String print() {
-        if (false == isNegative) {
-            return internalValue;
-        } else {
+    public String toString() {
+        if (isNegative) {
             return "-".concat(internalValue);
+        } else {
+            return internalValue;
         }
     }
 
-    public String removeLeadingZeros(String s) {
-        StringBuilder outputString = new StringBuilder(s);
-        while (outputString.charAt(0) == '0') { // remove any unnecessary leading zero's
-            outputString.deleteCharAt(0);
+    public int compareTo(BrobInt gint) {
+
+        if (false == isNegative && gint.isNegative) {
+            return 1;
+        } else if (isNegative && false == gint.isNegative) {
+            return -1;
+        } else if (length < gint.length) {
+            return -1;
+        } else if (length > gint.length) {
+            return 1;
+        } else if (length == gint.length) {
+            return this.internalValue.compareTo(gint.internalValue);
+        } else {
+            return -1000000000;
         }
-        return outputString.toString();
+
     }
 
-    /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-     *  Method to display an Array representation of this BrobInt as its bytes
-     *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-    public void toArray(byte[] d) {
-        System.out.println(Arrays.toString(d));
+    public BrobInt[] setBigger(BrobInt gint) {
+        BrobInt[] tempBrobArray = new BrobInt[2];
+        if (compareTo(gint) == 0 || compareTo(gint) > 0) {
+            tempBrobArray[0] = this;
+            tempBrobArray[1] = gint;
+        } else {
+            tempBrobArray[1] = this;
+            tempBrobArray[0] = gint;
+        }
+        return tempBrobArray;
     }
 
-    /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-     *  the main method redirects the user to the test class
-     *  @param  args  String array which contains command line arguments
-     *  note:  we don't really care about these
-     *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+    public static String byteToString(byte[] bArray) {
+        StringBuilder answer = new StringBuilder();
+        for (int i = bArray.length - 1; i >= 0; i--) {
+            if (bArray[i] < 10) {
+                answer.append("0");
+            }
+            answer.append(Byte.toString(bArray[i]));
+        }
+
+        return answer.toString();
+    }
+
+    public boolean equals(Object x) {
+        return this == x;
+    }
+
+    public static BrobInt valueOf(long value) {
+        throw new UnsupportedOperationException("\n         Sorry, that operation is not yet implemented.");
+    }
+
+    public static String trimZeros(String s) {
+        StringBuilder answer = new StringBuilder(s);
+        while (answer.charAt(0) == '0' && answer.length() > 1) {
+            answer.deleteCharAt(0);
+        }
+        return answer.toString();
+    }
+
     public static void main(String[] args) {
+        BrobInt myBrob = new BrobInt("-238572387509237523");
+        BrobInt myBrob2 = new BrobInt("-74563457457345734573457345");
 
-        BrobInt myBrob = new BrobInt("-234567");
-        // System.out.println(Arrays.toString(myBrob.byteVersion));
+        System.out.println(new BrobInt("12586269025").add(new BrobInt("20365011074")).internalValue);
 
-        BrobInt myBrob2 = new BrobInt("-999999");
-        // System.out.println(Arrays.toString(myBrob2.byteVersion));
-
-        BrobInt myBrob3 = new BrobInt("-23934546");
-
-        // myBrob.subtract(myBrob2).print();
-
-        System.out.println(myBrob.print());
-        System.out.println(myBrob2.print());
-
-        System.out.println(myBrob.add(myBrob2).print());
-
-        System.out.println(myBrob.print());
-        System.out.println(myBrob2.print());
-
-        System.exit(0);
     }
 }
