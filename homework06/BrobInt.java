@@ -1,5 +1,3 @@
-import java.util.Arrays;
-import java.util.Objects;
 
 public class BrobInt {
 
@@ -7,11 +5,11 @@ public class BrobInt {
     public static final BrobInt ONE = new BrobInt("1"); /// Constant for "one"
     public static final BrobInt TEN = new BrobInt("10"); /// Constant for "ten"
 
-    private String internalValue = "";
-    private boolean isNegative = false;
-    private byte[] byteVersion = null;
-    private byte[] digitArray = null;
-    private int length = 0;
+    private String internalValue = ""; // Numeric value of BrobInt, without sign
+    private boolean isNegative = false; // Boolean indicating sign
+    private byte[] byteVersion = null; // internalValue split every 2 digits into a byte array
+    private byte[] digitArray = null; // internalValue split every 1 digit into a byte array
+    private int length = 0; // Length of internal value, to save from repetitive compution of string length
 
     /**
     *  Constructor takes a string and assigns it to the internal storage, checks for a sign character
@@ -31,12 +29,13 @@ public class BrobInt {
         length = internalValue.length();
         byteVersion = new byte[(int) Math.ceil((double) length / 2.0)];
 
+        // Trys to put 2 digits into every array address
         for (int i = 0, j = length; i < byteVersion.length; i++, j -= 2) {
             try {
                 byteVersion[i] = Byte.parseByte(internalValue.substring(j - 2, j));
-            } catch (StringIndexOutOfBoundsException sob) {
+            } catch (StringIndexOutOfBoundsException sob) { // In the event that there are an odd amount of digits:
                 byteVersion[i] = Byte.parseByte(internalValue.substring(j - 1, j));
-            } catch (NumberFormatException nfe) {
+            } catch (NumberFormatException nfe) { // If one of the values in the input is not a digit
                 System.out.println("Please enter a valid Decimal only input");
                 System.exit(1);
             }
@@ -67,9 +66,10 @@ public class BrobInt {
     *   */
     public BrobInt add(BrobInt gint) {
 
-        boolean addSign = false;
-        boolean finalCarry = false;
+        boolean addSign = false; // If a sign should be added on in the end
+        boolean finalCarry = false; // If there is a carry beyond the size of bigBrob.length
 
+        // Based on sign, use addition or subtraction as appropriate, accounting for neccessary sign changes
         if (isNegative && gint.isNegative) {
             addSign = true;
         } else if (isNegative && false == gint.isNegative) {
@@ -79,25 +79,25 @@ public class BrobInt {
         }
 
         BrobInt[] tempBrobArray = setBigger(gint);
-        BrobInt bigBrob = new BrobInt(tempBrobArray[0].toString());
-        BrobInt littleBrob = new BrobInt(tempBrobArray[1].toString());
+        BrobInt bigBrob = new BrobInt(tempBrobArray[0].toString()); // The bigger of the two BrobInts
+        BrobInt littleBrob = new BrobInt(tempBrobArray[1].toString()); // The smaller of the two BrobInts
 
-        byte[] sumArray = new byte[bigBrob.byteVersion.length];
+        byte[] sumArray = new byte[bigBrob.byteVersion.length]; // Array that will come to represent the sum of the two numbers
 
         for (int i = 0; i < littleBrob.byteVersion.length; i++) {
 
-            short tempSum = (short) (bigBrob.byteVersion[i] + littleBrob.byteVersion[i]);
+            short tempSum = (short) (bigBrob.byteVersion[i] + littleBrob.byteVersion[i]); // Use short, since java does not have unsigned bytes
             try {
-                if (tempSum >= 100) {
+                if (tempSum >= 100) { // Accounts for carrying
                     tempSum -= 100;
                     bigBrob.byteVersion[i + 1] += 1;
                 }
-            } catch (ArrayIndexOutOfBoundsException aob) {
+            } catch (ArrayIndexOutOfBoundsException aob) { // In the event there is a carry beyond array size
                 finalCarry = true;
             }
             sumArray[i] = (byte) tempSum;
         }
-
+        // Fill in the rest of the digits places where the smaller BrobInt has not value
         if (bigBrob.byteVersion.length > littleBrob.byteVersion.length) {
             for (int i = littleBrob.byteVersion.length; i < bigBrob.byteVersion.length; i++) {
                 sumArray[i] = bigBrob.byteVersion[i];
@@ -128,8 +128,9 @@ public class BrobInt {
             return ZERO;
         }
 
-        boolean addSign = false;
+        boolean addSign = false; // If a sign should be added on in the end
 
+        // Based on sign, use addition or subtraction as appropriate, accounting for neccessary sign changes
         if (isNegative && gint.isNegative) {
             return add(new BrobInt(gint.internalValue));
         } else if (isNegative && false == gint.isNegative) {
@@ -143,20 +144,21 @@ public class BrobInt {
         }
 
         BrobInt[] tempBrobArray = setBigger(gint);
-        BrobInt bigBrob = new BrobInt(tempBrobArray[0].toString());
-        BrobInt littleBrob = new BrobInt(tempBrobArray[1].toString());
+        BrobInt bigBrob = new BrobInt(tempBrobArray[0].toString()); // The bigger of the two BrobInts
+        BrobInt littleBrob = new BrobInt(tempBrobArray[1].toString()); // The smaller of the two BrobInts
 
-        byte[] difArray = new byte[bigBrob.byteVersion.length];
+        byte[] difArray = new byte[bigBrob.byteVersion.length]; // Array that will come to represent the difference between the two numbers
 
         for (int i = 0; i < littleBrob.byteVersion.length; i++) {
-            short tempDif = (short) (bigBrob.byteVersion[i] - littleBrob.byteVersion[i]);
-            if (tempDif < 0) {
+            short tempDif = (short) (bigBrob.byteVersion[i] - littleBrob.byteVersion[i]); // Use short, since java does not have unsigned bytes
+            if (tempDif < 0) { // Accounts for borrowing
                 tempDif += 100;
                 bigBrob.byteVersion[i + 1] -= 1;
             }
             difArray[i] = (byte) tempDif;
         }
 
+        // Fill in the rest of the digits places where the smaller BrobInt has not value
         if (bigBrob.byteVersion.length > littleBrob.byteVersion.length) {
             for (int i = littleBrob.byteVersion.length; i < bigBrob.byteVersion.length; i++) {
                 difArray[i] = bigBrob.byteVersion[i];
@@ -178,6 +180,8 @@ public class BrobInt {
     *  @return BrobInt that is the product of the value of this BrobInt and the one passed in
     *   */
     public BrobInt multiply(BrobInt gint) {
+
+        // Didn't have time to get this to work...
 
         // BrobInt[] tempBrobArray = setBigger(gint);
         // BrobInt bigBrob = new BrobInt(tempBrobArray[0].toString());
@@ -232,7 +236,7 @@ public class BrobInt {
     *   */
     public String toString() {
         if (isNegative) {
-            return "-".concat(internalValue);
+            return "-".concat(internalValue); // Add sign if present
         } else {
             return internalValue;
         }
@@ -248,6 +252,8 @@ public class BrobInt {
     *   */
     public int compareTo(BrobInt gint) {
 
+        // This made sense to me when I wrote it
+        // I feel like it shouldn't work, but it does, so I'll leave it
         if (false == isNegative && gint.isNegative) {
             return 1;
         } else if (isNegative && false == gint.isNegative) {
@@ -259,9 +265,8 @@ public class BrobInt {
         } else if (length == gint.length) {
             return this.internalValue.compareTo(gint.internalValue);
         } else {
-            return -1000000000;
+            return -1000000000; // stupid java wants a fallback value even though this case will never happen
         }
-
     }
 
     /**
@@ -291,7 +296,7 @@ public class BrobInt {
         StringBuilder answer = new StringBuilder();
         for (int i = bArray.length - 1; i >= 0; i--) {
             if (bArray[i] < 10) {
-                answer.append("0");
+                answer.append("0"); //Prevents missing digits places
             }
             answer.append(Byte.toString(bArray[i]));
         }
@@ -319,6 +324,11 @@ public class BrobInt {
         return new BrobInt(Long.toString(value));
     }
 
+    /**
+     * Remove leading zeros from an input string
+     *  used to remove leading zero's from internalValue
+     * @return String with leading 0's removed
+     */
     public static String trimZeros(String s) {
         StringBuilder answer = new StringBuilder(s);
         while (answer.charAt(0) == '0' && answer.length() > 1) {
@@ -333,8 +343,9 @@ public class BrobInt {
     *  note:  we don't really care about these
     *   */
     public static void main(String[] args) {
-        BrobInt myBrob = new BrobInt("55");
-        BrobInt myBrob2 = new BrobInt("2");
+        System.out.println("\n  Hello, world, from the BrobInt program!!\n");
+        System.out.println("\n   You should run your tests from the BrobIntTester...\n");
 
+        System.exit(0);
     }
 }

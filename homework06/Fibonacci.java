@@ -5,6 +5,11 @@ public class Fibonacci {
 
     static int count = 0;
 
+    /**
+     * Outputs the n'th term of the Fibonacci sequence using BrobInts
+     *  Only stores last and current value, adding them with each loop
+     *  Prints out the answer after the loop finishes
+     */
     public static void main(String[] args) {
         if (args.length != 1) {
             System.out.println("Please enter exactly one numeric value");
