@@ -219,11 +219,8 @@ public class BrobInt {
             gint.isNegative = false;
             return add(gint);
         } else if (isNegative && gint.isNegative) {
-            isNegative = false;
             gint.isNegative = false;
-            BrobInt tempBrob = add(gint);
-            tempBrob.isNegative = true;
-            return tempBrob;
+            return subtract(gint);
         }
 
         boolean addSign = false;
