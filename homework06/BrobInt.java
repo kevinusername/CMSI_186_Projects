@@ -1,3 +1,4 @@
+import java.util.Arrays;
 
 public class BrobInt {
 
@@ -49,14 +50,22 @@ public class BrobInt {
     public void createDigitArray() {
         digitArray = new byte[length];
 
-        for (int i = 0; i < length; i++) {
+        for (int i = length - 1, j = 0; i > -1; i--, j++) {
             try {
-                digitArray[i] = Byte.parseByte(internalValue.substring(i, i + 1));
+                digitArray[j] = Byte.parseByte(String.valueOf(internalValue.charAt(i)));
             } catch (NumberFormatException nfe) {
                 System.out.println("Please enter a valid Decimal only input");
                 System.exit(1);
             }
         }
+    }
+
+    public String digitToString(byte[] bArray) {
+        StringBuilder answer = new StringBuilder();
+        for (int i = bArray.length - 1; i > -1; i--) {
+            answer.append(Byte.toString(bArray[i]));
+        }
+        return trimZeros(answer.toString());
     }
 
     /**
@@ -181,36 +190,45 @@ public class BrobInt {
     *   */
     public BrobInt multiply(BrobInt gint) {
 
-        // Didn't have time to get this to work...
+        boolean addSign = false;
 
-        // BrobInt[] tempBrobArray = setBigger(gint);
-        // BrobInt bigBrob = new BrobInt(tempBrobArray[0].toString());
-        // BrobInt littleBrob = new BrobInt(tempBrobArray[1].toString());
+        if ((isNegative || gint.isNegative) && false == (isNegative && gint.isNegative)) {
+            addSign = true;
+        }
 
-        // bigBrob.createDigitArray();
-        // littleBrob.createDigitArray();
+        BrobInt[] tempBrobArray = setBigger(gint);
+        BrobInt bigBrob = new BrobInt(tempBrobArray[0].toString());
+        BrobInt littleBrob = new BrobInt(tempBrobArray[1].toString());
 
-        // byte[] productArray = new byte[bigBrob.length + littleBrob.length];
+        bigBrob.createDigitArray();
+        littleBrob.createDigitArray();
 
-        // for (int i = 0; i < littleBrob.length; i++) {
-        //     for (int j = 0; j < bigBrob.length; j++) {
-        //         productArray[j] = (byte) (bigBrob.digitArray[j] * littleBrob.digitArray[i]);
-        //         try {
-        //             if (productArray[j] > 9) {
-        //                 bigBrob.digitArray[j + 1] += bigBrob.digitArray[j] / littleBrob.digitArray[i];
-        //                 productArray[j] = (byte) (productArray[j] % 10);
-        //             }
-        //         } catch (ArrayIndexOutOfBoundsException aob) {
-        //             productArray[j] += bigBrob.digitArray[j] / littleBrob.digitArray[i];
-        //             productArray[j + 1] = (byte) (productArray[j] % 10);
-        //         }
-        //     }
-        // }
-        // System.out.println(Arrays.toString(productArray));
-        // return ZERO;
-        throw new UnsupportedOperationException("\n         Sorry, that operation is not yet implemented.");
+        byte[][] productArray = new byte[littleBrob.length][bigBrob.length + littleBrob.length];
 
+        for (int i = 0; i < littleBrob.length; i++) {
+            for (int j = 0; j < bigBrob.length; j++) {
+                productArray[i][j + i] += (byte) (littleBrob.digitArray[i] * bigBrob.digitArray[j]);
+                if (productArray[i][j + i] >= 10) {
+                    productArray[i][j + i + 1] += (byte) (productArray[i][j + i] / 10);
+                    productArray[i][j + i] = (byte) (productArray[i][j + i] % 10);
+                }
+            }
+        }
+
+        BrobInt finalProduct = ZERO;
+
+        for (int i = 0; i < littleBrob.length; i++) {
+            finalProduct = finalProduct.add(new BrobInt(digitToString(productArray[i])));
+        }
+
+        if (addSign) {
+            finalProduct.isNegative = true;
+        }
+
+        return finalProduct;
     }
+
+    // throw new UnsupportedOperationException("\n         Sorry, that operation is not yet implemented.");
 
     /** 
     *  Method to divide the value of this BrobIntk by the BrobInt passed as argument
@@ -343,8 +361,16 @@ public class BrobInt {
     *  note:  we don't really care about these
     *   */
     public static void main(String[] args) {
-        System.out.println("\n  Hello, world, from the BrobInt program!!\n");
-        System.out.println("\n   You should run your tests from the BrobIntTester...\n");
+        // System.out.println("\n  Hello, world, from the BrobInt program!!\n");
+        // System.out.println("\n   You should run your tests from the BrobIntTester...\n");
+
+        BrobInt myBrob = new BrobInt("-312352367");
+        BrobInt myBrob2 = new BrobInt("15412");
+
+        // // myBrob.createDigitArray();
+        // // System.out.println(Arrays.toString(myBrob.digitArray));
+
+        System.out.println(myBrob.multiply(myBrob2).toString());
 
         System.exit(0);
     }
