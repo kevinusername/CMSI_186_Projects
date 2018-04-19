@@ -170,6 +170,10 @@ public class BrobInt {
         // Fill in the rest of the digits places where the smaller BrobInt has not value
         if (bigBrob.byteVersion.length > littleBrob.byteVersion.length) {
             for (int i = littleBrob.byteVersion.length; i < bigBrob.byteVersion.length; i++) {
+                if (bigBrob.byteVersion[i] < 0) {
+                    bigBrob.byteVersion[i] += 100;
+                    bigBrob.byteVersion[i + 1] -= 1;
+                }
                 difArray[i] = bigBrob.byteVersion[i];
             }
         }
@@ -236,7 +240,26 @@ public class BrobInt {
     *  @return BrobInt that is the dividend of this BrobInt divided by the one passed in
     *   */
     public BrobInt divide(BrobInt gint) {
-        throw new UnsupportedOperationException("\n         Sorry, that operation is not yet implemented.");
+
+        BrobInt[] tempBrobArray = setBigger(gint);
+        BrobInt bigBrob = new BrobInt(tempBrobArray[0].toString());
+        BrobInt littleBrob = new BrobInt(tempBrobArray[1].toString());
+
+        BrobInt solution = ZERO;
+        BrobInt nextValue = new BrobInt(bigBrob.toString());
+
+        boolean proceed = true;
+        while (proceed) {
+            nextValue = nextValue.subtract(littleBrob);
+            solution = solution.add(ONE);
+            if (nextValue.compareTo(ZERO) < 0) {
+                proceed = false;
+            }
+        }
+
+        solution = solution.subtract(ONE);
+
+        return solution;
     }
 
     /** 
