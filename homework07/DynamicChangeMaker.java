@@ -57,7 +57,7 @@ public class DynamicChangeMaker {
         }
 
         /*
-         *pArray stores a the optimal tuple for a given value using given denominations
+         * pArray stores a the optimal tuple for a given value using given denominations
          * optimalSolution is the tuple that can create the target value using the least
          * amount of coins
          */
@@ -126,11 +126,8 @@ public class DynamicChangeMaker {
                     //  a better/non-impossible solution; if so, copy it down
                     if (i != 0) {
 
-                        // if the cell above is impossible, basically do nothing since
-                        //  this the current cell is already IMPOSSIBLE
-
-                        // else if the cell above has a total that is less than the current
-                        //  cell, copy it down
+                        // if the cell above has a total that is less than the current
+                        // cell, copy it down
                         if (pArray[i][j] != Tuple.IMPOSSIBLE) {
                             if (pArray[i - 1][j].total() < pArray[i][j].total()
                                     && pArray[i - 1][j] != Tuple.IMPOSSIBLE) {
@@ -180,6 +177,7 @@ public class DynamicChangeMaker {
             }
         }
 
+        // If target is not an int, throws error message and exits
         int target = 0;
         try {
             target = Integer.parseInt(args[1]);
@@ -189,6 +187,7 @@ public class DynamicChangeMaker {
 
         }
 
+        // Create an instance of DynamicChangeMaker and run with values parsed from args
         DynamicChangeMaker DCM = new DynamicChangeMaker();
         System.out.println(DCM.makeChangeWithDynamicProgramming(coins, target));
     }
