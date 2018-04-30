@@ -161,7 +161,8 @@ public class DynamicChangeMaker {
 
         // If wrong amount of arguements, give error and exit
         if (args.length != 2) {
-            System.out.println("Please enter 2 arguemnts in the format:\n$java DynamicChangeMaker d1,d2,...,dn target");
+            System.out.println(
+                    "BAD DATA:\nPlease enter 2 arguemnts in the format:\n$java DynamicChangeMaker d1,d2,...,dn target");
             System.exit(1);
         }
         String[] denominations = args[0].split(",");
@@ -184,11 +185,19 @@ public class DynamicChangeMaker {
         } catch (NumberFormatException nfe) {
             System.out.println("BAD TARGET: All inputs must valid positive integers");
             System.exit(3);
-
         }
 
         // Create an instance of DynamicChangeMaker and run with values parsed from args
         DynamicChangeMaker DCM = new DynamicChangeMaker();
-        System.out.println(DCM.makeChangeWithDynamicProgramming(coins, target));
+        Tuple solution = DCM.makeChangeWithDynamicProgramming(coins, target);
+        if (solution == Tuple.IMPOSSIBLE) {
+            System.out.println("IMPOSSIBLE");
+        } else {
+            System.out.printf("%d cents can be made with %d coins as follows:\n", target, coins.length);
+
+            for (int i = 0; i < solution.length(); i++) {
+                System.out.printf("  %d x %-3d cent\n", solution.getElement(i), coins[i]);
+            }
+        }
     }
 }

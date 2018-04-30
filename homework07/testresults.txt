@@ -159,8 +159,8 @@ Results: 33/33 tests passed.
 
     Test20: testing optimal solution for 135 cents: 
       expecting Tuple: <1,1,1,2>: success
-creating random tuple: <69,26,72,24,62,20,35>
-creating random tuple: <50,41,58,31,50,59,24>
+creating random tuple: <10,25,40,59,73,44,62>
+creating random tuple: <24,69,63,17,56,16,36>
 
 
   TESTING OF TUPLE GENERATION FOR THREE BOGUS DENOMINATION SETS
@@ -195,45 +195,73 @@ Results:
 "running standalone programs to test extra credit operations" 
 . 
 "running java DynamicChangeMaker 8,13,4,9 14" 
-Impossible tuple
+IMPOSSIBLE
 . 
 "running java DynamicChangeMaker 2,3 5" 
-<1,1>
+5 cents can be made with 2 coins as follows:
+  1 x 2   cent
+  1 x 3   cent
 . 
 "running java DynamicChangeMaker 2,3,7,5,51,29,11 13579" 
-<1,0,0,0,266,0,1>
+13579 cents can be made with 7 coins as follows:
+  1 x 2   cent
+  0 x 3   cent
+  0 x 7   cent
+  0 x 5   cent
+  266 x 51  cent
+  0 x 29  cent
+  1 x 11  cent
 . 
 "running java DynamicChangeMaker 17,23,121,47,3 13579" 
-<3,0,111,2,1>
+13579 cents can be made with 5 coins as follows:
+  3 x 17  cent
+  0 x 23  cent
+  111 x 121 cent
+  2 x 47  cent
+  1 x 3   cent
 . 
 "running java DynamicChangeMaker 1,7,9 12" 
-<3,0,1>
+12 cents can be made with 3 coins as follows:
+  3 x 1   cent
+  0 x 7   cent
+  1 x 9   cent
 . 
 "running java DynamicChangeMaker 11,13,17,19,23 1357911" 
-<1,2,0,0,59038>
+1357911 cents can be made with 5 coins as follows:
+  1 x 11  cent
+  2 x 13  cent
+  0 x 17  cent
+  0 x 19  cent
+  59038 x 23  cent
 . 
 "running java DynamicChangeMaker 23, 19, 17, 13, 11 1357911" 
+BAD DATA:
 Please enter 2 arguemnts in the format:
 $java DynamicChangeMaker d1,d2,...,dn target
 . 
 "running java DynamicChangeMaker 3,1,9,8 14" 
-<2,0,0,1>
+14 cents can be made with 4 coins as follows:
+  2 x 3   cent
+  0 x 1   cent
+  0 x 9   cent
+  1 x 8   cent
 . 
 "running java DynamicChangeMaker 3" 
+BAD DATA:
 Please enter 2 arguemnts in the format:
 $java DynamicChangeMaker d1,d2,...,dn target
 . 
 "running java DynamicChangeMaker 3,12 -4" 
 BAD DATA:  target must be a positive integer
-Impossible tuple
+IMPOSSIBLE
 . 
 "running java DynamicChangeMaker 0,12,3 63" 
 BAD DATA:  Denominations must be positive integers
-Impossible tuple
+IMPOSSIBLE
 . 
 "running java DynamicChangeMaker 10,12,3,12 63" 
 BAD DATA:  No duplicate denominations allowed
-Impossible tuple
+IMPOSSIBLE
 . 
 . 
 ...........done.............. 
