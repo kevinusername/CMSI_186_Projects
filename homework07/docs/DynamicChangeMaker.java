@@ -190,11 +190,14 @@ public class DynamicChangeMaker {
         // Create an instance of DynamicChangeMaker and run with values parsed from args
         DynamicChangeMaker DCM = new DynamicChangeMaker();
         Tuple solution = DCM.makeChangeWithDynamicProgramming(coins, target);
+
+        // Rest of code gives human readable output to stdout
         if (solution == Tuple.IMPOSSIBLE) {
             System.out.println("IMPOSSIBLE");
         } else {
             System.out.printf("%d cents can be made with %d coins as follows:\n", target, coins.length);
 
+            // Outputs how many of each coin are required for optimal solution
             for (int i = 0; i < solution.length(); i++) {
                 System.out.printf("  %d x %-3d cent\n", solution.getElement(i), coins[i]);
             }

@@ -159,8 +159,8 @@ Results: 33/33 tests passed.
 
     Test20: testing optimal solution for 135 cents: 
       expecting Tuple: <1,1,1,2>: success
-creating random tuple: <10,25,40,59,73,44,62>
-creating random tuple: <24,69,63,17,56,16,36>
+creating random tuple: <28,43,29,39,22,51,33>
+creating random tuple: <65,25,59,57,60,25,10>
 
 
   TESTING OF TUPLE GENERATION FOR THREE BOGUS DENOMINATION SETS
