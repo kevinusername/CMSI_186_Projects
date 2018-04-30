@@ -34,6 +34,7 @@ public class DynamicChangeMaker {
             }
         }
         if (target <= 0) {
+            System.out.println("BAD DATA:  target must be a positive integer");
             return false;
         }
 

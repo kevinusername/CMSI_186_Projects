@@ -159,8 +159,8 @@ Results: 33/33 tests passed.
 
     Test20: testing optimal solution for 135 cents: 
       expecting Tuple: <1,1,1,2>: success
-creating random tuple: <13,50,17,71,57,47,66>
-creating random tuple: <47,14,31,18,12,53,38>
+creating random tuple: <10,12,46,43,33,4,19>
+creating random tuple: <19,71,18,61,16,37,4>
 
 
   TESTING OF TUPLE GENERATION FOR THREE BOGUS DENOMINATION SETS
@@ -183,7 +183,8 @@ creating random tuple: <47,14,31,18,12,53,38>
 
     Test 24: testing bogus negative amount......
           expecting: BAD DATA and a message: 
-            and got:            which is: success
+            and got: BAD DATA:  target must be a positive integer
+           which is: success
 
 
 Results:
@@ -223,6 +224,7 @@ Please enter 2 arguemnts in the format:
 $java DynamicChangeMaker d1,d2,...,dn target
 . 
 "running java DynamicChangeMaker 3,12 -4" 
+BAD DATA:  target must be a positive integer
 Impossible tuple
 . 
 "running java DynamicChangeMaker 0,12,3 63" 
