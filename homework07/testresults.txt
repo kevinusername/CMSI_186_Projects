@@ -159,8 +159,8 @@ Results: 33/33 tests passed.
 
     Test20: testing optimal solution for 135 cents: 
       expecting Tuple: <1,1,1,2>: success
-creating random tuple: <28,43,29,39,22,51,33>
-creating random tuple: <65,25,59,57,60,25,10>
+creating random tuple: <22,11,40,2,10,37,42>
+creating random tuple: <27,28,41,35,46,9,67>
 
 
   TESTING OF TUPLE GENERATION FOR THREE BOGUS DENOMINATION SETS
@@ -234,10 +234,13 @@ IMPOSSIBLE
   0 x 19  cent
   59038 x 23  cent
 . 
-"running java DynamicChangeMaker 23, 19, 17, 13, 11 1357911" 
-BAD DATA:
-Please enter 2 arguemnts in the format:
-$java DynamicChangeMaker d1,d2,...,dn target
+"running java DynamicChangeMaker 23,19,17,13,11 1357911" 
+1357911 cents can be made with 5 coins as follows:
+  59037 x 23  cent
+  2 x 19  cent
+  0 x 17  cent
+  0 x 13  cent
+  2 x 11  cent
 . 
 "running java DynamicChangeMaker 3,1,9,8 14" 
 14 cents can be made with 4 coins as follows:
